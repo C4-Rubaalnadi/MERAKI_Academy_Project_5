@@ -1,4 +1,3 @@
-DROP DATABASE MERAKI_Academy_Project_5;
 CREATE DATABASE MERAKI_Academy_Project_5;
 USE MERAKI_Academy_Project_5;
 
