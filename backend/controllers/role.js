@@ -13,7 +13,7 @@ const createNewRole = (req, res) => {
         success: true,
         message: `Success role created`,
         role: result,
-        data: data
+        data: data,
       });
     }
   });
