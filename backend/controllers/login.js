@@ -23,7 +23,11 @@ const login = async (req, res) => {
                 if (response) {
                     const payload = {
                         userId: result[0].id,
+                        firstName: result[0].firstName,
+                        lastName: result[0].lastName,
                         country: result[0].country,
+                        email: result[0].email,
+                        image: result[0].image,
                         role: result[0].role_id
                     }
 
