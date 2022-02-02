@@ -19,8 +19,6 @@ app.use("/products", productRouter);
 
 //=========================================
 
-
-
 const PORT = 5000;
 
 app.listen(PORT, () => {
