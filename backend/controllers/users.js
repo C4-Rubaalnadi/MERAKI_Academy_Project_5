@@ -3,10 +3,10 @@ const connection = require("../database/db");
 const bcrypt = require("bcrypt");
 //role_id FK cannot add or update it manulally in table user
 const createNewUser = async (req, res) => {
-    const { firstName, lastName, country, email, password, image } = req.body;
+    const { firstName, lastName, country, email, password, role_id ,image } = req.body;
   const hashPassword = await bcrypt.hash(password, 5);
-  const query = `INSERT INTO users (firstName, lastName,  country, email, password, image) VALUES (?,?,?,?,?,?)`;
-  const data = [firstName, lastName, country, email, hashPassword, image];
+  const query = `INSERT INTO users (firstName, lastName,  country, email, password, role_id ,image) VALUES (?,?,?,?,?,?,?)`;
+  const data = [firstName, lastName, country, email, hashPassword,role_id,image];
   console.log(data);
   connection.query(query, data, (err, results) => {
     if (err) {

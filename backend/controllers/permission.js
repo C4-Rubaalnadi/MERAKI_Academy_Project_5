@@ -1,7 +1,7 @@
 const connection = require("../database/db");
 
 const Createpermission = (req, res) => {
-  const {permission} = req.body;
+  const { permission } = req.body;
   const query = `INSERT INTO permission (permission) VALUES (?)`;
   const data = [permission];
   connection.query(query, data, (err, results) => {
@@ -22,5 +22,5 @@ const Createpermission = (req, res) => {
   });
 };
 module.exports = {
-    Createpermission,
-};  
+  Createpermission,
+};
