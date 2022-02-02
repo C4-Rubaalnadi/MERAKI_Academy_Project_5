@@ -11,9 +11,6 @@ const roleRouter = require("./routes/role"); //import role router
 const productRouter = require("./routes/products"); //import products router
 const permissionRouter = require("./routes/permission"); //import permission router
 //========================================
-app.use(express.json());
-app.use(cors());
-//========================================
 app.use("/users", usersRouter);
 app.use("/login", loginRouter);
 app.use("/roles", roleRouter);
@@ -21,6 +18,8 @@ app.use("/products", productRouter);
 app.use("/permission",permissionRouter);
 //=========================================
 
+app.use(express.json());
+app.use(cors());
 
 
 const PORT = 5000;
