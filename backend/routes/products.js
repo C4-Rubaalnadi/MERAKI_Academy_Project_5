@@ -6,5 +6,5 @@ productsRouter.get("/",getAllProducts)
 productsRouter.patch("/:id",updateProductById)
 productsRouter.delete("/:id",deleteProductById)
 productsRouter.get("/search",getPageProducts)
-productsRouter.get("search",getProductByName)
+productsRouter.get("/search_1",getProductByName)
 module.exports = productsRouter;
