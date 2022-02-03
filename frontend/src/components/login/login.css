@@ -1,0 +1,41 @@
+.divLogin {
+    width: 30%;
+    border: solid 0.1ch rgb(228, 226, 226);
+    font-family: monospace;
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.TitleLogin{
+    font-size: x-large;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.paragLogin{
+    font-size: large;
+    font-weight: bold;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    gap: 2ch;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputLogin {
+    border: none;
+    border-bottom: 0.2ch solid;
+    width: 60%;
+    font-family: cursive;
+}
+
+.btnLogin {
+    width: 60%;
+    border: none;
+    background-color: orangered;
+    
+    margin-bottom: 2ch;
+}
