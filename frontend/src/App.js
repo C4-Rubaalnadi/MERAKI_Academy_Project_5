@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Navigation from "./components/navigation";
 import Dashboard from "./components/dashboard";
-import Login from "./components/login";
+import Login from "./components/login/login";
 import Rigister from "./components/Rigister";
 import Profile from "./components/UserProfile";
 function App() {
