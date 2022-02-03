@@ -91,37 +91,37 @@ const deleteProductById = (req, res) => {
 };
 
 // get page products //pagination
-const getPageProducts=(req,res)=>{
-   // limit as 4
-   const limit = 5;
-   // page number
+const getPageProducts = (req, res) => {
+  // limit as 4
+  const limit = 5;
+  // page number
   const page = req.query.page;
   const offset = (page - 1) * limit;
-  const query = "select * from Products limit "+limit+" OFFSET "+offset;
-  
-  connection.query(query,(err,results)=>{
-    if (err) { 
+  const query = "select * from Products limit " + limit + " OFFSET " + offset;
+
+  connection.query(query, (err, results) => {
+    if (err) {
       res.status(500).json({
         success: false,
         message: "server error",
       });
     }
-    res
-      .status(200)
-      .json({ success: true, message: `page ${page} productss`, result: results });
-  
-  })
+    res.status(200).json({
+      success: true,
+      message: `page ${page} productss`,
+      result: results,
+    });
+  });
+};
 
-}
+// get product by name //search //products
+const getProductByName = async (req, res) => {
+  const name = req.query.name;
+  const query = `SELECT * FROM products WHERE nameProduct REGEXP '^${name}'`;
 
-// get product by name
-const getProductByName=async(req,res)=>{
-  const name=req.query.name
-  const query=`SELECT * FROM products WHERE nameProduct REGEXP '^${name}'`
-  
-  const data=[name]
-  connection.query(query,(err,results)=>{
-    if (err) { 
+  const data = [name];
+  connection.query(query, (err, results) => {
+    if (err) {
       res.status(500).json({
         success: false,
         message: "server error",
@@ -130,15 +130,32 @@ const getProductByName=async(req,res)=>{
     res
       .status(200)
       .json({ success: true, message: ` product by name`, result: results });
-  
-  
-  })
-}
+  });
+};
+
+//get products by type //category  //type
+const getProductsByType = (req, res) => {
+  const type = req.query.type;
+  const query = `SELECT * FROM products WHERE is_deleted=0 AND type=?`;
+  const data = [type];
+  connection.query(query, data, (err, results) => {
+    if (err) {
+      res.status(500).json({
+        success: false,
+        message: "server error",
+      });
+    }
+    res
+      .status(200)
+      .json({ success: true, message: ` product by type`, result: results });
+  });
+};
 module.exports = {
   createNewProduct,
   getAllProducts,
   updateProductById,
   deleteProductById,
   getPageProducts,
-  getProductByName
+  getProductByName,
+  getProductsByType,
 };
