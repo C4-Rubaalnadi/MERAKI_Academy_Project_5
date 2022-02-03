@@ -14,7 +14,6 @@ const Login = ({setUserInFo}) => {
     return {
       token: state.loginReducer.token,
       isLoggedIn: state.loginReducer.isLoggedIn,
-      // userInfo : state.loginReducer.userInfo
     };
   });
 
@@ -39,7 +38,6 @@ const Login = ({setUserInFo}) => {
         localStorage.setItem("token", res.data.token);
         dispatch(login(res.data.token));
         setUserInFo(res.data.payload);
-        // console.log(res.data.payload);
       } else throw Error;
     } catch (error) {
       if (error.response && error.response.data) {
