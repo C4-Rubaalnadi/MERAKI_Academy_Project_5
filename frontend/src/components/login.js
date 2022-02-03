@@ -7,7 +7,7 @@ import axios from "axios";
 /////////////
 //==============================================================================
 
-const Login = ({setUserInFo}) => {
+const Login = ({ setUserInFo }) => {
   const dispatch = useDispatch();
 
   const state = useSelector((state) => {
