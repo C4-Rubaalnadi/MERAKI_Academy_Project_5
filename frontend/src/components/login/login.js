@@ -1,6 +1,7 @@
+import "./login.css"
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../reducer/login/index";
+import { login } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
 
 import axios from "axios";
@@ -58,29 +59,35 @@ const Login = () => {
 
   return (
     <>
-      <div className="Form">
-        <p className="Title">Login:</p>
-        <form onSubmit={loginUser}>
+    <div className="">
+      <div className="divLogin">
+        <p className="TitleLogin">Login</p>
+        <p className="paragLogin">Please login below account detail</p>
+        <form className="formLogin" onSubmit={loginUser}>
           <br />
 
-          <input
+          <input className="inputLogin"
             type="email"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
           />
           <br />
-          <input
+          <input className="inputLogin"
             type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
-          <button>Login</button>
+          <button className="btnLogin">Sign in</button>
         </form>
 
         {status
           ? message && <div className="SuccessMessage">{message}</div>
           : message && <div className="ErrorMessage">{message}</div>}
+      </div>
+      <div>
+
+      </div>
       </div>
     </>
   );
