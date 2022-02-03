@@ -33,6 +33,7 @@ const Navigation = () => {
             >
               Logout
             </button>
+            <Link to="/profile"> Profile </Link>
           </>
         ) : (
           <>

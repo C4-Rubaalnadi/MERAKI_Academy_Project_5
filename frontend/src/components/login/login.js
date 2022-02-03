@@ -5,10 +5,10 @@ import { login } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
 
 import axios from "axios";
-
+/////////////
 //==============================================================================
 
-const Login = () => {
+const Login = ({ setUserInFo }) => {
   const dispatch = useDispatch();
 
   const state = useSelector((state) => {
@@ -38,6 +38,7 @@ const Login = () => {
         setMessage("");
         localStorage.setItem("token", res.data.token);
         dispatch(login(res.data.token));
+        setUserInFo(res.data.payload);
       } else throw Error;
     } catch (error) {
       if (error.response && error.response.data) {

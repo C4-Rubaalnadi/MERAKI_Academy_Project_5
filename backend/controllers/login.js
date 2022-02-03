@@ -37,11 +37,12 @@ const login = async (req, res) => {
           };
 
           const token = jwt.sign(payload, secret, options);
-
+          console.log(payload);
           res.status(200).json({
             success: true,
             message: `Valid login credentials`,
             token: token,
+            payload : payload
           });
         } else {
           return res.status(403).json({
