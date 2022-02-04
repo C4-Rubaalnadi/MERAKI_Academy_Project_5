@@ -1,0 +1,151 @@
+*{
+    font-family: monospace;
+}
+.homeNavBar{
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    background-color: orangered;
+}
+
+.left{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.left h3{
+    margin-right: 4%;
+    color: white;
+}
+
+.mid{
+    flex:1;
+    align-self: center;
+}
+.logo {
+    
+    color:white;
+   
+}
+.logo h1 {
+    justify-self: center;
+    align-self: center;
+}
+
+.right{
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+.cart{
+    width: 30px;
+    height: 30px;
+    color: aliceblue;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.pageComtainer{
+    
+    transform: translateX(0vw);
+}
+.sliderContainer{
+    height:80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 98vw;
+   
+    
+
+}
+
+.productsContainer{
+    height: 70%;
+    position: relative;
+}
+
+.iconsContainer{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-content: center;
+    background-color: #f5fbfd;
+    opacity: 0;
+    
+    
+}
+.containerCartIcoon{
+    align-self: center;
+}
+
+.iconsContainer:hover{
+    opacity: 0.5;
+}
+
+.cartIcoon{
+    width: 30px;
+    height: 30px;
+    color: black;
+    cursor: pointer;
+    
+
+}
+.productImg{
+    height: 80%;
+    width:80%;
+}
+.productName{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+   
+}
+.price{
+    margin-left:30px;
+    font-weight: 500;
+}
+.description{
+    text-align: left;
+    font-size: 1rem;
+    margin-left: 20px;
+}
+
+.leftArrow{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:rgb(202, 187, 187);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.leftArrow:hover{
+transition: 1.5s ease;
+}
+.rightArrow{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(202, 187, 187);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    cursor: pointer;
+}
