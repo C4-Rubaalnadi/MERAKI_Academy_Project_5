@@ -62,7 +62,7 @@ const Register = () => {
             <>
               <p className="TitleRegister">Register</p>
               <p className="paragRegister">Please login below account detail</p>
-              <form onSubmit={addUserInfo}>
+              <form className="formRegister" onSubmit={addUserInfo}>
                 <br />
                 <input className="inputRegister"
                   type="text"
