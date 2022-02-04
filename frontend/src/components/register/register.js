@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-////////////////////////////////////////////
+
+//-------------------------------------------------------------------------------------
+
 //role_id??
 const Register = () => {
   const dispatch = useDispatch();
@@ -20,7 +22,9 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState(false); //to massege if true show true message if false show false message
   const role_id = 1; //as user
-  /////////////////////////////////////////////////
+
+  //-----------------------------------------------------
+
   const addUserInfo = async (e) => {
     e.preventDefault();
     try {
@@ -44,56 +48,60 @@ const Register = () => {
       setMessage("Error happened while register, please try again");
     }
   };
-  /////////////////////////////////////////////////
+
+  //----------------------------------------------------------
 
   return (
     <>
-      <div className="rigister">
-        {!state.LoggedIn ? (
-          <>
-            <p className="title">Register:</p>
-            <form onSubmit={addUserInfo}>
-              <br />
-              <input
-                type="text"
-                placeholder="First Name"
-                onChange={(e) => setFirstName(e.target.value)}
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Last Name"
-                onChange={(e) => setLastName(e.target.value)}
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Country"
-                onChange={(e) => setCountry(e.target.value)}
-              />
-              <br />
-              <input
-                type="email"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <br />
-              <input
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <br />
-              <button>Register</button>
-              <br />
-            </form>
-            {status
-              ? message && <div className="SuccessMessage">{message}</div>
-              : message && <div className="ErrorMessage">{message}</div>}
-          </>
-        ) : (
-          <p>Logout First</p>
-        )}
+      <div>
+        <div className="register">
+          {!state.LoggedIn ? (
+            <>
+              <p className="title">Register:</p>
+              <form onSubmit={addUserInfo}>
+                <br />
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+                <br />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+                <br />
+                <input
+                  type="text"
+                  placeholder="Country"
+                  onChange={(e) => setCountry(e.target.value)}
+                />
+                <br />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <br />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <br />
+                <button>Register</button>
+                <br />
+              </form>
+              {status
+                ? message && <div className="SuccessMessage">{message}</div>
+                : message && <div className="ErrorMessage">{message}</div>}
+            </>
+          ) : (
+            <p>Logout First</p>
+          )}
+        </div>
+        <div></div>
       </div>
     </>
   );
