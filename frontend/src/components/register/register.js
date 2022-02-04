@@ -53,11 +53,12 @@ const Register = () => {
 
   return (
     <>
-      <div>
-        <div className="register">
+      <div className="containerRegister">
+        <div className="divRegister">
           {!state.LoggedIn ? (
             <>
-              <p className="title">Register:</p>
+              <p className="TitleRegister">Register</p>
+              <p className="paragLogin">Please login below account detail</p>
               <form onSubmit={addUserInfo}>
                 <br />
                 <input
