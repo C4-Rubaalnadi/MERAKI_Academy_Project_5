@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import "../App.css";
 import axios from "axios";
 ////////////////////////////////////////////
 //role_id??
-const Rigister = () => {
+const Register = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
@@ -112,4 +111,4 @@ const Rigister = () => {
   );
 };
 
-export default Rigister;
+export default Register;
