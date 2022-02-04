@@ -5,7 +5,7 @@ import Navigation from "./components/navigation";
 import Dashboard from "./components/dashboard";
 import Login from "./components/login/login";
 import Rigister from "./components/Rigister";
-import Profile from "./components/UserProfile";
+import UserProfile from "./components/userInfo/UserProfile";
 function App() {
   const [userInfo,setUserInfo] = useState({});
   return (
