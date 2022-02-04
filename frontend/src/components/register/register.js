@@ -61,7 +61,7 @@ const Register = () => {
           {!state.LoggedIn ? (
             <>
               <p className="TitleRegister">Register</p>
-              <p className="paragLogin">Please login below account detail</p>
+              <p className="paragRegister">Please login below account detail</p>
               <form onSubmit={addUserInfo}>
                 <br />
                 <input className="inputRegister"
