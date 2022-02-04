@@ -5,27 +5,31 @@ import { login } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
 
 import axios from "axios";
-import { FaAngleLeft, FaAngleRight, BsCart4 } from "react-icons/fa";
-import { BsFillCartPlusFill ,BsCartPlusFill} from "react-icons/bs";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { BsFillCartPlusFill, BsCartPlusFill } from "react-icons/bs";
+import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
 /////////////
 //==============================================================================
 
-const Home = () => {
+const Home = ({ userInfo }) => {
   const [products, setProducts] = useState();
 
   const [page, setPage] = useState(4);
   const [category, setCategory] = useState("all"); //set category from select
   const dispatch = useDispatch();
   const [productsCategory, setProductsCategory] = useState();
-  const [numperOfProducts,setNumperOfProducts]=useState()
-  console.log(numperOfProducts);
+  const [numperOfProducts, setNumperOfProducts] = useState();
+  const [quantity, setQuantity] = useState(0);
+
+  const [user_id, setUser_id] = useState(userInfo.userId);
+
   const state = useSelector((state) => {
     return {
       token: state.loginReducer.token,
       isLoggedIn: state.loginReducer.isLoggedIn,
     };
   });
-console.log(page);
+
   const navigate = useNavigate();
 
   //========================================
@@ -33,10 +37,11 @@ console.log(page);
   useEffect(() => {
     const getAllProductsPage = () => {
       axios
-        .get(`http://localhost:5000/products/search?page=${page}`)
+        .get(`http://localhost:5000/products/search?page=${page}`, {
+          user_id: userInfo.userId,
+        })
         .then((res) => {
           setProducts(res.data.result);
-          console.log(products);
         })
         .catch((err) => {
           console.log(err);
@@ -45,18 +50,19 @@ console.log(page);
     getAllProductsPage();
   }, [page]);
   //=============================================
-useEffect(()=>{
-const getAllProducts=()=>{
-    axios.get("http://localhost:5000/products/").then((res) => {
-        
-        setNumperOfProducts(res.data.result.length)
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-}
-getAllProducts()
-},[])
+  useEffect(() => {
+    const getAllProducts = () => {
+      axios
+        .get("http://localhost:5000/products/")
+        .then((res) => {
+          setNumperOfProducts(res.data.result.length);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getAllProducts();
+  }, []);
   //=========================================
   // get all products by category
   useEffect(() => {
@@ -73,9 +79,25 @@ getAllProducts()
     getAllProductsCategory();
   }, [category]);
   //========================================
-//   const handleAddToCart=()=>{
-//       axios.post()
-//   }
+  const handleAddToCart = (product_id) => {
+    axios
+      .post(
+        "http://localhost:5000/orders/",
+        { quantity, product_id, user_id },
+        {
+          headers: {
+            Authorization: `Bearer ${state.token}`,
+          },
+        }
+      )
+      .then((res) => {
+        setQuantity(0);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   //========================================
 
   return (
@@ -84,10 +106,10 @@ getAllProducts()
         <div className="homeNavBar">
           <div className="left">
             <h3>category </h3>
-            <select
+            <div className="box">
+            <select 
               onChange={(e) => {
                 setCategory(`${e.target.value}`);
-                console.log(e.target.value);
               }}
             >
               <option>all</option>
@@ -95,9 +117,8 @@ getAllProducts()
               <option>meat</option>
               <option>pasta</option>
               <option>millk_egg</option>
-
               <option>vegatables_frutes</option>
-            </select>
+            </select></div>
           </div>
           <div className="mid">
             <div>
@@ -110,18 +131,49 @@ getAllProducts()
         </div>
         <div className="pageComtainer">
           <div className="sliderContainer">
-            <div className="leftArrow" onClick={()=>{page>1?
-                  setPage((page)=>page-1):setPage((page)=>numperOfProducts/4)
-              }}>
-              <FaAngleLeft  />
+            <div
+              className="leftArrow"
+              onClick={() => {
+                page > 1
+                  ? setPage((page) => page - 1)
+                  : setPage((page) => numperOfProducts / 4);
+              }}
+            >
+              <FaAngleLeft />
             </div>
             {category == "all"
               ? products &&
-                products.map((product) => {
+                products.map((product, i) => {
                   return (
                     <>
                       <div className="productsContainer">
-                          <div className="iconsContainer"><div className="containerCartIcoon"><BsCartPlusFill className="cartIcoon" onClick={handleAddToCart}/></div></div>
+                        <div className="iconsContainer">
+                          <div className="containerCartIcoon">
+                            <div>{quantity}</div>
+                            <IoMdRemoveCircleOutline
+                              className="add"
+                              onClick={() => {
+                                quantity !== 0
+                                  ? setQuantity((previos) => previos - 1)
+                                  : setQuantity(0);
+                              }}
+                            />
+                            <IoIosAddCircle
+                              className="add"
+                              onClick={() => {
+                                setQuantity((previos) => previos + 1);
+                              }}
+                            />
+                            <BsCartPlusFill
+                              key={i}
+                              className="cartIcoon"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleAddToCart(product.id);
+                              }}
+                            />
+                          </div>
+                        </div>
                         <img
                           className="productImg"
                           src={product.image && product.image}
@@ -142,10 +194,37 @@ getAllProducts()
                   );
                 })
               : productsCategory &&
-                productsCategory.map((product) => {
+                productsCategory.map((product, i) => {
                   return (
                     <>
                       <div className="productsContainer">
+                        <div className="iconsContainer">
+                          <div className="containerCartIcoon">
+                            <div>{quantity}</div>
+                            <IoMdRemoveCircleOutline
+                              className="add"
+                              onClick={() => {
+                                quantity !== 0
+                                  ? setQuantity((previos) => previos - 1)
+                                  : setQuantity(0);
+                              }}
+                            />
+                            <IoIosAddCircle
+                              className="add"
+                              onClick={() => {
+                                setQuantity((previos) => previos + 1);
+                              }}
+                            />
+                            <BsCartPlusFill
+                              key={i}
+                              className="cartIcoon"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleAddToCart(product.id);
+                              }}
+                            />
+                          </div>
+                        </div>
                         <img
                           className="productImg"
                           src={product.image && product.image}
@@ -166,10 +245,15 @@ getAllProducts()
                   );
                 })}
 
-            <div className="rightArrow" onClick={()=>{page*4<numperOfProducts?
-                  setPage((page)=>page+1):setPage(1)
-              }}>
-              <FaAngleRight  />
+            <div
+              className="rightArrow"
+              onClick={() => {
+                page * 4 < numperOfProducts
+                  ? setPage((page) => page + 1)
+                  : setPage(1);
+              }}
+            >
+              <FaAngleRight />
             </div>
           </div>
         </div>
