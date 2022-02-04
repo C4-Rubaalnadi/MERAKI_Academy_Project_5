@@ -1,9 +1,15 @@
+.containerLogin {
+    display: flex;
+    flex-direction: row;
+    gap: 5ch;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
 .divLogin {
-    width: 30%;
+    width: 25%;
     border: solid 0.1ch rgb(228, 226, 226);
-    font-family: monospace;
-    margin-left: 30%;
-    margin-top: 5%;
 }
 
 .TitleLogin{
@@ -13,8 +19,8 @@
 }
 
 .paragLogin{
-    font-size: large;
-    font-weight: bold;
+    font-family: system-ui;
+    font-size: small;
 }
 
 .formLogin {
@@ -28,14 +34,67 @@
 .inputLogin {
     border: none;
     border-bottom: 0.2ch solid;
-    width: 60%;
+    width: 80%;
     font-family: cursive;
 }
 
 .btnLogin {
-    width: 60%;
-    border: none;
-    background-color: orangered;
-    
+    width: 80%;
+    height: 5ch;
+    background-color: orange;
+    border: solid orange 0.3ch;
+    color: white;
+    font-size: larg;
+    font-family: cursive;
+    font-weight: bold;
+    margin-bottom: 5ch;
+}
+
+.btnLogin:hover {
+    background-color: white;
+    color: orange;
+    cursor: pointer;
+}
+
+.btnCreateAcc {
+    height: 5ch;
+    border: solid orange 0.3ch;
+    background-color: white;
+    color: orange;
+    cursor: pointer;
+    width: 100%;
+    font-size: larg;
+    font-family: cursive;
+    font-weight: bold;
     margin-bottom: 2ch;
+}
+
+.btnCreateAcc:hover {
+    background-color: whitesmoke;
+}
+
+.divLogin2 {
+    width: 20%;
+    margin-top: 2%;
+}
+
+.paraghraphQ {
+    font-family: system-ui;
+    font-weight: bold;
+    padding-bottom: 0.5ch;
+
+}
+
+.paraghraphC {
+    font-family: system-ui;
+    color: orange;
+    font-size: small;
+    font-weight: bold;
+    text-align: left;
+}
+
+.paraghraph {
+    font-family: system-ui;
+    font-size: small;
+    text-align: left;
 }
