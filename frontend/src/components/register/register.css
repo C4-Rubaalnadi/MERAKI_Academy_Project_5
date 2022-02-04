@@ -1,0 +1,8 @@
+.containerRegister {
+    display: flex;
+    flex-direction: row;
+    gap: 5ch;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
