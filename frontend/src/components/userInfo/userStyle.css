@@ -1,10 +1,39 @@
+.user-content{
+    font-family: cursive;
+    display: flex;
+    box-shadow: 0 0 10px #0000001a;
+    width: 80%;
+    margin:auto;
+}
 .profile{
-    margin-left: -65%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid gray;
+    width: 20%;
+    height: 80vh;
+    margin-top: 5%;
+    margin-left: 0,5%;
 }
 .userImg{
-    width: 10%;
+    width: 50%;
     margin-left: -13%;
 }
 .userInfo{
     margin-left: -10%;
+}
+.title{
+    margin-left: -30%;
+    /* border-bottom: 1px solid;
+    border-top: 1px solid; */
+}
+.welcom{
+    width: 80%;
+    margin: 4% -22%;
+
+}
+.message{
+    font-size: 35px;
+}
+.my-account{
+    font-size: 20px;
 }
