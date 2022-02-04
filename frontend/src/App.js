@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Navigation from "./components/navigation";
 import Dashboard from "./components/dashboard";
 import Login from "./components/login/login";
-import Rigister from "./components/Rigister";
+import Register from "./components/register/register";
 import UserProfile from "./components/userInfo/UserProfile";
 function App() {
   const [userInfo,setUserInfo] = useState({});
@@ -13,7 +13,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/login" element={<Login setUserInFo={setUserInfo} />} />
-        <Route path="/register" element={<Rigister />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<UserProfile userInfo={userInfo}  />} />
         <Route path="/dashboard" element={<Dashboard userInfo={userInfo}/>} />
       </Routes>
