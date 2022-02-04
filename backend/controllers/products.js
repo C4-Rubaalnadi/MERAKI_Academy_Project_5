@@ -151,10 +151,9 @@ const getProductsByType = (req, res) => {
   });
 };
 //getAllCategory
-const getAllCategory=(req,res)=>{
- 
+const getAllCategory = (req, res) => {
   const query = `SELECT type FROM products WHERE is_deleted=0 `;
-  
+
   connection.query(query, (err, results) => {
     if (err) {
       res.status(500).json({
@@ -166,7 +165,7 @@ const getAllCategory=(req,res)=>{
       .status(200)
       .json({ success: true, message: ` all type`, result: results });
   });
-}
+};
 
 module.exports = {
   createNewProduct,
@@ -176,5 +175,5 @@ module.exports = {
   getPageProducts,
   getProductByName,
   getProductsByType,
-  getAllCategory
+  getAllCategory,
 };
