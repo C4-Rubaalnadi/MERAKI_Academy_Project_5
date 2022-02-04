@@ -18,12 +18,8 @@ const Register = () => {
   const [country, setCountry] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [image, setImage] = useState(
-    "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"
-  );
   const [status, setStatus] = useState(false); //to massege if true show true message if false show false message
   const role_id = 1; //as user
-  const userImg = image;
   /////////////////////////////////////////////////
   const addUserInfo = async (e) => {
     e.preventDefault();
@@ -34,7 +30,6 @@ const Register = () => {
         country,
         email,
         password,
-        image,
         role_id,
       });
       if (result.data.success) {
@@ -42,7 +37,6 @@ const Register = () => {
         setMessage("The user has been created successfully");
       } else throw Error;
     } catch (error) {
-      console.log(error);
       setStatus(false);
       if (error.response && error.response.data) {
         return setMessage(error.response.data.message);
@@ -59,12 +53,6 @@ const Register = () => {
           <>
             <p className="title">Register:</p>
             <form onSubmit={addUserInfo}>
-              <br />
-              <img
-                src={userImg}
-                alt="userImg"
-                style={{ width: "10%", marginLeft: "-21%" }}
-              />
               <br />
               <input
                 type="text"
