@@ -5,7 +5,7 @@ import Navigation from "./components/navigation";
 import Dashboard from "./components/dashboard";
 import Login from "./components/login/login";
 import Rigister from "./components/Rigister";
-import Profile from "./components/UserProfile";
+import UserProfile from "./components/userInfo/UserProfile";
 function App() {
   const [userInfo,setUserInfo] = useState({});
   return (
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login setUserInFo={setUserInfo} />} />
         <Route path="/register" element={<Rigister />} />
-        <Route path="/profile" element={<Profile userInfo={userInfo}  />} />
+        <Route path="/profile" element={<UserProfile userInfo={userInfo}  />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </div>
