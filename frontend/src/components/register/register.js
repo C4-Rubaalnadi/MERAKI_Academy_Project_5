@@ -61,31 +61,31 @@ const Register = () => {
               <p className="paragLogin">Please login below account detail</p>
               <form onSubmit={addUserInfo}>
                 <br />
-                <input
+                <input className="inputRegister"
                   type="text"
                   placeholder="First Name"
                   onChange={(e) => setFirstName(e.target.value)}
                 />
                 <br />
-                <input
+                <input className="inputRegister"
                   type="text"
                   placeholder="Last Name"
                   onChange={(e) => setLastName(e.target.value)}
                 />
                 <br />
-                <input
+                <input className="inputRegister"
                   type="text"
                   placeholder="Country"
                   onChange={(e) => setCountry(e.target.value)}
                 />
                 <br />
-                <input
+                <input className="inputRegister"
                   type="email"
                   placeholder="Email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <br />
-                <input
+                <input className="inputRegister"
                   type="password"
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
