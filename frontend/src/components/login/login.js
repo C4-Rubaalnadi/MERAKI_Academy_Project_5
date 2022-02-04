@@ -60,7 +60,7 @@ const Login = ({ setUserInFo }) => {
 
   return (
     <>
-    <div className="">
+    <div className="containerLogin">
       <div className="divLogin">
         <p className="TitleLogin">Login</p>
         <p className="paragLogin">Please login below account detail</p>
@@ -86,8 +86,14 @@ const Login = ({ setUserInFo }) => {
           ? message && <div className="SuccessMessage">{message}</div>
           : message && <div className="ErrorMessage">{message}</div>}
       </div>
-      <div>
-
+      <div className="divLogin2">
+        <p className="paraghraphQ">Don't have an account?</p>
+        <button className="btnCreateAcc" onClick={() => {
+          navigate("/register")
+        }}>Create Account</button>
+        <p className="paraghraphC">Terms & Conditions</p>
+        <p className="paraghraph">Your privacy and security are important to us. For more information on how we use your data read our</p>
+        <p className="paraghraphC">privacy policy</p>
       </div>
       </div>
     </>
