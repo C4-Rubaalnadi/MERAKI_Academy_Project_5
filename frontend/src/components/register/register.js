@@ -60,7 +60,7 @@ const Register = () => {
         <div className="divRegister">
           {!state.LoggedIn ? (
             <>
-              <p className="TitleRegister">Register</p>
+              <p className="TitleRegister">Create Account</p>
               <p className="paragRegister">Please login below account detail</p>
               <form className="formRegister" onSubmit={addUserInfo}>
                 <br />
@@ -94,7 +94,7 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <br />
-                <button className="btnRegister">Register</button>
+                <button className="btnRegister">Create</button>
                 <br />
               </form>
               {status
