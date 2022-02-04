@@ -1,32 +1,42 @@
 const connection = require("../database/db");
-// const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+
 //role_id FK cannot add or update it manulally in table user
 const createNewUser = async (req, res) => {
-    const { firstName, lastName, country, email, password, role_id ,image } = req.body;
+  const { firstName, lastName, country, email, password, role_id, image } =
+    req.body;
+
   const hashPassword = await bcrypt.hash(password, 5);
+
   const query = `INSERT INTO users (firstName, lastName,  country, email, password, role_id ,image) VALUES (?,?,?,?,?,?,?)`;
-  const data = [firstName, lastName, country, email, hashPassword,1,image];
-  console.log(data);
+
+  const data = [firstName, lastName, country, email, hashPassword, 1, image];
+
   connection.query(query, data, (err, results) => {
     if (err) {
-      return res.status(409).json({
+      if (err.sqlState == "23000") {
+        return res.status(409).json({
+          success: false,
+          message: `The email already exists`,
+        });
+      }
+      return res.status(500).json({
         success: false,
-        massage: "The email already exists",
+        message: `Server Error`,
         err: err,
       });
+    } else {
+      res.status(201).json({
+        success: true,
+        message: `Success Author Added`,
+        results: results,
+        data: data,
+      });
     }
-    // result are the data returned by mysql server
-    res.status(200).json({
-      success: true,
-      massage: "Success Author Added",
-      results: results,
-      data: data,
-    });
   });
 };
-//get all user
-//is_deleted=0 && put * ??
+
+//get all user //is_deleted=0 && put * ??
 const getAllUser = (req, res) => {
   const query = `SELECT id FROM users `;
   connection.query(query, (err, results) => {
@@ -45,8 +55,8 @@ const getAllUser = (req, res) => {
     });
   });
 };
-//get user by id
-//??
+
+//get user by id  //??
 const getUserById = (req, res) => {
   const userId = req.params.id;
   const query = `SELECT * FROM users WHERE id = ${userId}`;
@@ -66,18 +76,18 @@ const getUserById = (req, res) => {
     });
   });
 };
-//update user information 
-// role_id ,??
-const updateInfo = async (req,res) => {
-  const {firstName, lastName, country, email, password,image} = req.body;
+
+//update user information // role_id ,??
+const updateInfo = async (req, res) => {
+  const { firstName, lastName, country, email, password, image } = req.body;
   const hashPassword = await bcrypt.hash(password, 5);
   const id = req.params.id;
   const query = `UPDATE users SET firstName = ? , lastName = ? , country = ? , email = ? ,password = ?  ,image = ? WHERE id = ? `;
-  const data = [firstName, lastName, country, email,hashPassword,image,id];
+  const data = [firstName, lastName, country, email, hashPassword, image, id];
   connection.query(query, data, (err, result) => {
     if (err) throw err;
     if (result.affectedRows === 0) {
-      res.status(404).json({ 
+      res.status(404).json({
         success: false,
         message: `The user: ${id} is not found`,
       });
@@ -90,12 +100,11 @@ const updateInfo = async (req,res) => {
       });
     }
   });
-}
+};
+
 module.exports = {
   createNewUser,
   getAllUser,
   getUserById,
-  updateInfo
+  updateInfo,
 };
-// module.exports = {
-//   };
