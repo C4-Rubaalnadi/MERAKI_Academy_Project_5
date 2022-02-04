@@ -14,6 +14,8 @@ const Register = () => {
     };
   });
 
+  const navigate = useNavigate();
+
   const [message, setMessage] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
