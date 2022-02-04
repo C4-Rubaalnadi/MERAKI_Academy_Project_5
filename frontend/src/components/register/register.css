@@ -6,3 +6,34 @@
     justify-content: center;
     margin-top: 10%;
 }
+
+.divRegister {
+    width: 25%;
+    border: solid 0.1ch rgb(228, 226, 226);
+}
+
+.TitleRegister {
+    font-size: x-large;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.paragRegister {
+    font-family: system-ui;
+    font-size: small;
+}
+
+.formRegister {
+    display: flex;
+    flex-direction: column;
+    gap: 1ch;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputRegister {
+    border: none;
+    border-bottom: 0.2ch solid;
+    width: 80%;
+    font-family: cursive;
+}
