@@ -8,7 +8,7 @@ const login = async (req, res) => {
   const password = req.body.password;
   const email = req.body.email.toLowerCase();
 
-  const query = `SELECT * FROM users INNER JOIN roles ON users.role_id = roles.id WHERE email = ?`;
+  const query = `SELECT * FROM users  WHERE email = ?`;
 
   const data = [email];
 
@@ -20,6 +20,7 @@ const login = async (req, res) => {
         if (err) throw err;
 
         if (response) {
+          console.log(result);
           const payload = {
             userId: result[0].id,
             firstName: result[0].firstName,
