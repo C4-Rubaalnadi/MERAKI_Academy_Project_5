@@ -102,7 +102,15 @@ const Register = () => {
             <p>Logout First</p>
           )}
         </div>
-        <div></div>
+        <div className="divRegister2">
+        <p className="paraghraphQ">Already an account holder?</p>
+        <button className="btnLog_in" onClick={() => {
+          navigate("/login")
+        }}>Log in</button>
+        <p className="paraghraphC">Terms & Conditions</p>
+        <p className="paraghraph">Your privacy and security are important to us. For more information on how we use your data read our</p>
+        <p className="paraghraphC">privacy policy</p>
+      </div>
       </div>
     </>
   );
