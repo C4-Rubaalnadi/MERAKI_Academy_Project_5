@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -13,6 +13,8 @@ const Navigation = () => {
       isLoggedIn: state.loginReducer.isLoggedIn,
     };
   });
+
+  const navigate = useNavigate();
 
   //===============================================================
 
@@ -29,6 +31,7 @@ const Navigation = () => {
               onClick={() => {
                 dispatch(logout());
                 localStorage.clear();
+                navigate("/login")
               }}
             >
               Logout
