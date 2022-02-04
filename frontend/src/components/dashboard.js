@@ -1,8 +1,8 @@
 import React from "react";
 import Home from "./home/home";
 
-const Dashboard = () => {
-  return <> <div><Home/></div></>;
+const Dashboard = ({userInfo}) => {
+  return <> <div><Home userInfo={userInfo}/></div></>;
 };
 
 export default Dashboard;
