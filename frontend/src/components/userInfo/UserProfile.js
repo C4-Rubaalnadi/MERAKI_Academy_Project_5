@@ -20,39 +20,36 @@ const UserProfile = ({ userInfo }) => {
       <div className="user-content">
         {userInfo ? (
           <>
-      <div className="profile">
-            <div className="profile-img">
-              <div className="title">
-                <p>Account Details:</p>
-              </div>
-              <img
-                src={imag}
-                alt="userImg"
-                className="userImg"
-                // style={{ width: "10%", marginLeft: "-21%" }}
-              />
-              <span></span>
+            <div className="welcom">
+              <p className="message"> Welcome {userInfo.firstName} </p>
             </div>
-            <div className="userInfo">
-              <p>
-                {" "}
-                {userInfo.firstName} {userInfo.lastName}{" "}
-              </p>
-              <div className="email-prof">
-              <p> {userInfo.email} </p>
+            <div className="line"></div>
+            <div className="profile">
+              <p className="details">Account Details:</p>
+              <div className="userInfo">
+                <div className="profile-img">
+                  <img
+                    src={imag}
+                    alt="userImg"
+                    className="userImg"
+                    // style={{ width: "10%", marginLeft: "-21%" }}
+                  />
+                </div>
+                <div className="info-prof">
+
+                <p>
+                  {" "}
+                  {userInfo.firstName} {userInfo.lastName}{" "}
+                </p>
+                  <p> {userInfo.email} </p>
+                </div>
               </div>
-              <p> {userInfo.country} </p>
             </div>
-          </div>
-          <div className="welcom">
-          <p className="message"> Welcome {userInfo.firstName} </p>
-          <p className="my-account"> My Account: </p>
-          </div>
           </>
         ) : (
           <></>
-          )}
-        </div>
+        )}
+      </div>
     </>
   );
 };

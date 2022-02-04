@@ -8,6 +8,7 @@ import axios from "axios";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { BsFillCartPlusFill, BsCartPlusFill } from "react-icons/bs";
 import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
+import Cart from "../cart/Cart";
 /////////////
 //==============================================================================
 
@@ -126,7 +127,7 @@ const Home = ({ userInfo }) => {
             </div>
           </div>
           <div className="right">
-            <BsFillCartPlusFill className="cart" />
+            <BsFillCartPlusFill className="cart" onClick={() => {navigate("/cart")}}/>
           </div>
         </div>
         <div className="pageComtainer">
