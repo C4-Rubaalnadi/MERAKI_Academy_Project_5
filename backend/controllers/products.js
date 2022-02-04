@@ -93,7 +93,7 @@ const deleteProductById = (req, res) => {
 // get page products //pagination
 const getPageProducts = (req, res) => {
   // limit as 4
-  const limit = 5;
+  const limit = 4;
   // page number
   const page = req.query.page;
   const offset = (page - 1) * limit;
@@ -150,6 +150,24 @@ const getProductsByType = (req, res) => {
       .json({ success: true, message: ` product by type`, result: results });
   });
 };
+//getAllCategory
+const getAllCategory=(req,res)=>{
+ 
+  const query = `SELECT type FROM products WHERE is_deleted=0 `;
+  
+  connection.query(query, (err, results) => {
+    if (err) {
+      res.status(500).json({
+        success: false,
+        message: "server error",
+      });
+    }
+    res
+      .status(200)
+      .json({ success: true, message: ` all type`, result: results });
+  });
+}
+
 module.exports = {
   createNewProduct,
   getAllProducts,
@@ -158,4 +176,5 @@ module.exports = {
   getPageProducts,
   getProductByName,
   getProductsByType,
+  getAllCategory
 };
