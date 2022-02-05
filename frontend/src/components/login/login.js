@@ -52,7 +52,7 @@ const Login = ({ setUserInFo }) => {
 
   useEffect(() => {
     if (state.isLoggedIn) {
-      navigate("/dashboard");
+      navigate("/home");
     }
   });
 
