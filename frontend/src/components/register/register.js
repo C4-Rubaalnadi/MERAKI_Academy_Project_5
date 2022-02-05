@@ -98,8 +98,8 @@ const Register = () => {
                 <br />
               </form>
               {status
-                ? message && <div className="SuccessMessage">{message}</div>
-                : message && <div className="ErrorMessage">{message}</div>}
+                ? message && <div className="SuccessMessageRegister">{message}</div>
+                : message && <div className="ErrorMessageRegister">{message}</div>}
             </>
           ) : (
             <p>Logout First</p>

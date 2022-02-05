@@ -55,7 +55,7 @@ const login = async (req, res) => {
     } else {
       return res.status(404).json({
         success: false,
-        message: `The email doesn't exist`,
+        message: `The Email Doesn't Exist`,
       });
     }
   });

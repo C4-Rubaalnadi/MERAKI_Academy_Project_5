@@ -83,8 +83,8 @@ const Login = ({ setUserInFo }) => {
         </form>
 
         {status
-          ? message && <div className="SuccessMessage">{message}</div>
-          : message && <div className="ErrorMessage">{message}</div>}
+          ? message && <div className="SuccessMessageLogin">{message}</div>
+          : message && <div className="ErrorMessageLogin">{message}</div>}
       </div>
       <div className="divLogin2">
         <p className="paraghraphQ">Don't have an account?</p>
