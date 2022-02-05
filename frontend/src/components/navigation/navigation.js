@@ -40,6 +40,8 @@ const Navigation = ({ userInfo }) => {
                 <i id="imgProfile" class="fas fa-user-circle"></i>
                 <p className="name">{userInfo.firstName}</p>
               </div>
+              <div className="divLogout">
+              <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
               <button
                 className="logout"
                 onClick={() => {
@@ -50,6 +52,7 @@ const Navigation = ({ userInfo }) => {
               >
                 Logout
               </button>
+              </div>
             </div>
           </>
         ) : (
