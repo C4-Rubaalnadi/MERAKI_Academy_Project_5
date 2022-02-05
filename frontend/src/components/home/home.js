@@ -109,18 +109,19 @@ const Home = ({ userInfo }) => {
           <div className="left">
             <h3>category </h3>
             <div className="box">
-            <select 
-              onChange={(e) => {
-                setCategory(`${e.target.value}`);
-              }}
-            >
-              <option>all</option>
-              <option>snake</option>
-              <option>meat</option>
-              <option>pasta</option>
-              <option>millk_egg</option>
-              <option>vegatables_frutes</option>
-            </select></div>
+              <select
+                onChange={(e) => {
+                  setCategory(`${e.target.value}`);
+                }}
+              >
+                <option>all</option>
+                <option>snake</option>
+                <option>meat</option>
+                <option>pasta</option>
+                <option>millk_egg</option>
+                <option>vegatables_frutes</option>
+              </select>
+            </div>
           </div>
           <div className="mid">
             <div>
@@ -128,7 +129,12 @@ const Home = ({ userInfo }) => {
             </div>
           </div>
           <div className="right">
-            <BsFillCartPlusFill className="cart" onClick={() => {navigate("/cart")}}/>
+            <BsFillCartPlusFill
+              className="cart"
+              onClick={() => {
+                navigate("/cart");
+              }}
+            />
           </div>
         </div>
         <div className="pageComtainer">
@@ -259,7 +265,8 @@ const Home = ({ userInfo }) => {
             </div>
           </div>
         </div>
-        <Chat/>
+
+        <Chat />
       </div>
     </>
   );
