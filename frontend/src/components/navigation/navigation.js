@@ -1,4 +1,4 @@
-import "./navigation.css"
+import "./navigation.css";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../reducer/login/index";
@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 //===============================================================
 
-const Navigation = () => {
+const Navigation = ({ userInfo }) => {
   const dispatch = useDispatch();
 
   const state = useSelector((state) => {
@@ -21,23 +21,39 @@ const Navigation = () => {
 
   return (
     <>
-      <div className="navBar">
+      <div className="divNavigation">
+        <div>
+          <h1 className="jebnalak">Jebnalak</h1>
+        </div>
         {state.isLoggedIn ? (
           <>
-            <Link className="Link" to="/home">
-              Home
-            </Link>
-            <Link to="/profile"> Profile </Link>
-            <button
-              className="logout"
-              onClick={() => {
-                dispatch(logout());
-                localStorage.clear();
-                navigate("/login")
-              }}
-            >
-              Logout
-            </button>
+            <div className="divLink">
+              <Link className="Link" to="/home">
+                Home
+              </Link>
+              <div
+                className="divProfile"
+                onClick={() => {
+                  navigate("/profile");
+                }}
+              >
+                <i id="imgProfile" class="fas fa-user-circle"></i>
+                <p className="name">{userInfo.firstName}</p>
+              </div>
+              <div className="divLogout">
+              <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
+              <button
+                className="logout"
+                onClick={() => {
+                  dispatch(logout());
+                  localStorage.clear();
+                  navigate("/login");
+                }}
+              >
+                Logout
+              </button>
+              </div>
+            </div>
           </>
         ) : (
           <>
