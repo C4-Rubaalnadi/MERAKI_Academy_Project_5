@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import Navigation from "./components/navigation";
+import Navigation from "./components/navigation/navigation";
 import Home from "./components/home/home";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
@@ -11,6 +11,7 @@ import Cart  from "./components/cart/Cart";
 
 function App() {
   const [userInfo,setUserInfo] = useState({});
+
   return (
     <div className="App">
       <Navigation />
