@@ -1,6 +1,3 @@
-*{
-    font-family: monospace;
-}
 .homeNavBar{
     display: flex;
     flex-direction: row;
@@ -64,6 +61,7 @@
     -ms-word-break: normal;
     word-break: normal;
   }
+  
 .left{
     flex:1;
     display: flex;
@@ -211,3 +209,5 @@ transition: 1.5s ease;
     opacity: 0.5;
     cursor: pointer;
 }
+
+

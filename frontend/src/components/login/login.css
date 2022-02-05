@@ -36,6 +36,7 @@
     border-bottom: 0.2ch solid;
     width: 80%;
     font-family: cursive;
+    outline: none;
 }
 
 .btnLogin {
@@ -48,12 +49,14 @@
     font-family: cursive;
     font-weight: bold;
     margin-bottom: 5ch;
+    outline: none;
 }
 
 .btnLogin:hover {
     background-color: white;
     color: orange;
     cursor: pointer;
+    transition: 0.8s;
 }
 
 .btnCreateAcc {
@@ -67,10 +70,12 @@
     font-family: cursive;
     font-weight: bold;
     margin-bottom: 2ch;
+    outline: none;
 }
 
 .btnCreateAcc:hover {
     background-color: whitesmoke;
+    transition: 0.8s;
 }
 
 .divLogin2 {
@@ -97,4 +102,12 @@
     font-family: system-ui;
     font-size: small;
     text-align: left;
+}
+
+.ErrorMessageLogin {
+    margin-bottom: 2ch;
+    font-family: system-ui;
+    color: red;
+    font-weight: bold;
+    font-size: small;
 }

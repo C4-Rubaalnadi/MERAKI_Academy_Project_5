@@ -1,0 +1,80 @@
+.divNavigation {
+    height: 10ch;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.jebnalak {
+    margin-left: 2ch;
+    font-family: cursive;
+}
+
+.divLink {
+    display: flex;
+    flex-direction: row;
+    gap: 4ch;
+    margin-right: 2.5ch;
+}
+
+.divProfile {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.divProfile:hover {
+    cursor: pointer;
+}
+
+#imgProfile {
+    font-size: 4ch;
+    margin-top: 1ch;
+}
+
+.name {
+    margin-left: 0.5ch;
+    font-family: cursive;
+    font-weight: bold;
+    margin-top: 4ch;
+}
+
+.name:hover {
+    color: orangered;
+}
+
+.Link {
+    margin-top: 4ch;
+    margin-right: 2ch;
+    font-family: cursive;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.Link:hover {
+    color: orangered;
+}
+
+.logout {
+    background-color: white;
+    border: none;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: medium;
+    margin-top: 2ch;
+}
+
+.logout:hover {
+    color: orangered;
+    cursor: pointer;
+}
+
+#logoutIcon {
+    margin-top: 2.6ch;
+}
+
+.divLogout {
+    display: flex;
+    flex-direction: row;
+}

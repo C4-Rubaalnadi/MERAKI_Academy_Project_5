@@ -17,7 +17,7 @@ const createNewUser = async (req, res) => {
       if (err.sqlState == "23000") {
         return res.status(409).json({
           success: false,
-          message: `The email already exists`,
+          message: `The Email Already Exists`,
         });
       }
       return res.status(500).json({
@@ -28,7 +28,7 @@ const createNewUser = async (req, res) => {
     } else {
       res.status(201).json({
         success: true,
-        message: `Success Author Added`,
+        message: `The user has been created successfully`,
         results: results,
         data: data,
       });

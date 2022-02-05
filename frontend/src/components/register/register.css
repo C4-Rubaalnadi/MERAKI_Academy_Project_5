@@ -36,6 +36,7 @@
     border-bottom: 0.2ch solid;
     width: 80%;
     font-family: cursive;
+    outline: none;
 }
 
 .btnRegister {
@@ -49,12 +50,14 @@
     font-weight: bold;
     margin-bottom: 3ch;
     margin-top: 3ch;
+    outline: none;
 }
 
 .btnRegister:hover {
     background-color: white;
     color: orange;
     cursor: pointer;
+    transition: 0.8s;
 }
 
 .divRegister2 {
@@ -72,10 +75,12 @@
     font-family: cursive;
     font-weight: bold;
     margin-bottom: 2ch;
+    outline: none;
 }
 
 .btnLog_in:hover {
     background-color: whitesmoke;
+    transition: 0.5s;
 }
 
 .paraghraphQ {
@@ -97,4 +102,20 @@
     font-family: system-ui;
     font-size: small;
     text-align: left;
+}
+
+.ErrorMessageRegister {
+    margin-bottom: 2ch;
+    font-family: system-ui;
+    color: rgb(168, 4, 4);
+    font-weight: bold;
+    font-size: small;
+}
+
+.SuccessMessageRegister {
+    margin-bottom: 2ch;
+    font-family: system-ui;
+    color: rgb(197, 129, 2);
+    font-weight: bold;
+    font-size: small;
 }
