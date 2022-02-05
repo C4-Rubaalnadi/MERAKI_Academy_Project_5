@@ -98,3 +98,11 @@
     font-size: small;
     text-align: left;
 }
+
+.ErrorMessageLogin {
+    margin-bottom: 2ch;
+    font-family: system-ui;
+    color: red;
+    font-weight: bold;
+    font-size: small;
+}
