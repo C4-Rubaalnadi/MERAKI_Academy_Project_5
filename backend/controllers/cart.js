@@ -23,8 +23,9 @@ const createCart = (req, res) => {
 // getAllCartOfUser
 const getAllCartOfUser = (req, res) => {
   //   const query = `SELECT image,nameProduct,price FROM product LEFT JOIN cart ON product.id = cart.product_id`;
-  const userId = req.body.id;
-  const query = `SELECT * FROM cart LEFT JOIN products ON products.id = cart.product_id  WHERE cart.user_id = ?`;
+  // console.log(req.params.id);
+  const userId = req.params.id;
+  const query = `SELECT * FROM cart INNER JOIN products ON products.id = cart.product_id  WHERE cart.user_id = ?`;
   const data = [userId];
   connection.query(query, data, (err, results) => {
     if (err) {
