@@ -10,6 +10,7 @@ import { BsFillCartPlusFill, BsCartPlusFill } from "react-icons/bs";
 import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
 import Cart from "../cart/Cart";
 /////////////
+import { Chat } from "../chatbot";
 //==============================================================================
 
 const Home = ({ userInfo }) => {
@@ -258,6 +259,7 @@ const Home = ({ userInfo }) => {
             </div>
           </div>
         </div>
+        <Chat/>
       </div>
     </>
   );
