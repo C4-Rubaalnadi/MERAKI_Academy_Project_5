@@ -64,6 +64,7 @@
     -ms-word-break: normal;
     word-break: normal;
   }
+  
 .left{
     flex:1;
     display: flex;
