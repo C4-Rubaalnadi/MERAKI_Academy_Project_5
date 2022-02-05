@@ -1,3 +1,4 @@
+import "./navigation.css"
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../reducer/login/index";
@@ -20,7 +21,7 @@ const Navigation = () => {
 
   return (
     <>
-      <div className="NavBar">
+      <div className="navBar">
         {state.isLoggedIn ? (
           <>
             <Link className="Link" to="/home">
