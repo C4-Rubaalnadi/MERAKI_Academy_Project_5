@@ -54,6 +54,7 @@
     background-color: white;
     color: orange;
     cursor: pointer;
+    transition: 0.8s;
 }
 
 .btnCreateAcc {
@@ -71,6 +72,7 @@
 
 .btnCreateAcc:hover {
     background-color: whitesmoke;
+    transition: 0.8s;
 }
 
 .divLogin2 {
