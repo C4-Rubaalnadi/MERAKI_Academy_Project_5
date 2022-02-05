@@ -1,6 +1,7 @@
+import "./navigation.css"
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { logout } from "../reducer/login/index";
+import { logout } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
 
 //===============================================================
@@ -20,12 +21,13 @@ const Navigation = () => {
 
   return (
     <>
-      <div className="NavBar">
+      <div className="navBar">
         {state.isLoggedIn ? (
           <>
-            <Link className="Link" to="/dashboard">
-              Dashboard
+            <Link className="Link" to="/home">
+              Home
             </Link>
+            <Link to="/profile"> Profile </Link>
             <button
               className="logout"
               onClick={() => {
@@ -36,7 +38,6 @@ const Navigation = () => {
             >
               Logout
             </button>
-            <Link to="/profile"> Profile </Link>
           </>
         ) : (
           <>
