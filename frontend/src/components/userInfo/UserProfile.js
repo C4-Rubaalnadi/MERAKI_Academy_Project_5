@@ -14,7 +14,7 @@ const UserProfile = ({ userInfo }) => {
       token: state.loginReducer.token,
     };
   });
-  const imag = userInfo.image;
+  const imag = "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg";
   return (
     <>
       <div className="user-content">
