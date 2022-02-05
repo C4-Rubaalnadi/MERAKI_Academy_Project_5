@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navigation />
+      <Navigation userInfo={userInfo} />
       <Routes>
         <Route path="/login" element={<Login setUserInFo={setUserInfo} />} />
         <Route path="/register" element={<Register />} />
