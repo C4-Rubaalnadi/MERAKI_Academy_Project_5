@@ -106,3 +106,11 @@
     font-weight: bold;
     font-size: small;
 }
+
+.SuccessMessageRegister {
+    margin-bottom: 2ch;
+    font-family: system-ui;
+    color: rgb(197, 129, 2);
+    font-weight: bold;
+    font-size: small;
+}
