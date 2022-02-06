@@ -9,7 +9,7 @@ const Admin = () => {
           
           <div className="pageContainer">
             <div className="sideBar">
-                <div className="adminDashboard"><GrDashboard/><button className="dashboardButton"></button></div>
+                <div className="adminDashboard"><GrDashboard/><button className="dashboardButton">Dasboard</button></div>
             </div>
             <div className="midPage"><Chart /></div>
             <div className="leftPage"></div>
