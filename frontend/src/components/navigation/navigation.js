@@ -22,15 +22,12 @@ const Navigation = ({ userInfo }) => {
   return (
     <>
       <div className="divNavigation">
-        <div>
-          <h1 className="jebnalak">Jebnalak</h1>
+        <div className="divJebnalak">
+          <h1 className="jebnalak">Jebna</h1><h1 className="jebnalak2">lak</h1>
         </div>
         {state.isLoggedIn ? (
           <>
             <div className="divLink">
-              <Link className="Link" to="/home">
-                Home
-              </Link>
               <div
                 className="divProfile"
                 onClick={() => {
@@ -40,9 +37,12 @@ const Navigation = ({ userInfo }) => {
                 <i id="imgProfile" class="fas fa-user-circle"></i>
                 <p className="name">{userInfo.firstName}</p>
               </div>
+              <Link className="Link" to="/home">
+                Home
+              </Link>
               <div className="divLogout">
               <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
-              <button
+              <p
                 className="logout"
                 onClick={() => {
                   dispatch(logout());
@@ -51,7 +51,7 @@ const Navigation = ({ userInfo }) => {
                 }}
               >
                 Logout
-              </button>
+              </p>
               </div>
             </div>
           </>

@@ -3,11 +3,24 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* background-image: url("pic.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 .jebnalak {
-    margin-left: 2ch;
     font-family: cursive;
+    color: orangered;
+}
+
+.jebnalak2 {
+    font-family: cursive;
+}
+
+.divJebnalak {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2ch;
 }
 
 .divLink {
@@ -20,7 +33,6 @@
 .divProfile {
     display: flex;
     flex-direction: row;
-
 }
 
 .divProfile:hover {
@@ -45,7 +57,7 @@
 
 .Link {
     margin-top: 4ch;
-    margin-right: 2ch;
+    /* margin-right: 2ch; */
     font-family: cursive;
     font-weight: bold;
     text-decoration: none;
@@ -57,12 +69,11 @@
 }
 
 .logout {
-    background-color: white;
-    border: none;
     font-family: cursive;
     font-weight: bold;
     font-size: medium;
-    margin-top: 2ch;
+    margin-top: 4ch;
+    margin-left: 0.5ch;
 }
 
 .logout:hover {
@@ -71,7 +82,7 @@
 }
 
 #logoutIcon {
-    margin-top: 2.6ch;
+    margin-top: 2.7ch;
 }
 
 .divLogout {

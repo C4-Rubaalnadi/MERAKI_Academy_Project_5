@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-// import "../App.css";
-import "./userStyle.css";
-import axios from "axios";
+import "./userProfile.css";
+
+
 ////////////////////////////////////////////
 //role_id??
 const UserProfile = ({ userInfo }) => {
@@ -15,6 +14,8 @@ const UserProfile = ({ userInfo }) => {
     };
   });
   const imag = "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg";
+  
+  
   return (
     <>
       <div className="user-content">
