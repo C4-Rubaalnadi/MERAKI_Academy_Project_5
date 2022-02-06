@@ -11,7 +11,7 @@ import Cart  from "./components/cart/Cart";
 
 function App() {
   const [userInfo,setUserInfo] = useState({});
-
+  const [finalPrice, setFinalPrice] = useState(0);
   return (
     <div className="App">
       <Navigation userInfo={userInfo} />
@@ -19,8 +19,8 @@ function App() {
         <Route path="/login" element={<Login setUserInFo={setUserInfo} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<UserProfile userInfo={userInfo}  />} />
-        <Route path="/home" element={<Home userInfo={userInfo}/>} />
-        <Route path="/cart" element={<Cart userInfo={userInfo}/>}/>
+        <Route path="/home" element={<Home userInfo={userInfo} />} />
+        <Route path="/cart" element={<Cart userInfo={userInfo} finalPrice={finalPrice} setFinalPrice={setFinalPrice}/>}/>
       </Routes>
     </div>
   );
