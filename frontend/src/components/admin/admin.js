@@ -11,12 +11,12 @@ const Admin = () => {
             <div className="sideBar">
                 <div className="adminDashboard"><GrDashboard/><button className="dashboardButton"></button></div>
             </div>
-            <div className="midPage"></div>
+            <div className="midPage"><Chart /></div>
             <div className="leftPage"></div>
           </div>
         </div>
       </div>
-      <Chart />
+      
     </div>
   );
 };
