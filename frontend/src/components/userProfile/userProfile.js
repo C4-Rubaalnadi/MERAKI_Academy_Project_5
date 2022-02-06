@@ -18,25 +18,23 @@ const UserProfile = ({ userInfo }) => {
   
   return (
     <>
-      <div className="user-content">
+      <div className="divContainer">
         {userInfo ? (
           <>
-            <div className="welcom">
-              <p className="message"> Welcome {userInfo.firstName} </p>
+            <div>
+              <p className="welcome"> Welcome {userInfo.firstName} </p>
             </div>
             <div className="line"></div>
             <div className="profile">
               <p className="details">Account Details:</p>
               <div className="userInfo">
-                <div className="profile-img">
+                <div className="profileImg">
                   <img
                     src={imag}
                     alt="userImg"
-                    className="userImg"
-                    // style={{ width: "10%", marginLeft: "-21%" }}
-                  />
+                    className="userImg"/>
                 </div>
-                <div className="info-prof">
+                <div className="infoProfile">
 
                 <p>
                   {" "}
