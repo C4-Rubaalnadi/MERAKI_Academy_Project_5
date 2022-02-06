@@ -1,59 +1,62 @@
-.cartt{
-    color: #000;
-    width: 80%;
-    margin: auto;
-    margin-top: 10%;
-    /* display: flex; */
+.cartt {
+  color: #000;
+  width: 80%;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: -8%;
 }
-.cart-detalis{
+.cartt-contt{
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-    margin-bottom: 2%;
-    width: 80%;
-    margin: auto;
-      margin-top: 5%;
-      margin-bottom: -8%;
+    border-bottom: 1px solid gray
 }
-.cart-cont{
-    display: flex;
+.cart-detalis {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  margin-bottom: 2%;
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: -8%;
 }
-.cart-img{
-    width: 100px;
+.cart-cont {
+  display: flex;
+  gap: 8%;
+  margin-bottom: -7%;
+  border-bottom: 1px solid gray
 }
-.cart-info{
-    margin-left: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.cart-img {
+  width: 150px;
+  margin-top: -1%;
+    margin-bottom: 5%
 }
-.cart-price{
+.cart-info {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16%;
+}
+.cart-price p{
+    margin-left: -200%;
+}
+/* .cart-price{
     margin-top: -2%;
+} */
+.cart-add {
+  margin-right: 10%;
 }
-.cart-add{
-    display: flex;
-    width: 15%;
-    justify-content: space-between;
-    height: 15%;
-    align-items: center;
-    margin-top: 10%;
-    border: 1px solid #eee;
+.cart-desc {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
 }
-.cart-desc{
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-}
-.cart-dec{
-    margin-left: 7%;
-}
-.cart-inc{
-    margin-right: 7%;
-}
-.cart-item{
-    width: 30%;
-    height: 100%;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
+.cartt-title{
+     display: flex;
+    justify-content: flex-start;
+    margin-left: 10%;
+    margin-bottom: -3%;
 }
