@@ -16,3 +16,19 @@
     flex: 1;
 
 }
+
+.adminDashboard{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 5vh;
+
+}
+.midPage{
+    flex:2.5;
+
+}
+
+.leftPage{
+    flex:1.5;
+}
