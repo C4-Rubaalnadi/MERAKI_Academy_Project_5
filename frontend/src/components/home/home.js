@@ -104,12 +104,13 @@ const Home = ({ userInfo }) => {
 
   return (
     <>
-      <div className="">
+      <div className="divHome">
         <div className="homeNavBar">
           <div className="left">
-            <h3>category </h3>
+            <h3>Category </h3>
             <div className="box">
               <select
+                className="select"
                 onChange={(e) => {
                   setCategory(`${e.target.value}`);
                 }}
@@ -123,11 +124,6 @@ const Home = ({ userInfo }) => {
               </select>
             </div>
           </div>
-          <div className="mid">
-            <div>
-              <h1 className="logo">gebnalk</h1>
-            </div>
-          </div>
           <div className="right">
             <BsFillCartPlusFill
               className="cart"
@@ -137,7 +133,7 @@ const Home = ({ userInfo }) => {
             />
           </div>
         </div>
-        <div className="pageComtainer">
+        <div className="pageContainer">
           <div className="sliderContainer">
             <div
               className="leftArrow"
@@ -166,18 +162,18 @@ const Home = ({ userInfo }) => {
                                   : setQuantity(0);
                               }}
                             />
-                            <IoIosAddCircle
-                              className="add"
-                              onClick={() => {
-                                setQuantity((previos) => previos + 1);
-                              }}
-                            />
                             <BsCartPlusFill
                               key={i}
                               className="cartIcoon"
                               onClick={(e) => {
                                 e.preventDefault();
                                 handleAddToCart(product.id);
+                              }}
+                            />
+                            <IoIosAddCircle
+                              className="add"
+                              onClick={() => {
+                                setQuantity((previos) => previos + 1);
                               }}
                             />
                           </div>
@@ -190,9 +186,10 @@ const Home = ({ userInfo }) => {
                           <div className="productName">
                             {product.nameProduct && product.nameProduct}{" "}
                             <div className="price">
-                              {product.price && product.price} JOD
+                              {product.price && product.price} JD
                             </div>
                           </div>
+                          <br/>
                           <div className="description">
                             {product.description && product.description}
                           </div>
