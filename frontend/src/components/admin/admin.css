@@ -1,6 +1,8 @@
 .adminPageContainer{
-    height: 80vh;
+    height: 75vh;
     margin-top: 4ch;
+    border-radius: 5ch;
+    background-color: rgb(245, 245, 245)
 }
 .adminPageWrapper{
     height: 100%;
@@ -15,6 +17,7 @@
 
 .sideBar{
     flex: 1;
+    margin-top: 2ch;
 
 }
 
@@ -27,6 +30,7 @@
     border: none;
     align-items: center;
     cursor: pointer;
+    margin-top: 2ch;
 
 }
 
@@ -35,16 +39,18 @@
     width: 70%;
     border: none;
     color: black;
-    background-color: white;
+    background-color: rgb(245, 245, 245);
     cursor: pointer;
     text-align: left;
     
 }
 .midPage{
     flex:2.5;
+    margin-top: 2ch;
 
 }
 
 .leftPage{
     flex:1.5;
+    margin-top: 2ch;
 }
