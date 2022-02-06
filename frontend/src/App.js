@@ -6,23 +6,32 @@ import Home from "./components/home/home";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
 import UserProfile from "./components/userProfile/userProfile";
-import Cart  from "./components/cart/Cart";
+import Cart from "./components/cart/Cart";
 import Admin from "./components/admin/admin";
 
-
 function App() {
-  const [userInfo,setUserInfo] = useState({});
+  const [userInfo, setUserInfo] = useState({});
   const [finalPrice, setFinalPrice] = useState(0);
   return (
     <div className="App">
       <Navigation userInfo={userInfo} />
-      <Admin/>
+
       <Routes>
         <Route path="/login" element={<Login setUserInFo={setUserInfo} />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<UserProfile userInfo={userInfo}  />} />
+        <Route path="/profile" element={<UserProfile userInfo={userInfo} />} />
         <Route path="/home" element={<Home userInfo={userInfo} />} />
-        <Route path="/cart" element={<Cart userInfo={userInfo} finalPrice={finalPrice} setFinalPrice={setFinalPrice}/>}/>
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              userInfo={userInfo}
+              finalPrice={finalPrice}
+              setFinalPrice={setFinalPrice}
+            />
+          }
+        />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </div>
   );
