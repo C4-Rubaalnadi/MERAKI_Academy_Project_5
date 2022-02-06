@@ -7,6 +7,7 @@ import Login from "./components/login/login";
 import Register from "./components/register/register";
 import UserProfile from "./components/userProfile/userProfile";
 import Cart  from "./components/cart/Cart";
+import Admin from "./components/admin/admin";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Navigation userInfo={userInfo} />
+      <Admin/>
       <Routes>
         <Route path="/login" element={<Login setUserInFo={setUserInfo} />} />
         <Route path="/register" element={<Register />} />
