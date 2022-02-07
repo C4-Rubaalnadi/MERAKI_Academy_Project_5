@@ -1,9 +1,9 @@
 import React from "react";
 import Chart from "./chart";
+import "../admin/admin.css"
 import { GrDashboard } from "react-icons/gr";
-import { CgProductHunt } from "react-icons/cg";
-import { FiUsers } from "react-icons/fi";
-import { IoCartSharp } from "react-icons/io5";
+import AdminNavigation from "./adminNavigation";
+
 const Admin = () => {
   return (
     <div>
@@ -11,22 +11,11 @@ const Admin = () => {
         <div className="adminPageWrapper">
           <div className="pageContainer">
             <div className="sideBar">
-              <div className="adminDashboard">
+            <div className="adminDashboard">
                 <GrDashboard />
                 <button className="dashboardButton">Dasboard</button>
               </div>
-              <div className="adminDashboard">
-                <CgProductHunt />
-                <button className="dashboardButton">Products</button>
-              </div>
-              <div className="adminDashboard">
-                <FiUsers />
-                <button className="dashboardButton">Users</button>
-              </div>
-              <div className="adminDashboard">
-                <IoCartSharp />
-                <button className="dashboardButton">Orders</button>
-              </div>
+                <AdminNavigation/>
             </div>
             <div className="midPage">
               <Chart />
