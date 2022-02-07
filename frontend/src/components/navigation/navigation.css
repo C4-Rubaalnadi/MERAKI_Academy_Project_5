@@ -1,5 +1,5 @@
 .divNavigation {
-    height: 10ch;
+    height: 12vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -8,9 +8,17 @@
     background-size: cover; */
 }
 
+.divLink2 {
+    margin-right: 40%;
+    display: flex;
+    flex-direction: row;
+    gap: 30%;
+}
+
 .jebnalak {
     font-family: cursive;
     color: orangered;
+    margin-left: 2ch;
 }
 
 .jebnalak2 {
@@ -20,6 +28,12 @@
 .divJebnalak {
     display: flex;
     flex-direction: row;
+    margin-left: 2ch;
+}
+
+.jebna {
+    font-family: cursive;
+    color: orange;
     margin-left: 2ch;
 }
 
