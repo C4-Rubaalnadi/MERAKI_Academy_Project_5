@@ -11,7 +11,7 @@ const AdminNavigation = () => {
              
               <div className="adminDashboard">
                 <CgProductHunt />
-                <Link className="dashboardLink" to={"/stock"}>Products</Link>
+                <Link className="dashboardLink" to={"/products"}>Products</Link>
               </div>
               <div className="adminDashboard">
                 <FiUsers />
