@@ -60,6 +60,7 @@ const Login = ({ setUserInFo }) => {
 
   return (
     <>
+    <div className="divImage">
     <div className="containerLogin">
       <div className="divLogin">
         <p className="TitleLogin">Login</p>
@@ -94,6 +95,7 @@ const Login = ({ setUserInFo }) => {
         <p className="paraghraphC">Terms & Conditions</p>
         <p className="paraghraph">Your privacy and security are important to us. For more information on how we use your data read our</p>
         <p className="paraghraphC">privacy policy</p>
+      </div>
       </div>
       </div>
     </>

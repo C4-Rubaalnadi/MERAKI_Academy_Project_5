@@ -22,11 +22,15 @@ const Navigation = ({ userInfo }) => {
   return (
     <>
       <div className="divNavigation">
-        <div className="divJebnalak">
+        {/* <div className="divJebnalak">
           <h1 className="jebnalak">Jebna</h1><h1 className="jebnalak2">lak</h1>
-        </div>
+        </div> */}
         {state.isLoggedIn ? (
           <>
+            <div className="divJebnalak">
+              <h1 className="jebnalak">Jebna</h1>
+              <h1 className="jebnalak2">lak</h1>
+            </div>
             <div className="divLink">
               <div
                 className="divProfile"
@@ -41,26 +45,34 @@ const Navigation = ({ userInfo }) => {
                 Home
               </Link>
               <div className="divLogout">
-              <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
-              <p
-                className="logout"
-                onClick={() => {
-                  dispatch(logout());
-                  localStorage.clear();
-                  navigate("/login");
-                }}
-              >
-                Logout
-              </p>
+                <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
+                <p
+                  className="logout"
+                  onClick={() => {
+                    dispatch(logout());
+                    localStorage.clear();
+                    navigate("/login");
+                  }}
+                >
+                  Logout
+                </p>
               </div>
             </div>
           </>
         ) : (
           <>
-            <Link className="Link" to="/register">
-              Register
-            </Link>
-            <Link to="/login">Login</Link>
+            <div className="divJebnalak">
+              <h1 className="jebna">Jebna</h1>
+              <h1 className="jebnalak2">lak</h1>
+            </div>
+            <div className="divLink2">
+              <Link className="Link" to="/register">
+                Register
+              </Link>
+              <Link className="Link" to="/login">
+                Login
+              </Link>
+            </div>
           </>
         )}
       </div>
