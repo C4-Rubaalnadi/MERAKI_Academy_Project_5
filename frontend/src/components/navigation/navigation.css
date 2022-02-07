@@ -17,7 +17,7 @@
 
 .jebnalak {
     font-family: cursive;
-    color: orangered;
+    color: orange;
     margin-left: 2ch;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .name:hover {
-    color: orangered;
+    color: orange;
 }
 
 .Link {
@@ -79,7 +79,7 @@
 }
 
 .Link:hover {
-    color: orangered;
+    color: orange;
 }
 
 .logout {
@@ -91,7 +91,7 @@
 }
 
 .logout:hover {
-    color: orangered;
+    color: orange;
     cursor: pointer;
 }
 
