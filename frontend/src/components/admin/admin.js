@@ -20,7 +20,7 @@ const Admin = () => {
             <div className="midPage">
               <Chart />
             </div>
-            <div className="leftPage"></div>
+            
           </div>
         </div>
       </div>
