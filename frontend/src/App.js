@@ -8,9 +8,9 @@ import Register from "./components/register/register";
 import UserProfile from "./components/userProfile/userProfile";
 import Cart from "./components/cart/Cart";
 import Admin from "./components/admin/admin";
-import Users from "./components/admin/users/Users";
-import Products from "./components/admin/products/Products";
-import Orders from "./components/admin/orders/Orders";
+import Users from "./components/admin/users/users.js";
+import Products from "./components/admin/products/products.js";
+import Orders from "./components/admin/orders/orders.js"
 /////////////////////////////////////////////////////////////////////////////
 function App() {
   const [userInfo, setUserInfo] = useState({});
@@ -37,7 +37,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/users" element={<Users />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/orders" element={<Orders />} />
+        <Route path="/orders" element={<Orders/>} />
       </Routes>
     </div>
   );
