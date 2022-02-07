@@ -8,6 +8,9 @@ import Register from "./components/register/register";
 import UserProfile from "./components/userProfile/userProfile";
 import Cart from "./components/cart/Cart";
 import Admin from "./components/admin/admin";
+import Users from "./components/admin/users/Users";
+import Products from "./components/admin/products/Products";
+import Orders from "./components/admin/orders/Orders";
 
 function App() {
   const [userInfo, setUserInfo] = useState({});
@@ -32,6 +35,9 @@ function App() {
           }
         />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/orders" element={<Orders />} />
       </Routes>
     </div>
   );
