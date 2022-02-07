@@ -11,7 +11,7 @@ import Admin from "./components/admin/admin";
 import Users from "./components/admin/users/Users";
 import Products from "./components/admin/products/Products";
 import Orders from "./components/admin/orders/Orders";
-
+/////////////////////////////////////////////////////////////////////////////
 function App() {
   const [userInfo, setUserInfo] = useState({});
   const [finalPrice, setFinalPrice] = useState(0);
