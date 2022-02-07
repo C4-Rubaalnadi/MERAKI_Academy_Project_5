@@ -44,6 +44,20 @@
     text-align: left;
     
 }
+.dashboardLink{
+    height: 100%;
+    width: 70%;
+    border: none;
+    color: black;
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    text-align: left;
+    margin-left: 22px;
+    padding-top: 2ch;
+
+}
 .midPage{
     flex:2.5;
     margin-top: 2ch;
