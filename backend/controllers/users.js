@@ -38,7 +38,7 @@ const createNewUser = async (req, res) => {
 
 //get all user //is_deleted=0 && put * ??
 const getAllUser = (req, res) => {
-  const query = `SELECT id FROM users `;
+  const query = `SELECT * FROM users where is_deleted=0 `;
   connection.query(query, (err, results) => {
     if (err) {
       return res.status(409).json({

@@ -1,5 +1,5 @@
 import "./navigation.css";
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
@@ -41,7 +41,10 @@ const Navigation = ({ userInfo }) => {
                 <i id="imgProfile" class="fas fa-user-circle"></i>
                 <p className="name">{userInfo.firstName}</p>
               </div>
-              <Link className="Link" to="/home">
+              <Link
+                className="Link"
+                to={userInfo.role === 1 ? "/home" : "/admin"}
+              >
                 Home
               </Link>
               <div className="divLogout">
