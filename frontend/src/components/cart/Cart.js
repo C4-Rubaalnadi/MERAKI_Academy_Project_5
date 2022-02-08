@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import "./cartStyle.css";
+
 const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
   const [order, setOrder] = useState();
+
   const state = useSelector((state) => {
     return {
       LoggedIn: state.loginReducer.isLoggedIn,
       token: state.loginReducer.token,
     };
   });
+
   const final_price = (result) => {
     result.map((element) => {
       // finalPrice += element.price;
@@ -19,6 +21,7 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
       // console.log(finalPrice);
     });
   };
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/orders/${userInfo.userId}`)
@@ -30,60 +33,44 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
         console.log(err);
       });
   }, [order]);
+
   return (
     <>
       <div className="cartt-title">
         <p> My Cart </p>
       </div>
-      <div className="cart-contaner">
-        <div className="cart-detalis">
-          <p> Product </p>
-          <p>Name </p>
-          <p>Price </p>
-          <p> Quantity </p>
-          <p>Total Price </p>
-        </div>
+      <div>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {order &&
+              order.map((ord, index) => {
+                return (
+                  <tr key={index} className="tr">
+                    <td>
+                      <img className="cart-img" src={ord.image && ord.image} />
+                    </td>
+                    <td>{ord.nameProduct && ord.nameProduct}</td>
+                    <td>{ord.price && ord.price} JD</td>
+                    <td>{ord.quantity && ord.quantity}</td>
+                    <td>{ord.price && ord.price * ord.quantity} JD</td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
       </div>
-      {order &&
-        order.map((ord, i) => {
-          // setFinalPrice(finalPrice + ord.price);
-          return (
-            <>
-              <div className="cartt">
-                <div className="cartt-contt">
-                  <div className="car-img">
-                    <img className="cart-img" src={ord.image && ord.image} />
-                  </div>
-                  <div className="cart-desc">
-                    <div className="cart-info">
-                      <p>{ord.nameProduct && ord.nameProduct}</p>
-                    </div>
-                    <div className="cart-pri">
-                      <p className="cart-price">
-                        {" "}
-                        {ord.price && ord.price} JOD
-                      </p>
-                    </div>
-                    <div className="cart-add">
-                      <p className="cart-item">
-                        {" "}
-                        {ord.quantity && ord.quantity}{" "}
-                      </p>
-                    </div>
-                    <div className="total-price">
-                      <p> {ord.price && ord.price * ord.quantity} JOD</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* <p>{finalPrice} </p> */}
-              {/* <div className="cart-cont">
-              </div> */}
-              {/* <hr /> */}
-            </>
-          );
-        })}
     </>
   );
 };
+
 export default Cart;
+

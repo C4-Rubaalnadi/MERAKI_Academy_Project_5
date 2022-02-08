@@ -107,15 +107,15 @@ select::-ms-expand {
 }
 
 .productsContainer {
-  height: 50vh;
+  height: 55vh;
   width: 40vh;
   position: relative;
-  box-shadow: 0 0 20px #0000001a;
+  box-shadow: 10px 10px 30px orange;
   border-radius: 10%;
 }
 
 .productImg {
-  height: 70%;
+  height: 60%;
   width: 80%;
   margin-top: 2ch;
 }
@@ -164,19 +164,22 @@ select::-ms-expand {
   font-size: 1.1rem;
   font-weight: 700;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: cursive;
+  margin-top: 1ch;
 }
 
 .price {
   margin-left: 30px;
-  font-weight: 500;
+  /* font-weight: bold; */
+  font-family: cursive;
+  color: orangered;
 }
 
 .description {
   text-align: left;
   font-size: 1rem;
   /* margin-left: 20px; */
-  font-family: 'Courier New', Courier, monospace;
+  font-family: cursive;
   text-align: center;
 }
 
