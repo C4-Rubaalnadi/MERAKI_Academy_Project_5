@@ -86,9 +86,37 @@ const updateCartById = (req, res) => {
   });
 };
 
+// delete quantity from cart by id for user
+const deleteCartById = (req, res) => {
+  const id = req.params.id;
+  const product_id = req.params.product_id;
+
+  const query = `UPDATE cart SET is_deleted=?  WHERE product_id=? AND user_id=?`
+
+  const data = [1, product_id, id];
+
+  connection.query(query, data, (err, result) => {
+    if (err) throw err;
+    if (result.affectedRows === 0) {
+      res.status(404).json({
+        success: false,
+        message: `The cart : ${id} is not found`,
+      });
+    } else {
+      res.status(202).json({
+        success: true,
+        message: ` Succeeded to delete cart with id: ${id}`,
+        results: result,
+        id: id,
+      });
+    }
+  });
+}
+
 module.exports = {
   createCart,
   getAllCartOfUser,
   getAllOrder,
   updateCartById,
+  deleteCartById
 };
