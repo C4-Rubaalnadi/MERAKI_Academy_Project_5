@@ -24,7 +24,7 @@ const Login = ({ setUserInFo }) => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState(false);
-
+const[user,setUser]=useState()
   //========================================
   const loginUser = async (e) => {
     e.preventDefault();
@@ -37,8 +37,12 @@ const Login = ({ setUserInFo }) => {
       if (res.data.success) {
         setMessage("");
         localStorage.setItem("token", res.data.token);
-        dispatch(login(res.data.token));
+         dispatch(login(res.data.token));
         setUserInFo(res.data.payload);
+        setUser(res.data.payload)
+        console.log(res.data.payload.role);
+        console.log(state.isLoggedIn);
+        
       } else throw Error;
     } catch (error) {
       if (error.response && error.response.data) {
@@ -51,15 +55,15 @@ const Login = ({ setUserInFo }) => {
   //========================================
 
   useEffect(() => {
-    if (state.isLoggedIn) {
-      navigate("/home");
-    }
-  });
+    if(state.isLoggedIn)
+    user.role==1?navigate("/home"):navigate("/admin");
+  },[user]);
 
   //========================================
 
   return (
     <>
+    <div className="divImage">
     <div className="containerLogin">
       <div className="divLogin">
         <p className="TitleLogin">Login</p>
@@ -94,6 +98,7 @@ const Login = ({ setUserInFo }) => {
         <p className="paraghraphC">Terms & Conditions</p>
         <p className="paraghraph">Your privacy and security are important to us. For more information on how we use your data read our</p>
         <p className="paraghraphC">privacy policy</p>
+      </div>
       </div>
       </div>
     </>

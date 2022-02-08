@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   height: 10vh;
-  background-color: orangered;
+  background-color: orange;
   border-radius: 20ch;
   justify-content: space-between;
 }
@@ -98,7 +98,7 @@ select::-ms-expand {
 }
 
 .sliderContainer {
-  height: 80vh;
+  height: 75vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -107,11 +107,17 @@ select::-ms-expand {
 }
 
 .productsContainer {
-  height: 40vh;
+  height: 50vh;
   width: 40vh;
   position: relative;
-  box-shadow: 0 0 10px #0000001a;
+  box-shadow: 0 0 20px #0000001a;
   border-radius: 10%;
+}
+
+.productImg {
+  height: 70%;
+  width: 80%;
+  margin-top: 2ch;
 }
 
 .iconsContainer {
@@ -150,10 +156,6 @@ select::-ms-expand {
   cursor: pointer;
 }
 
-.productImg {
-  height: 80%;
-  width: 80%;
-}
 
 .productName {
   display: flex;
@@ -162,16 +164,25 @@ select::-ms-expand {
   font-size: 1.1rem;
   font-weight: 700;
   text-align: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .price {
   margin-left: 30px;
   font-weight: 500;
 }
+
 .description {
   text-align: left;
   font-size: 1rem;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+.divDescription {
+  display: flex;
+  flex-direction: column;
 }
 
 .leftArrow {
@@ -189,6 +200,7 @@ select::-ms-expand {
 .leftArrow:hover {
   transition: 1.5s ease;
 }
+
 .rightArrow {
   width: 50px;
   height: 50px;
