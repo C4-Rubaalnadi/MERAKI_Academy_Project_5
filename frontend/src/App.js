@@ -6,7 +6,9 @@ import Home from "./components/home/home";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
 import UserProfile from "./components/userProfile/userProfile";
-import Cart from "./components/cart/Cart";
+import Cart  from "./components/cart/Cart";
+import HeroPage from "./components/heroPage/HeroPage";
+
 import Admin from "./components/admin/admin";
 import Users from "./components/admin/users/users.js";
 import Products from "./components/admin/products/products.js";
@@ -24,6 +26,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<UserProfile userInfo={userInfo} />} />
         <Route path="/home" element={<Home userInfo={userInfo} />} />
+        <Route path="/cart" element={<Cart userInfo={userInfo} finalPrice={finalPrice} setFinalPrice={setFinalPrice}/>}/>
+        <Route path="/hero" element={<HeroPage />} />
         <Route
           path="/cart"
           element={
