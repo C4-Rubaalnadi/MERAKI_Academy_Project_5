@@ -7,7 +7,7 @@ import Login from "./components/login/login";
 import Register from "./components/register/register";
 import UserProfile from "./components/userProfile/userProfile";
 import Cart  from "./components/cart/Cart";
-
+import HeroPage from "./components/heroPage/HeroPage";
 
 function App() {
   const [userInfo,setUserInfo] = useState({});
@@ -21,6 +21,7 @@ function App() {
         <Route path="/profile" element={<UserProfile userInfo={userInfo}  />} />
         <Route path="/home" element={<Home userInfo={userInfo} />} />
         <Route path="/cart" element={<Cart userInfo={userInfo} finalPrice={finalPrice} setFinalPrice={setFinalPrice}/>}/>
+        <Route path="/hero" element={<HeroPage />} />
       </Routes>
     </div>
   );
