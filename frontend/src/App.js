@@ -8,7 +8,7 @@ import Register from "./components/register/register";
 import UserProfile from "./components/userProfile/userProfile";
 import Cart  from "./components/cart/Cart";
 import HeroPage from "./components/heroPage/HeroPage";
-import Cart from "./components/cart/Cart";
+
 import Admin from "./components/admin/admin";
 import Users from "./components/admin/users/users.js";
 import Products from "./components/admin/products/products.js";
