@@ -62,17 +62,6 @@ const Navigation = ({ userInfo }) => {
               <p onClick={() => {
                 navigate("/hero")
               }}> Hero </p>
-                <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
-                <p
-                  className="logout"
-                  onClick={() => {
-                    dispatch(logout());
-                    localStorage.clear();
-                    navigate("/login");
-                  }}
-                >
-                  Logout
-                </p>
               </div>
             </div>
           </>
