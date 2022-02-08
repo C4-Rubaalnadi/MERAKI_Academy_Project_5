@@ -48,6 +48,20 @@ const Navigation = ({ userInfo }) => {
                 Home
               </Link>
               <div className="divLogout">
+              <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
+              <p
+                className="logout"
+                onClick={() => {
+                  dispatch(logout());
+                  localStorage.clear();
+                  navigate("/login");
+                }}
+              >
+                Logout
+              </p>
+              <p onClick={() => {
+                navigate("/hero")
+              }}> Hero </p>
                 <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
                 <p
                   className="logout"
