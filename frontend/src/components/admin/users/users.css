@@ -1,0 +1,21 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    
+    text-align: left;
+    padding: 8px;
+  }
+  .userImg{
+      height: 4ch;
+      width: 4ch;
+      border-radius: 50%;
+      margin-left: 5%;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
