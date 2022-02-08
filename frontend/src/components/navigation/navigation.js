@@ -45,7 +45,7 @@ const Navigation = ({ userInfo }) => {
                 className="Link"
                 to={userInfo.role === 1 ? "/home" : "/admin"}
               >
-                Home
+               {userInfo.role === 1 ? "Home":"Dashboard"}
               </Link>
               <div className="divLogout">
               <i id="logoutIcon" class="fas fa-sign-out-alt"></i>

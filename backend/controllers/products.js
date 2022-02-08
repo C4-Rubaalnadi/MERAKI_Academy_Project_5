@@ -92,8 +92,8 @@ const deleteProductById = (req, res) => {
 
 // get page products //pagination
 const getPageProducts = (req, res) => {
-  // limit as 4
-  const limit = 4;
+  // limit as 8
+  const limit = 8;
   // page number
   const page = req.query.page;
   const offset = (page - 1) * limit;

@@ -16,7 +16,7 @@ import { Chat } from "../chatbot";
 const Home = ({ userInfo }) => {
   const [products, setProducts] = useState();
 
-  const [page, setPage] = useState(4);
+  const [page, setPage] = useState(1);
   const [category, setCategory] = useState("all"); //set category from select
   const dispatch = useDispatch();
   const [productsCategory, setProductsCategory] = useState();
@@ -140,7 +140,7 @@ const Home = ({ userInfo }) => {
               onClick={() => {
                 page > 1
                   ? setPage((page) => page - 1)
-                  : setPage((page) => numperOfProducts / 4);
+                  : setPage((page) => Math.ceil(numperOfProducts / 8));
               }}
             >
               <FaAngleLeft />
@@ -253,7 +253,7 @@ const Home = ({ userInfo }) => {
             <div
               className="rightArrow"
               onClick={() => {
-                page * 4 < numperOfProducts
+                page * 8 < numperOfProducts
                   ? setPage((page) => page + 1)
                   : setPage(1);
               }}
