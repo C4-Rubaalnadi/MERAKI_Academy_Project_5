@@ -36,13 +36,15 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
 
   return (
     <>
-      <div className="cartt-title">
+    <div>
+      <div className="myCartTitle">
         <p> My Cart </p>
       </div>
-      <div>
+      <br/>
+      <div className="divTable">
         <table className="table">
           <thead>
-            <tr>
+            <tr className="thCart">
               <th>Product</th>
               <th>Name</th>
               <th>Price</th>
@@ -54,9 +56,9 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
             {order &&
               order.map((ord, index) => {
                 return (
-                  <tr key={index} className="tr">
+                  <tr key={index} className="trCart">
                     <td>
-                      <img className="cart-img" src={ord.image && ord.image} />
+                      <img className="cartImg" src={ord.image && ord.image} />
                     </td>
                     <td>{ord.nameProduct && ord.nameProduct}</td>
                     <td>{ord.price && ord.price} JD</td>
@@ -67,6 +69,7 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
               })}
           </tbody>
         </table>
+      </div>
       </div>
     </>
   );
