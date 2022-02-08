@@ -82,6 +82,7 @@ const Home = ({ userInfo }) => {
   }, [category]);
   //========================================
   const handleAddToCart = (product_id) => {
+    if(quantity>0){
     axios
       .post(
         "http://localhost:5000/orders/",
@@ -98,7 +99,7 @@ const Home = ({ userInfo }) => {
       })
       .catch((err) => {
         console.log(err);
-      });
+      });}
   };
   //========================================
 

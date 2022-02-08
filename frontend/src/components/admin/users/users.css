@@ -28,3 +28,10 @@
   .usersTable table tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+  .deleteIcons{
+    color: red;
+    width: 3ch;
+    height: 3ch;
+    cursor: pointer;
+  }
