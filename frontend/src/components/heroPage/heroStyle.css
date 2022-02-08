@@ -55,3 +55,6 @@
   align-items: flex-start;
   margin: auto;
 }
+.foot-content h5{
+  width: 50%;
+}
