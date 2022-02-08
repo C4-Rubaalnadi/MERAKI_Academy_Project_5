@@ -7,24 +7,24 @@
     align-items: center;
 }
 
-table {
+.usersTable table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
   }
   
-  td, th {
+  .usersTable table td, th {
     
     text-align: left;
     padding: 8px;
   }
-  .userImg{
+  .usersTable table .userImg{
       height: 4ch;
       width: 4ch;
       border-radius: 50%;
       margin-left: 5%;
   }
   
-  tr:nth-child(even) {
+  .usersTable table tr:nth-child(even) {
     background-color: #dddddd;
   }
