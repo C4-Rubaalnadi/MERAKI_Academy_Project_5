@@ -28,10 +28,10 @@ useEffect(()=>{
   </tr>{users&&users.map((user)=>{return(<>
   <tr>
       <td><img className='userImg' src='https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg'/></td>
-    <td>{`${user.firstName} ${user.lastName}`}</td>
-    <td>{user.email}</td>
-    <td>{user.country}</td>
-    <td>{user.role_id}</td>
+    <td>{`${user.firstName&&user.firstName} ${user.lastName&&user.lastName}`}</td>
+    <td>{user.email&&user.email}</td>
+    <td>{user.country&&user.country}</td>
+    <td>{user.role_id&&user.role_id}</td>
   </tr></>)})}
   
 </table>
