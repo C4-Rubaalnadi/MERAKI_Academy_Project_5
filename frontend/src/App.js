@@ -27,7 +27,7 @@ function App() {
         <Route path="/profile" element={<UserProfile userInfo={userInfo} />} />
         <Route path="/home" element={<Home userInfo={userInfo} />} />
         <Route path="/cart" element={<Cart userInfo={userInfo} finalPrice={finalPrice} setFinalPrice={setFinalPrice}/>}/>
-        <Route path="/hero" element={<HeroPage />} />
+        <Route path="/" element={<HeroPage />} />
         <Route
           path="/cart"
           element={

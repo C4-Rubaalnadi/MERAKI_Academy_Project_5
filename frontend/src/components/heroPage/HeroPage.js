@@ -38,7 +38,6 @@ export default function HeroPage() {
         >
           {images.map((backgroundImage, index) => (
             <div className="slide" key={index} style={{ backgroundImage }}>
-              {/* <div style={{ backgroundImage: `url${backgroundImage}`}}> </div> */}
               <img src={backgroundImage} alt="img-hero" />
             </div>
           ))}

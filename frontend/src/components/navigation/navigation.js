@@ -54,14 +54,11 @@ const Navigation = ({ userInfo }) => {
                 onClick={() => {
                   dispatch(logout());
                   localStorage.clear();
-                  navigate("/login");
+                  navigate("/");
                 }}
               >
                 Logout
               </p>
-              <p onClick={() => {
-                navigate("/hero")
-              }}> Hero </p>
               </div>
             </div>
           </>
