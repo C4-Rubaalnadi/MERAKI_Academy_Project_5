@@ -145,111 +145,112 @@ const Home = ({ userInfo }) => {
             >
               <FaAngleLeft />
             </div>
-            {category == "all"
-              ? products &&
-                products.map((product, i) => {
-                  return (
-                    <>
-                      <div className="productsContainer">
-                        <div className="iconsContainer">
-                          <div className="containerCartIcoon">
-                            <div>{quantity}</div>
-                            <IoMdRemoveCircleOutline
-                              className="add"
-                              onClick={() => {
-                                quantity !== 0
-                                  ? setQuantity((previos) => previos - 1)
-                                  : setQuantity(0);
-                              }}
-                            />
-                            <BsCartPlusFill
-                              key={i}
-                              className="cartIcoon"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleAddToCart(product.id);
-                              }}
-                            />
-                            <IoIosAddCircle
-                              className="add"
-                              onClick={() => {
-                                setQuantity((previos) => previos + 1);
-                              }}
-                            />
-                          </div>
-                        </div>
-                        <img
-                          className="productImg"
-                          src={product.image && product.image}
-                        ></img>
-                        <div>
-                          <div className="productName">
-                            {product.nameProduct && product.nameProduct}{" "}
-                            <div className="price">
-                              {product.price && product.price} JD
+            <div className="divProduct">
+              {category == "all"
+                ? products &&
+                  products.map((product, i) => {
+                    return (
+                      <>
+                        <div className="productsContainer">
+                          <div className="iconsContainer">
+                            <div className="containerCartIcoon">
+                              <div>{quantity}</div>
+                              <IoMdRemoveCircleOutline
+                                className="add"
+                                onClick={() => {
+                                  quantity !== 0
+                                    ? setQuantity((previos) => previos - 1)
+                                    : setQuantity(0);
+                                }}
+                              />
+                              <BsCartPlusFill
+                                key={i}
+                                className="cartIcoon"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handleAddToCart(product.id);
+                                }}
+                              />
+                              <IoIosAddCircle
+                                className="add"
+                                onClick={() => {
+                                  setQuantity((previos) => previos + 1);
+                                }}
+                              />
                             </div>
                           </div>
-                          <br/>
-                          <div className="description">
-                            {product.description && product.description}
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  );
-                })
-              : productsCategory &&
-                productsCategory.map((product, i) => {
-                  return (
-                    <>
-                      <div className="productsContainer">
-                        <div className="iconsContainer">
-                          <div className="containerCartIcoon">
-                            <div>{quantity}</div>
-                            <IoMdRemoveCircleOutline
-                              className="add"
-                              onClick={() => {
-                                quantity !== 0
-                                  ? setQuantity((previos) => previos - 1)
-                                  : setQuantity(0);
-                              }}
-                            />
-                            <IoIosAddCircle
-                              className="add"
-                              onClick={() => {
-                                setQuantity((previos) => previos + 1);
-                              }}
-                            />
-                            <BsCartPlusFill
-                              key={i}
-                              className="cartIcoon"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleAddToCart(product.id);
-                              }}
-                            />
-                          </div>
-                        </div>
-                        <img
-                          className="productImg"
-                          src={product.image && product.image}
-                        ></img>
-                        <div>
-                          <div className="productName">
-                            {product.nameProduct && product.nameProduct}{" "}
-                            <div className="price">
-                              {product.price && product.price} JOD
+                          <img
+                            className="productImg"
+                            src={product.image && product.image}
+                          ></img>
+                          <div>
+                            <div className="productName">
+                              {product.nameProduct && product.nameProduct}{" "}
+                              <div className="price">
+                                {product.price && product.price} JD
+                              </div>
+                            </div>
+                            <br />
+                            <div className="description">
+                              {product.description && product.description}
                             </div>
                           </div>
-                          <div className="description">
-                            {product.description && product.description}
+                        </div>
+                      </>
+                    );
+                  })
+                : productsCategory &&
+                  productsCategory.map((product, i) => {
+                    return (
+                      <>
+                        <div className="productsContainer">
+                          <div className="iconsContainer">
+                            <div className="containerCartIcoon">
+                              <div>{quantity}</div>
+                              <IoMdRemoveCircleOutline
+                                className="add"
+                                onClick={() => {
+                                  quantity !== 0
+                                    ? setQuantity((previos) => previos - 1)
+                                    : setQuantity(0);
+                                }}
+                              />
+                              <IoIosAddCircle
+                                className="add"
+                                onClick={() => {
+                                  setQuantity((previos) => previos + 1);
+                                }}
+                              />
+                              <BsCartPlusFill
+                                key={i}
+                                className="cartIcoon"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handleAddToCart(product.id);
+                                }}
+                              />
+                            </div>
+                          </div>
+                          <img
+                            className="productImg"
+                            src={product.image && product.image}
+                          ></img>
+                          <div>
+                            <div className="productName">
+                              {product.nameProduct && product.nameProduct}{" "}
+                              <div className="price">
+                                {product.price && product.price} JOD
+                              </div>
+                            </div>
+                            <div className="description">
+                              {product.description && product.description}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </>
-                  );
-                })}
-
+                      </>
+                    );
+                  })}
+            </div>
             <div
               className="rightArrow"
               onClick={() => {
