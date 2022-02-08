@@ -52,6 +52,9 @@ const Navigation = ({ userInfo }) => {
               >
                 Logout
               </p>
+              <p onClick={() => {
+                navigate("/hero")
+              }}> Hero </p>
               </div>
             </div>
           </>
