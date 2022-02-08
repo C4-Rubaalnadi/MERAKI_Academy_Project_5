@@ -16,27 +16,24 @@ useEffect(()=>{
     getAllUsers()},[])
 
     return (
-        <div>
+        <div className='usersTable'>
             <table>
-                {}
+                
   <tr>
       <th>Image</th>
     <th>Name</th>
     <th>Email</th>
     <th>Country</th>
-  </tr>
+    <th>Role</th>
+  </tr>{users&&users.map((user)=>{return(<>
   <tr>
       <td><img className='userImg' src='https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg'/></td>
-    <td></td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  {/* <tr>
-      <td></td>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr> */}
+    <td>{`${user.firstName} ${user.lastName}`}</td>
+    <td>{user.email}</td>
+    <td>{user.country}</td>
+    <td>{user.role_id}</td>
+  </tr></>)})}
+  
 </table>
         </div>
     );
