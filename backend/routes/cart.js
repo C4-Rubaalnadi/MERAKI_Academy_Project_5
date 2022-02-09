@@ -14,7 +14,7 @@ const authentication = require("../middleware/authentication");
 
 cartRouter.post("/", authentication, createCart);
 cartRouter.get("/:id", getAllCartOfUser);
-cartRouter.get("/search", getAllOrder);
+cartRouter.get("/search/cart", getAllOrder);
 cartRouter.put("/update/:id/:product_id", updateCartById);
 cartRouter.delete("/delete/:id/:product_id", deleteCartById);
 
