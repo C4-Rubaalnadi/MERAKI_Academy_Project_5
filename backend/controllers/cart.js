@@ -42,7 +42,7 @@ const getAllCartOfUser = (req, res) => {
 };
 //admin
 const getAllOrder = (req, res) => {
-  const query = `SELECT * FROM cart LEFT JOIN products ON  cart.product_id = products.id INNER JOIN users ON cart.user_id = users.id `;
+  const query = `SELECT * FROM cart LEFT JOIN products ON  cart.product_id = products.id INNER JOIN users ON cart.user_id = users.id`;
   connection.query(query, (err, results) => {
     if (err) {
       res.status(500).json({
@@ -52,10 +52,11 @@ const getAllOrder = (req, res) => {
     }
     res.status(201).json({
       success: true,
-      message: "get cart success ",
+      message: "get cart success admin",
       result: results,
     });
   });
+  console.log(results);
 };
 
 // update cart by id for user
