@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    /* margin-top: 4ch; */
 }
 .order-table table{
     font-family: arial, sans-serif;
@@ -13,9 +12,9 @@
     width: 100%;
 }
 .order-table table td, th{
-    text-align: left;
+    text-align: center;
     padding: 4px;
-    height: 4vh;
+    height: 8vh;
 }
 .order-table table tr:nth-child(even) {
     background-color: #dddddd;
