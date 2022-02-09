@@ -25,6 +25,15 @@ const Users = () => {
     getAllUsers();
   }, []);
 
+  //===========================================
+  //delete user
+  const handleDeleteUser=(id)=>{
+      axios.delete(`http://localhost:5000/users/${id}`).then((result)=>{
+          console.log(result.data);
+      }).catch((err)=>{console.log(err);})
+  }
+  //===========================================
+
   return (
     <div className="usersTable">
       {deleteStatus || updateStatus ? (
@@ -91,6 +100,7 @@ const Users = () => {
                     <TiDelete
                       className="deleteIcons"
                       onClick={() => {
+                        setId(user.id)
                         setDeleteStatus(true);
                       }}
                     />
