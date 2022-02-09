@@ -83,3 +83,8 @@ opacity: 1 ;
     color: green;
     cursor: pointer;
   }
+
+
+  .updateSelect{
+    border: none;
+  }
