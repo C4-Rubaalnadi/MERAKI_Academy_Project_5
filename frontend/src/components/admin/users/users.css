@@ -5,8 +5,52 @@
     height: 70vh;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
+.userMessage{
+width: 100%;
+height: 100%;
+position: absolute;
+background-color: #dddddd;
+opacity: 0.86;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+#messageContainer{
+width: 30%;
+height: 30%;
+background-color: white;
+opacity: 1 ;
+
+}
+.message{
+  height: 60%;
+  width: 100%;
+  text-align: left;
+  margin-top: 10%;
+  margin-left: 5%;
+  color: black;
+  
+  
+}
+.messageIcons{
+  height: 40%;
+  width: 100%;
+  text-align: center;
+}
+.approve{
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+}
+.disApprove{
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+}
 .usersTable table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -34,4 +78,15 @@
     width: 3ch;
     height: 3ch;
     cursor: pointer;
+  }
+
+  .editRole{
+    margin-left: 1ch;
+    color: green;
+    cursor: pointer;
+  }
+
+
+  .updateSelect{
+    border: none;
   }

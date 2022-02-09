@@ -125,11 +125,33 @@ const deleteUser=(req,res)=>{
   });
 
   }
-
+//update user role
+const updateUserRole=(req,res)=>{
+  const id=req.params.id;
+  const query=`UPDATE users SET role_id=?  WHERE id=?`
+  const data=[req.body.role_id,req.params.id]
+  connection.query(query,data,(err,result)=>{
+    if (err) throw err;
+    if (result.affectedRows === 0) {
+      res.status(404).json({
+        success: false,
+        message: `The user : ${id} is not found`,
+      });
+    } else {
+      res.status(202).json({
+        success: true,
+        message: ` Succeeded to update user with id: ${id}`,
+        results: result,
+        id: id,
+      });
+    }
+  });
+}
 module.exports = {
   createNewUser,
   getAllUser,
   getUserById,
   updateInfo,
-  deleteUser
+  deleteUser,
+  updateUserRole
 };
