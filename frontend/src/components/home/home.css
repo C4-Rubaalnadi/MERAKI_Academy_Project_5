@@ -181,7 +181,6 @@ select::-ms-expand {
 
 .price {
   margin-left: 30px;
-  /* font-weight: bold; */
   font-family: cursive;
   color: orangered;
 }
@@ -189,7 +188,6 @@ select::-ms-expand {
 .description {
   text-align: left;
   font-size: 1rem;
-  /* margin-left: 20px; */
   font-family: cursive;
   text-align: center;
 }

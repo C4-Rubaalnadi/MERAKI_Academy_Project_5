@@ -1,21 +1,20 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import "./userProfile.css";
 
+//======================================================
 
-////////////////////////////////////////////
-//role_id??
 const UserProfile = ({ userInfo }) => {
-  const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
       LoggedIn: state.loginReducer.isLoggedIn,
       token: state.loginReducer.token,
     };
   });
-  const imag = "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg";
-  
-  
+
+  const imag =
+    "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg";
+
   return (
     <>
       <div className="divContainer">
@@ -29,17 +28,13 @@ const UserProfile = ({ userInfo }) => {
               <p className="details">Account Details:</p>
               <div className="userInfo">
                 <div className="profileImg">
-                  <img
-                    src={imag}
-                    alt="userImg"
-                    className="userImg"/>
+                  <img src={imag} alt="userImg" className="userImg" />
                 </div>
                 <div className="infoProfile">
-
-                <p>
-                  {" "}
-                  {userInfo.firstName} {userInfo.lastName}{" "}
-                </p>
+                  <p>
+                    {" "}
+                    {userInfo.firstName} {userInfo.lastName}{" "}
+                  </p>
                   <p> {userInfo.email} </p>
                 </div>
               </div>

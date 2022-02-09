@@ -25,7 +25,6 @@ const createNewProduct = (req, res) => {
 };
 
 //get all products
-
 const getAllProducts = (req, res) => {
   const query = `SELECT * FROM products WHERE is_deleted=0`;
   connection.query(query, (err, results) => {
@@ -67,7 +66,6 @@ const updateProductById = (req, res) => {
 };
 
 //delete product by id
-
 const deleteProductById = (req, res) => {
   const id = req.params.id;
   const query = `UPDATE products SET is_deleted=?  WHERE id=?`;

@@ -103,11 +103,11 @@ const updateInfo = async (req, res) => {
 };
 
 // delete user
-const deleteUser=(req,res)=>{
-  const id=req.params.id;
-  const query=`UPDATE users SET is_deleted=?  WHERE id=?`
-  const data=[1,req.params.id]
-  connection.query(query,data,(err,result)=>{
+const deleteUser = (req, res) => {
+  const id = req.params.id;
+  const query = `UPDATE users SET is_deleted=?  WHERE id=?`;
+  const data = [1, req.params.id];
+  connection.query(query, data, (err, result) => {
     if (err) throw err;
     if (result.affectedRows === 0) {
       res.status(404).json({
@@ -123,14 +123,14 @@ const deleteUser=(req,res)=>{
       });
     }
   });
+};
 
-  }
 //update user role
-const updateUserRole=(req,res)=>{
-  const id=req.params.id;
-  const query=`UPDATE users SET role_id=?  WHERE id=?`
-  const data=[req.body.role_id,req.params.id]
-  connection.query(query,data,(err,result)=>{
+const updateUserRole = (req, res) => {
+  const id = req.params.id;
+  const query = `UPDATE users SET role_id=?  WHERE id=?`;
+  const data = [req.body.role_id, req.params.id];
+  connection.query(query, data, (err, result) => {
     if (err) throw err;
     if (result.affectedRows === 0) {
       res.status(404).json({
@@ -146,12 +146,13 @@ const updateUserRole=(req,res)=>{
       });
     }
   });
-}
+};
+
 module.exports = {
   createNewUser,
   getAllUser,
   getUserById,
   updateInfo,
   deleteUser,
-  updateUserRole
+  updateUserRole,
 };

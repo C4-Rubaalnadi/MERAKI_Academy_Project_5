@@ -21,6 +21,7 @@ const Createpermission = (req, res) => {
     });
   });
 };
+
 module.exports = {
   Createpermission,
 };

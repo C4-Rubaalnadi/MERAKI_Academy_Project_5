@@ -45,20 +45,20 @@ const Navigation = ({ userInfo }) => {
                 className="Link"
                 to={userInfo.role === 1 ? "/home" : "/admin"}
               >
-               {userInfo.role === 1 ? "Home":"Dashboard"}
+                {userInfo.role === 1 ? "Home" : "Dashboard"}
               </Link>
               <div className="divLogout">
-              <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
-              <p
-                className="logout"
-                onClick={() => {
-                  dispatch(logout());
-                  localStorage.clear();
-                  navigate("/");
-                }}
-              >
-                Logout
-              </p>
+                <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
+                <p
+                  className="logout"
+                  onClick={() => {
+                    dispatch(logout());
+                    localStorage.clear();
+                    navigate("/");
+                  }}
+                >
+                  Logout
+                </p>
               </div>
             </div>
           </>

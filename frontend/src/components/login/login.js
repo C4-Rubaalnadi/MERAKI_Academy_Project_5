@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
 import GoogleLogin from "react-google-login";
-
 import axios from "axios";
-/////////////
+
 //==============================================================================
 
 const Login = ({ setUserInFo }) => {
@@ -27,9 +26,8 @@ const Login = ({ setUserInFo }) => {
   const navigate = useNavigate();
   
   const handleLogin = (googleData) => {
-    console.log(googleData);
-    console.log(googleData.tokenId);
     dispatch(login(googleData.tokenId));
+
     setUserInFo({
       userId: googleData.profileObj.googleId,
       firstName: googleData.profileObj.givenName,
@@ -38,6 +36,7 @@ const Login = ({ setUserInFo }) => {
       image: googleData.profileObj.imageUrl,
       role: 1,
     });
+    
     navigate("/home");
   };
 
@@ -46,6 +45,7 @@ const Login = ({ setUserInFo }) => {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState(false);
   const [user, setUser] = useState();
+
   //========================================
   const loginUser = async (e) => {
     e.preventDefault();
@@ -61,8 +61,6 @@ const Login = ({ setUserInFo }) => {
         dispatch(login(res.data.token));
         setUserInFo(res.data.payload);
         setUser(res.data.payload);
-        console.log(res.data.payload.role);
-        console.log(state.isLoggedIn);
       } else throw Error;
     } catch (error) {
       if (error.response && error.response.data) {

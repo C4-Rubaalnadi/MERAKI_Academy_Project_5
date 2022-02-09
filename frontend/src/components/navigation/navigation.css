@@ -1,105 +1,102 @@
 .divNavigation {
-    height: 12vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* background-image: url("pic.jpg");
-    background-repeat: no-repeat;
-    background-size: cover; */
+  height: 12vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .divLink2 {
-    margin-right: 40%;
-    display: flex;
-    flex-direction: row;
-    gap: 30%;
+  margin-right: 40%;
+  display: flex;
+  flex-direction: row;
+  gap: 30%;
 }
 
 .jebnalak {
-    font-family: cursive;
-    color: orange;
-    margin-left: 2ch;
+  font-family: cursive;
+  color: orange;
+  margin-left: 2ch;
 }
 
 .jebnalak2 {
-    font-family: cursive;
+  font-family: cursive;
 }
 
 .divJebnalak {
-    display: flex;
-    flex-direction: row;
-    margin-left: 2ch;
+  display: flex;
+  flex-direction: row;
+  margin-left: 2ch;
 }
 
 .jebna {
-    font-family: cursive;
-    color: orange;
-    margin-left: 2ch;
+  font-family: cursive;
+  color: orange;
+  margin-left: 2ch;
 }
 
 .divLink {
-    display: flex;
-    flex-direction: row;
-    gap: 4ch;
-    margin-right: 2.5ch;
+  display: flex;
+  flex-direction: row;
+  gap: 4ch;
+  margin-right: 2.5ch;
 }
 
 .divProfile {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .divProfile:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #imgProfile {
-    font-size: 4ch;
-    margin-top: 1ch;
+  font-size: 4ch;
+  margin-top: 1ch;
 }
 
 .name {
-    margin-left: 0.5ch;
-    font-family: cursive;
-    font-weight: bold;
-    margin-top: 4ch;
+  margin-left: 0.5ch;
+  font-family: cursive;
+  font-weight: bold;
+  margin-top: 4ch;
 }
 
 .name:hover {
-    color: orange;
+  color: orange;
 }
 
 .Link {
-    margin-top: 4ch;
-    /* margin-right: 2ch; */
-    font-family: cursive;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
+  margin-top: 4ch;
+  /* margin-right: 2ch; */
+  font-family: cursive;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 
 .Link:hover {
-    color: orange;
+  color: orange;
 }
 
 .logout {
-    font-family: cursive;
-    font-weight: bold;
-    font-size: medium;
-    margin-top: 4ch;
-    margin-left: 0.5ch;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: medium;
+  margin-top: 4ch;
+  margin-left: 0.5ch;
 }
 
 .logout:hover {
-    color: orange;
-    cursor: pointer;
+  color: orange;
+  cursor: pointer;
 }
 
 #logoutIcon {
-    margin-top: 2.7ch;
+  margin-top: 2.7ch;
 }
 
 .divLogout {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
