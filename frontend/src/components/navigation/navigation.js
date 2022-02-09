@@ -64,18 +64,18 @@ const Navigation = ({ userInfo }) => {
           </>
         ) : (
           <>
-            <div className="divJebnalak">
+            {/* <div className="divJebnalak">
               <h1 className="jebna">Jebna</h1>
               <h1 className="jebnalak2">lak</h1>
-            </div>
-            <div className="divLink2">
+            </div> */}
+            {/* <div className="divLink2">
               <Link className="Link" to="/register">
                 Register
               </Link>
               <Link className="Link" to="/login">
                 Login
               </Link>
-            </div>
+            </div> */}
           </>
         )}
       </div>
