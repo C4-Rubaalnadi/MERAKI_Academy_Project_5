@@ -8,7 +8,7 @@ const login = async (req, res) => {
   const password = req.body.password;
   const email = req.body.email.toLowerCase();
 
-  const query = `SELECT * FROM users  WHERE email = ?`;
+  const query = `SELECT * FROM users  WHERE email = ? AND is_deleted=0`;
 
   const data = [email];
 
