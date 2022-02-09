@@ -6,7 +6,7 @@
 }
 .slideshowSlider {
   white-space: nowrap;
-  transition: ease 1000ms;
+  /* transition: ease 1000ms; #ff0000f7 //#d60909*/
 }
 .slide {
   display: inline-block;
@@ -15,7 +15,7 @@
   border-radius: 40px;
   /* position: relative; */
 }
-.slide img{
+.slide img {
   width: 100%;
   height: 100%;
   position: relative;
@@ -36,49 +36,128 @@
 .slideshowDot.active {
   background-color: orange;
 }
-.contaner-about{
+.contaner-about {
   display: flex;
   width: 80%;
   margin: auto;
   gap: 8%;
-  margin-top:3% ;
+  margin-top: 3%;
 }
-.contaner-about p{
+.contaner-about p {
   max-width: 100%;
 }
-.footer{
+.footer {
   width: 100%;
-    background-color: orange;
+  background-color: orange;
 }
-.foot-content{
+.foot-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 80%;
   align-items: flex-start;
   margin: auto;
 }
-.foot-content h5{
+.foot-content h5 {
   width: 50%;
 }
-.parOfNav{
+.parOfNav {
   width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction:row ;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  background: #fff;
-  opacity: 0.3;
   position: absolute;
-  z-index:100;
-  top:9%
+  z-index: 100;
+  top: 22%;
+  right: 25%;
+  bottom: 0%;
+  left: -20%;
 }
-.nav-infoo{
- width: 30%;
- height: 100%;
+.nav-infoo {
+  width: 30%;
 }
-.infoo{
-  width: 50%;
-  height: 50%;
-
+.infoo {
+  color: #fff;
+  font-weight: bolder;
+  display: flex;
+  font-size: 30px;
+  text-align: start;
 }
+.hero-log {
+  position: absolute;
+  left: 40%;
+  bottom: 8%;
+  color: #fff;
+  border: 1px solid orange;
+  width: 15%;
+  border-radius: 7%;
+}
+.hero-log p {
+  font-weight: bolder;
+  font-size: 17px;
+}
+.hero-log:hover {
+  background-color: orange;
+}
+.jebna-hero {
+  color: orange;
+}
+.lak-hero {
+  color: #000;
+}
+.foot-info {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.hero-email {
+  margin-top: 4%;
+  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 10%;
+  align-items: center;
+}
+.hero-send{
+  color: #fff;
+  font-weight: bolder;
+  background-color: orange;
+  font-size: 25px;
+}
+.hero-email input {
+  padding: 9%;
+  border-radius: 9%;
+  border: 1px solid orange;
+}
+.foot-end{
+  display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.foot-icon{
+  margin-top: 2%;
+}
+/* media */
+@media (max-width: 800px) {
+  .infoo p {
+    font-size: 17px;
+  }
+  .parOfNav {
+    top: -25%;
+  }
+  .hero-log {
+    bottom: 27%;
+    left: 40%;
+  }
+  .hero-log p {
+    font-size: 14px;
+  }
+}
+/* @media (max-width: 400px){
+  .infoo p{
+    font-size: 12px;
+  }
+.parOfNav{
+  font-size: 15px;
+}
+} */
