@@ -23,14 +23,23 @@ const Login = ({ setUserInFo }) => {
     console.log(result);
   };
 
+  
+  const navigate = useNavigate();
+  
   const handleLogin = (googleData) => {
     console.log(googleData);
     console.log(googleData.tokenId);
     dispatch(login(googleData.tokenId));
-    navigate("/home")
+    setUserInFo({
+      userId: googleData.profileObj.googleId,
+      firstName: googleData.profileObj.givenName,
+      lastName: googleData.profileObj.familyName,
+      email: googleData.profileObj.email,
+      image: googleData.profileObj.imageUrl,
+      role: 1,
+    });
+    navigate("/home");
   };
-
-  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
