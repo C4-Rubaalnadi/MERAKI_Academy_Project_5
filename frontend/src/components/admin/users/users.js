@@ -10,7 +10,9 @@ const Users = () => {
   const [updateStatus, setUpdateStatus] = useState(false);
   const[id,setId]=useState()
   const [status,setStatus]=useState()
+  const [role_id,SetRole_id]=useState()
   console.log(id);
+  console.log(role_id);
   useEffect(() => {
     const getAllUsers = () => {
       axios
@@ -37,7 +39,9 @@ const Users = () => {
   //===========================================
   //update user role
   const handleUpdateUser=(id)=>{
-
+axios.put(`http://localhost:5000/users/role/${id}`,role_id===1?{role_id:2}:{role_id:1}).then((res)=>{
+    console.log(res.data);
+}).catch((err)=>{console.log(err);})
   }
   //===========================================
 
@@ -53,8 +57,8 @@ const Users = () => {
               <FcApprove
                 className="approve"
                 onClick={() => {
-                   deleteStatus?handleDeleteUser(id):handleUpdateUser(id)
-                   setStatus(!status)
+                   deleteStatus?handleDeleteUser(id):handleUpdateUser(id,role_id)
+                   setStatus(true)
                   setUpdateStatus(false);
                   setDeleteStatus(false);
                 }}
@@ -100,6 +104,7 @@ const Users = () => {
                       className="editRole"
                       onClick={() => {
                           setId(user.id)
+                          SetRole_id(user.role_id)
                         setUpdateStatus(true);
                       }}
                     />
