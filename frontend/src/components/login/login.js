@@ -25,6 +25,9 @@ const Login = ({ setUserInFo }) => {
 
   const handleLogin = (googleData) => {
     console.log(googleData);
+    console.log(googleData.tokenId);
+    dispatch(login(googleData.tokenId));
+    navigate("/home")
   };
 
   const navigate = useNavigate();
