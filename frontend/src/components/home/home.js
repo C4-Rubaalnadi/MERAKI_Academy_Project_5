@@ -3,14 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
-
 import axios from "axios";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { BsFillCartPlusFill, BsCartPlusFill } from "react-icons/bs";
 import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
-import Cart from "../cart/Cart";
-/////////////
 import { Chat } from "../chatbot";
+
 //==============================================================================
 
 const Home = ({ userInfo }) => {
@@ -18,11 +16,9 @@ const Home = ({ userInfo }) => {
 
   const [page, setPage] = useState(1);
   const [category, setCategory] = useState("all"); //set category from select
-  const dispatch = useDispatch();
   const [productsCategory, setProductsCategory] = useState();
   const [numperOfProducts, setNumperOfProducts] = useState();
   const [quantity, setQuantity] = useState(0);
-
   const [user_id, setUser_id] = useState(userInfo.userId);
 
   const state = useSelector((state) => {
@@ -36,6 +32,7 @@ const Home = ({ userInfo }) => {
 
   //========================================
   // pagination//get page products
+
   useEffect(() => {
     const getAllProductsPage = () => {
       axios
@@ -45,13 +42,13 @@ const Home = ({ userInfo }) => {
         .then((res) => {
           setProducts(res.data.result);
         })
-        .catch((err) => {
-          console.log(err);
-        });
+        .catch((err) => {});
     };
     getAllProductsPage();
   }, [page]);
+
   //=============================================
+
   useEffect(() => {
     const getAllProducts = () => {
       axios
@@ -59,14 +56,14 @@ const Home = ({ userInfo }) => {
         .then((res) => {
           setNumperOfProducts(res.data.result.length);
         })
-        .catch((err) => {
-          console.log(err);
-        });
+        .catch((err) => {});
     };
     getAllProducts();
   }, []);
+
   //=========================================
   // get all products by category
+
   useEffect(() => {
     const getAllProductsCategory = () => {
       axios
@@ -74,33 +71,32 @@ const Home = ({ userInfo }) => {
         .then((res) => {
           setProductsCategory(res.data.result);
         })
-        .catch((err) => {
-          console.log(err);
-        });
+        .catch((err) => {});
     };
     getAllProductsCategory();
   }, [category]);
+
   //========================================
+  
   const handleAddToCart = (product_id) => {
-    if(quantity>0){
-    axios
-      .post(
-        "http://localhost:5000/orders/",
-        { quantity, product_id, user_id },
-        {
-          headers: {
-            Authorization: `Bearer ${state.token}`,
-          },
-        }
-      )
-      .then((res) => {
-        setQuantity(0);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });}
+    if (quantity > 0) {
+      axios
+        .post(
+          "http://localhost:5000/orders/",
+          { quantity, product_id, user_id },
+          {
+            headers: {
+              Authorization: `Bearer ${state.token}`,
+            },
+          }
+        )
+        .then((res) => {
+          setQuantity(0);
+        })
+        .catch((err) => {});
+    }
   };
+
   //========================================
 
   return (

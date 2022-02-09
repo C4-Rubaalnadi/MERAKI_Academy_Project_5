@@ -1,29 +1,30 @@
-/* Slideshow */
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
   max-width: 100%;
 }
+
 .slideshowSlider {
   white-space: nowrap;
-  /* transition: ease 1000ms; #ff0000f7 //#d60909*/
 }
+
 .slide {
   display: inline-block;
   height: 90%;
   width: 100%;
   border-radius: 40px;
-  /* position: relative; */
 }
+
 .slide img {
   width: 100%;
   height: 100%;
   position: relative;
 }
-/* Buttons */
+
 .slideshowDots {
   text-align: center;
 }
+
 .slideshowDot {
   display: inline-block;
   height: 15px;
@@ -33,9 +34,11 @@
   margin: 15px 7px 0px;
   background-color: #c4c4c4;
 }
+
 .slideshowDot.active {
   background-color: orange;
 }
+
 .contaner-about {
   display: flex;
   width: 80%;
@@ -43,13 +46,16 @@
   gap: 8%;
   margin-top: 3%;
 }
+
 .contaner-about p {
   max-width: 100%;
 }
+
 .footer {
   width: 100%;
   background-color: orange;
 }
+
 .foot-content {
   display: flex;
   flex-direction: row;
@@ -57,9 +63,11 @@
   align-items: flex-start;
   margin: auto;
 }
+
 .foot-content h5 {
   width: 50%;
 }
+
 .parOfNav {
   width: 100%;
   display: flex;
@@ -73,9 +81,11 @@
   bottom: 0%;
   left: -20%;
 }
+
 .nav-infoo {
   width: 30%;
 }
+
 .infoo {
   color: #fff;
   font-weight: bolder;
@@ -83,6 +93,7 @@
   font-size: 30px;
   text-align: start;
 }
+
 .hero-log {
   position: absolute;
   left: 40%;
@@ -92,24 +103,30 @@
   width: 15%;
   border-radius: 7%;
 }
+
 .hero-log p {
   font-weight: bolder;
   font-size: 17px;
 }
+
 .hero-log:hover {
   background-color: orange;
 }
+
 .jebna-hero {
   color: orange;
 }
+
 .lak-hero {
   color: #000;
 }
+
 .foot-info {
   display: flex;
   flex-direction: column;
   align-items: baseline;
 }
+
 .hero-email {
   margin-top: 4%;
   display: flex;
@@ -118,26 +135,30 @@
   gap: 10%;
   align-items: center;
 }
-.hero-send{
+
+.hero-send {
   color: #fff;
   font-weight: bolder;
   background-color: orange;
   font-size: 25px;
 }
+
 .hero-email input {
   padding: 9%;
   border-radius: 9%;
   border: 1px solid orange;
 }
-.foot-end{
+
+.foot-end {
   display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+  width: 100%;
+  justify-content: space-evenly;
 }
-.foot-icon{
+
+.foot-icon {
   margin-top: 2%;
 }
-/* media */
+
 @media (max-width: 800px) {
   .infoo p {
     font-size: 17px;

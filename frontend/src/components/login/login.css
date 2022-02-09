@@ -1,122 +1,121 @@
 .containerLogin {
-    display: flex;
-    flex-direction: row;
-    gap: 5ch;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 5ch;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
 }
 
 .divLogin {
-    width: 25%;
-    border: solid 0.1ch rgb(228, 226, 226);
+  width: 25%;
+  border: solid 0.1ch rgb(228, 226, 226);
 }
 
-.TitleLogin{
-    font-size: x-large;
-    font-family: cursive;
-    font-weight: bold;
+.TitleLogin {
+  font-size: x-large;
+  font-family: cursive;
+  font-weight: bold;
 }
 
-.paragLogin{
-    font-family: system-ui;
-    font-size: small;
+.paragLogin {
+  font-family: system-ui;
+  font-size: small;
 }
 
 .formLogin {
-    display: flex;
-    flex-direction: column;
-    gap: 2ch;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2ch;
+  justify-content: center;
+  align-items: center;
 }
 
 .inputLogin {
-    border: none;
-    border-bottom: 0.2ch solid;
-    width: 80%;
-    font-family: cursive;
-    outline: none;
+  border: none;
+  border-bottom: 0.2ch solid;
+  width: 80%;
+  font-family: cursive;
+  outline: none;
 }
 
 .btnLogin {
-    width: 80%;
-    height: 5ch;
-    background-color: orange;
-    border: solid orange 0.3ch;
-    color: white;
-    font-size: larg;
-    font-family: cursive;
-    font-weight: bold;
-    margin-bottom: 5ch;
-    outline: none;
+  width: 80%;
+  height: 5ch;
+  background-color: orange;
+  border: solid orange 0.3ch;
+  color: white;
+  font-size: larg;
+  font-family: cursive;
+  font-weight: bold;
+  margin-bottom: 5ch;
+  outline: none;
 }
 
 .btnLogin:hover {
-    background-color: white;
-    color: orange;
-    cursor: pointer;
-    transition: 0.8s;
+  background-color: white;
+  color: orange;
+  cursor: pointer;
+  transition: 0.8s;
 }
 
 .btnCreateAcc {
-    height: 5ch;
-    border: solid orange 0.3ch;
-    background-color: white;
-    color: orange;
-    cursor: pointer;
-    width: 100%;
-    font-size: larg;
-    font-family: cursive;
-    font-weight: bold;
-    margin-bottom: 2ch;
-    outline: none;
+  height: 5ch;
+  border: solid orange 0.3ch;
+  background-color: white;
+  color: orange;
+  cursor: pointer;
+  width: 100%;
+  font-size: larg;
+  font-family: cursive;
+  font-weight: bold;
+  margin-bottom: 2ch;
+  outline: none;
 }
 
 .btnCreateAcc:hover {
-    background-color: whitesmoke;
-    transition: 0.8s;
+  background-color: whitesmoke;
+  transition: 0.8s;
 }
 
 .divLogin2 {
-    width: 20%;
-    margin-top: 2%;
+  width: 20%;
+  margin-top: 2%;
 }
 
 .paraghraphQ {
-    font-family: system-ui;
-    font-weight: bold;
-    padding-bottom: 0.5ch;
-
+  font-family: system-ui;
+  font-weight: bold;
+  padding-bottom: 0.5ch;
 }
 
 .paraghraphC {
-    font-family: system-ui;
-    color: orange;
-    font-size: small;
-    font-weight: bold;
-    text-align: left;
+  font-family: system-ui;
+  color: orange;
+  font-size: small;
+  font-weight: bold;
+  text-align: left;
 }
 
 .paraghraph {
-    font-family: system-ui;
-    font-size: small;
-    text-align: left;
+  font-family: system-ui;
+  font-size: small;
+  text-align: left;
 }
 
 .loginGoogle {
-    width: 100%;
-    text-align: center;
-    font-family: cursive;
-    font-weight: bold;
-    border: orange 1px solid;
-    border-radius: 50%;
+  width: 100%;
+  text-align: center;
+  font-family: cursive;
+  font-weight: bold;
+  border: orange 1px solid;
+  border-radius: 50%;
 }
 
 .ErrorMessageLogin {
-    margin-bottom: 2ch;
-    font-family: system-ui;
-    color: red;
-    font-weight: bold;
-    font-size: small;
+  margin-bottom: 2ch;
+  font-family: system-ui;
+  color: red;
+  font-weight: bold;
+  font-size: small;
 }

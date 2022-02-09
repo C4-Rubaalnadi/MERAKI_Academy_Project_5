@@ -20,10 +20,9 @@ const createCart = (req, res) => {
     });
   });
 };
+
 // getAllCartOfUser
 const getAllCartOfUser = (req, res) => {
-  //   const query = `SELECT image,nameProduct,price FROM product LEFT JOIN cart ON product.id = cart.product_id`;
-  // console.log(req.params.id);
   const userId = req.params.id;
   const query = `SELECT * FROM cart INNER JOIN products ON products.id = cart.product_id  WHERE cart.user_id = ?`;
   const data = [userId];
@@ -71,7 +70,6 @@ const updateCartById = (req, res) => {
 
   connection.query(query, data, (err, result) => {
     if (err) {
-      console.log(quantity, id, product_id);
       res.status(500).json({
         success: false,
         message: "Server error",
@@ -81,7 +79,7 @@ const updateCartById = (req, res) => {
       success: true,
       message: "update cart",
       result: result,
-      data: data
+      data: data,
     });
   });
 };
@@ -91,7 +89,7 @@ const deleteCartById = (req, res) => {
   const id = req.params.id;
   const product_id = req.params.product_id;
 
-  const query = `UPDATE cart SET is_deleted=?  WHERE product_id=? AND user_id=?`
+  const query = `UPDATE cart SET is_deleted=?  WHERE product_id=? AND user_id=?`;
 
   const data = [1, product_id, id];
 
@@ -111,12 +109,12 @@ const deleteCartById = (req, res) => {
       });
     }
   });
-}
+};
 
 module.exports = {
   createCart,
   getAllCartOfUser,
   getAllOrder,
   updateCartById,
-  deleteCartById
+  deleteCartById,
 };

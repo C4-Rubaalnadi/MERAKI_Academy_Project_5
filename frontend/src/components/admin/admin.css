@@ -1,15 +1,15 @@
 .adminPageContainer {
   height: 75vh;
-  
-  margin:4ch;
+  margin: 4ch;
   background-color: rgb(245, 245, 245);
 }
+
 .adminPageWrapper {
   height: 100%;
-  
   display: flex;
   flex-direction: column;
 }
+
 .pageContainer {
   height: 100%;
   display: flex;
@@ -42,6 +42,7 @@
   cursor: pointer;
   text-align: left;
 }
+
 .dashboardLink {
   height: 100%;
   width: 70%;
@@ -55,6 +56,7 @@
   margin-left: 22px;
   padding-top: 2ch;
 }
+
 .midPage {
   flex: 3;
   margin-top: 2ch;
@@ -67,8 +69,3 @@
   flex-direction: row;
   justify-content: space-around;
 }
-
-/* .leftPage{
-    flex:1.5;
-    margin-top: 2ch;
-} */
