@@ -1,75 +1,52 @@
-import React, { useEffect, useState }  from 'react';
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../orders/orders.css";
-// 
+//
 const Orders = () => {
-    const[orders,setOrdes] = useState();
-    const getAllOrder = () => {
-        axios
-        .get("http://localhost:5000/orders/search")
-        .then((res) => {
-          console.log(res.data);
-          setOrdes(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    return (
-        <div className='orderTable'>
-            <button onClick={() => {getAllOrder()}}> check </button>
-            {/* <table>
+  const [orders, setOrdes] = useState();
+  const getAllOrder = () => {
+    axios
+      .get("http://localhost:5000/orders/search/cart")
+      .then((res) => {
+        setOrdes(res.data.result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    getAllOrder();
+  }, [orders]);
+  return (
+    <div className="order-table">
+      <table>
         <tr>
-          <th>Image</th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
+          <th>Cart id</th>
+          <th>Product Name</th>
+          <th>quantity</th>
+          <th>Category</th>
+          <th> Client </th>
         </tr>
         {orders &&
           orders.map((order) => {
             return (
               <>
                 <tr>
+                  <td> {order.id && order.id} </td>
+                  <td>{order.nameProduct && order.nameProduct}</td>
+                  <td>{order.quantity && order.quantity}</td>
+                  <td>{order.type && order.type}</td>
                   <td>
-                    <img
-                      className="userImg"
-                      src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg"
-                    />
-                  </td>
-                  <td>{`${user.firstName && user.firstName} ${
-                    user.lastName && user.lastName
-                  }`}</td>
-                  <td>{user.email && user.email}</td>
-                  <td>{user.country && user.country}</td>
-                  <td><select className="updateSelect"><option>{user.role_id ===1? user.role_id +" .user ":user.role_id +" .admin "}</option><option>{user.role_id===1?"2.admin":"1.user"}</option></select>
-                    
-                    <BiEditAlt
-                      className="editRole"
-                      onClick={() => {
-                          setId(user.id)
-                          SetRole_id(user.role_id)
-                        setUpdateStatus(true);
-                      }}
-                    />
-                  </td>
-                  <td>
-                    <TiDelete
-                      className="deleteIcons"
-                      onClick={() => {
-                        setId(user.id)
-                        setDeleteStatus(true);
-                      }}
-                    />
+                    {order.firstName && order.firstName}
+                    {order.lastName && order.lastName}
                   </td>
                 </tr>
               </>
             );
           })}
-      </table> */}
-        </div>
-    );
-}
+      </table>
+    </div>
+  );
+};
 
 export default Orders;
