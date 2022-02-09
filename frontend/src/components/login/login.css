@@ -104,6 +104,15 @@
     text-align: left;
 }
 
+.loginGoogle {
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+    border: orange 1px solid;
+    border-radius: 50%;
+}
+
 .ErrorMessageLogin {
     margin-bottom: 2ch;
     font-family: system-ui;

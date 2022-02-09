@@ -1,8 +1,9 @@
-import "./login.css"
+import "./login.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
+import GoogleLogin from "react-google-login";
 
 import axios from "axios";
 /////////////
@@ -18,13 +19,21 @@ const Login = ({ setUserInFo }) => {
     };
   });
 
+  const handelFailure = (result) => {
+    console.log(result);
+  };
+
+  const handleLogin = (googleData) => {
+    console.log(googleData);
+  };
+
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState(false);
-const[user,setUser]=useState()
+  const [user, setUser] = useState();
   //========================================
   const loginUser = async (e) => {
     e.preventDefault();
@@ -37,12 +46,11 @@ const[user,setUser]=useState()
       if (res.data.success) {
         setMessage("");
         localStorage.setItem("token", res.data.token);
-         dispatch(login(res.data.token));
+        dispatch(login(res.data.token));
         setUserInFo(res.data.payload);
-        setUser(res.data.payload)
+        setUser(res.data.payload);
         console.log(res.data.payload.role);
         console.log(state.isLoggedIn);
-        
       } else throw Error;
     } catch (error) {
       if (error.response && error.response.data) {
@@ -55,51 +63,70 @@ const[user,setUser]=useState()
   //========================================
 
   useEffect(() => {
-    if(state.isLoggedIn)
-    user.role==1?navigate("/home"):navigate("/admin");
-  },[user]);
+    if (state.isLoggedIn)
+      user.role == 1 ? navigate("/home") : navigate("/admin");
+  }, [user]);
 
   //========================================
 
   return (
     <>
-    <div className="divImage">
-    <div className="containerLogin">
-      <div className="divLogin">
-        <p className="TitleLogin">Login</p>
-        <p className="paragLogin">Please login below account detail</p>
-        <form className="formLogin" onSubmit={loginUser}>
-          <br />
+      <div className="divImage">
+        <div className="containerLogin">
+          <div className="divLogin">
+            <p className="TitleLogin">Login</p>
+            <p className="paragLogin">Please login below account detail</p>
+            <form className="formLogin" onSubmit={loginUser}>
+              <br />
 
-          <input className="inputLogin"
-            type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <br />
-          <input className="inputLogin"
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <br />
-          <button className="btnLogin">Sign in</button>
-        </form>
+              <input
+                className="inputLogin"
+                type="email"
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <br />
+              <input
+                className="inputLogin"
+                type="password"
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <br />
+              <button className="btnLogin">Sign in</button>
+            </form>
 
-        {status
-          ? message && <div className="SuccessMessageLogin">{message}</div>
-          : message && <div className="ErrorMessageLogin">{message}</div>}
-      </div>
-      <div className="divLogin2">
-        <p className="paraghraphQ">Don't have an account?</p>
-        <button className="btnCreateAcc" onClick={() => {
-          navigate("/register")
-        }}>Create Account</button>
-        <p className="paraghraphC">Terms & Conditions</p>
-        <p className="paraghraph">Your privacy and security are important to us. For more information on how we use your data read our</p>
-        <p className="paraghraphC">privacy policy</p>
-      </div>
-      </div>
+            {status
+              ? message && <div className="SuccessMessageLogin">{message}</div>
+              : message && <div className="ErrorMessageLogin">{message}</div>}
+          </div>
+          <div className="divLogin2">
+            <p className="paraghraphQ">Don't have an account?</p>
+            <button
+              className="btnCreateAcc"
+              onClick={() => {
+                navigate("/register");
+              }}
+            >
+              Create Account
+            </button>
+            <div>
+              <GoogleLogin
+                clientId="1036615723540-ppf72gmnljg8fi0msga16shtnt5mnsc0.apps.googleusercontent.com"
+                buttonText="Login with Google"
+                onSuccess={handleLogin}
+                onFailure={handelFailure}
+                cookiePolicy={"single_host_origin"}
+              />
+            </div>
+            <p className="paraghraphC">Terms & Conditions</p>
+            <p className="paraghraph">
+              Your privacy and security are important to us. For more
+              information on how we use your data read our
+            </p>
+            <p className="paraghraphC">privacy policy</p>
+          </div>
+        </div>
       </div>
     </>
   );
