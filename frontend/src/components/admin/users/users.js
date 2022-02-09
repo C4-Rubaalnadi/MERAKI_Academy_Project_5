@@ -9,6 +9,7 @@ const Users = () => {
   const [deleteStatus, setDeleteStatus] = useState(false);
   const [updateStatus, setUpdateStatus] = useState(false);
   const[id,setId]=useState()
+  const [status,setStatus]=useState()
   console.log(id);
   useEffect(() => {
     const getAllUsers = () => {
@@ -23,14 +24,20 @@ const Users = () => {
         });
     };
     getAllUsers();
-  }, []);
+  }, [status]);
 
   //===========================================
   //delete user
   const handleDeleteUser=(id)=>{
       axios.delete(`http://localhost:5000/users/${id}`).then((result)=>{
           console.log(result.data);
+          
       }).catch((err)=>{console.log(err);})
+  }
+  //===========================================
+  //update user role
+  const handleUpdateUser=(id)=>{
+
   }
   //===========================================
 
@@ -46,7 +53,8 @@ const Users = () => {
               <FcApprove
                 className="approve"
                 onClick={() => {
-                //    deleteStatus?handleDeleteUser(id):handleUpdateUser(id)
+                   deleteStatus?handleDeleteUser(id):handleUpdateUser(id)
+                   setStatus(!status)
                   setUpdateStatus(false);
                   setDeleteStatus(false);
                 }}
