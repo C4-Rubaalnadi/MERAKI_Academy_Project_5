@@ -1,4 +1,4 @@
-import "./register.css"
+import "./register.css";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -6,9 +6,7 @@ import axios from "axios";
 
 //-------------------------------------------------------------------------------------
 
-//role_id??
 const Register = () => {
-  const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
       LoggedIn: state.loginReducer.isLoggedIn,
@@ -64,31 +62,36 @@ const Register = () => {
               <p className="paragRegister">Please login below account detail</p>
               <form className="formRegister" onSubmit={addUserInfo}>
                 <br />
-                <input className="inputRegister"
+                <input
+                  className="inputRegister"
                   type="text"
                   placeholder="First Name"
                   onChange={(e) => setFirstName(e.target.value)}
                 />
                 <br />
-                <input className="inputRegister"
+                <input
+                  className="inputRegister"
                   type="text"
                   placeholder="Last Name"
                   onChange={(e) => setLastName(e.target.value)}
                 />
                 <br />
-                <input className="inputRegister"
+                <input
+                  className="inputRegister"
                   type="text"
                   placeholder="Country"
                   onChange={(e) => setCountry(e.target.value)}
                 />
                 <br />
-                <input className="inputRegister"
+                <input
+                  className="inputRegister"
                   type="email"
                   placeholder="Email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <br />
-                <input className="inputRegister"
+                <input
+                  className="inputRegister"
                   type="password"
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
@@ -98,22 +101,34 @@ const Register = () => {
                 <br />
               </form>
               {status
-                ? message && <div className="SuccessMessageRegister">{message}</div>
-                : message && <div className="ErrorMessageRegister">{message}</div>}
+                ? message && (
+                    <div className="SuccessMessageRegister">{message}</div>
+                  )
+                : message && (
+                    <div className="ErrorMessageRegister">{message}</div>
+                  )}
             </>
           ) : (
             <p>Logout First</p>
           )}
         </div>
         <div className="divRegister2">
-        <p className="paraghraphQ">Already an account holder?</p>
-        <button className="btnLog_in" onClick={() => {
-          navigate("/login")
-        }}>Log in</button>
-        <p className="paraghraphC">Terms & Conditions</p>
-        <p className="paraghraph">Your privacy and security are important to us. For more information on how we use your data read our</p>
-        <p className="paraghraphC">privacy policy</p>
-      </div>
+          <p className="paraghraphQ">Already an account holder?</p>
+          <button
+            className="btnLog_in"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Log in
+          </button>
+          <p className="paraghraphC">Terms & Conditions</p>
+          <p className="paraghraph">
+            Your privacy and security are important to us. For more information
+            on how we use your data read our
+          </p>
+          <p className="paraghraphC">privacy policy</p>
+        </div>
       </div>
     </>
   );
