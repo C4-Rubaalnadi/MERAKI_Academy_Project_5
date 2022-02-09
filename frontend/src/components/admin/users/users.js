@@ -13,27 +13,28 @@ const Users = () => {
   const [role_id,SetRole_id]=useState()
   console.log(id);
   console.log(role_id);
+  const getAllUsers = () => {
+    axios
+      .get("http://localhost:5000/users/")
+      .then((res) => {
+        console.log(res.data);
+        setUsers(res.data.results);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   useEffect(() => {
-    const getAllUsers = () => {
-      axios
-        .get("http://localhost:5000/users/")
-        .then((res) => {
-          console.log(res.data);
-          setUsers(res.data.results);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
+    
     getAllUsers();
-  }, [status]);
+  }, []);
 
   //===========================================
   //delete user
   const handleDeleteUser=(id)=>{
       axios.delete(`http://localhost:5000/users/${id}`).then((result)=>{
           console.log(result.data);
-          
+          getAllUsers()
       }).catch((err)=>{console.log(err);})
   }
   //===========================================
@@ -41,6 +42,7 @@ const Users = () => {
   const handleUpdateUser=(id)=>{
 axios.put(`http://localhost:5000/users/role/${id}`,role_id===1?{role_id:2}:{role_id:1}).then((res)=>{
     console.log(res.data);
+    getAllUsers()
 }).catch((err)=>{console.log(err);})
   }
   //===========================================
