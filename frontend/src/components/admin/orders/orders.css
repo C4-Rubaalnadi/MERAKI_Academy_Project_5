@@ -1,0 +1,22 @@
+.order-table{
+    display: flex;
+    background-color: rgb(245, 245, 245);
+    margin: 4ch;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* margin-top: 4ch; */
+}
+.order-table table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.order-table table td, th{
+    text-align: left;
+    padding: 4px;
+    height: 4vh;
+}
+.order-table table tr:nth-child(even) {
+    background-color: #dddddd;
+}
