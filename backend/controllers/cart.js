@@ -53,7 +53,7 @@ const getAllOrder = (req, res) => {
     }
     res.status(201).json({
       success: true,
-      message: "get cart success ",
+      message: "get cart success admin",
       result: results,
     });
   });
