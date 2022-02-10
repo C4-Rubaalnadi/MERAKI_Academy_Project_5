@@ -24,8 +24,8 @@ const createCart = (req, res) => {
 // getAllCartOfUser
 const getAllCartOfUser = (req, res) => {
   const userId = req.params.id;
-  const query = `SELECT * FROM cart INNER JOIN products ON products.id = cart.product_id  WHERE cart.user_id = ?`;
-  const data = [userId];
+  const query = `SELECT * FROM cart INNER JOIN products ON products.id = cart.product_id  WHERE cart.user_id = ? AND cart.is_deleted =?`;
+  const data = [userId,0];
   connection.query(query, data, (err, results) => {
     if (err) {
       res.status(500).json({
@@ -63,10 +63,10 @@ const updateCartById = (req, res) => {
   const id = req.params.id;
   const product_id = req.params.product_id;
   const { quantity } = req.body;
+  const user_id = req.body.user_id;
+  const query = `UPDATE cart SET quantity=? WHERE product_id=? AND  user_id=? AND id =?`;
 
-  const query = `UPDATE cart SET quantity=? WHERE product_id=? AND user_id=?`;
-
-  const data = [quantity, product_id, id];
+  const data = [quantity , product_id,user_id,id];
 
   connection.query(query, data, (err, result) => {
     if (err) {
@@ -89,7 +89,7 @@ const deleteCartById = (req, res) => {
   const id = req.params.id;
   const product_id = req.params.product_id;
 
-  const query = `UPDATE cart SET is_deleted=?  WHERE product_id=? AND user_id=?`;
+  const query = `UPDATE cart SET is_deleted=?  WHERE product_id=? AND user_id=? `;
 
   const data = [1, product_id, id];
 
