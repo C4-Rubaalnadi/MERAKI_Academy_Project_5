@@ -10,7 +10,7 @@
 
 .slide {
   display: inline-block;
-  height: 80ch;
+  /* height: 60ch; */
   width: 100%;
   border-radius: 40px;
 }
@@ -80,7 +80,7 @@
   right: 25%;
   bottom: 0%;
   left: -15%;
-  /* padding-top: 1ch; */
+  /* padding-top: 5ch; */
   margin-left: 13ch;
 }
 
@@ -104,12 +104,18 @@
   text-align: left;
   font-size: 1.3em;
   text-decoration: underline;
+  width: 10ch;
 }
 
 .jebnalakHero {
   font-size: 3em;
   font-weight: bolder;
   text-align: left;
+}
+
+.shopNow:hover {
+  cursor: pointer;
+  color: orange;
 }
 
 .infoo {
@@ -128,12 +134,6 @@
   font-family: 'Courier New', Courier, monospace;
   text-align: left;
   /* margin-bottom: 25ch; */
-}
-
-
-
-.btnHeroLog:hover {
-  /* background-color: orange; */
 }
 
 .jebna-hero {
