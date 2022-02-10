@@ -76,27 +76,40 @@
   align-items: center;
   position: absolute;
   z-index: 100;
-  top: 1%;
+  top: 0.1ch;
   right: 25%;
   bottom: 0%;
   left: -15%;
-  margin-top: 25%;
+  /* padding-top: 1ch; */
+  margin-left: 13ch;
 }
 
 .nav-infoo {
-  width: 40%;
+  width: 100ch;
   height: 50ch;
 }
 
-.paragJebna {
+.pLine1 {
   text-align: left;
-  margin-left: 2ch;
-  font-weight: bold;
-  font-size: larger;
+  font-size: 1.8em;
 }
 
-.Why {
-  font-size: 40px;
+.pLine2 {
+  text-align: left;
+  font-size: 1.3em;
+
+}
+
+.shopNow {
+  text-align: left;
+  font-size: 1.3em;
+  text-decoration: underline;
+}
+
+.jebnalakHero {
+  font-size: 3em;
+  font-weight: bolder;
+  text-align: left;
 }
 
 .infoo {
@@ -105,24 +118,18 @@
   height: 55vh;
   color: black;
   font-weight: bolder;
-  font-size: 25px;
-  display: flex;
+  /* font-size: 25px; */
   /* font-size: 30px; */
-  text-align: start;
+  /* text-align: start; */
   /* background-color: white; */
   /* border: solid 1px orange; */
   border-radius: 10%;
   /* opacity: 0.6; */
-  font-family: Georgia, serif;
+  font-family: 'Courier New', Courier, monospace;
   text-align: left;
+  /* margin-bottom: 25ch; */
 }
 
-.btnHeroLog {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  height: 5ch;
-  width: 15ch;
-
-}
 
 
 .btnHeroLog:hover {
@@ -176,9 +183,6 @@
 }
 
 @media (max-width: 800px) {
-  .infoo p {
-    font-size: 17px;
-  }
   .parOfNav {
     top: -25%;
   }
