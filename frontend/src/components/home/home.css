@@ -224,3 +224,16 @@ select::-ms-expand {
   opacity: 0.5;
   cursor: pointer;
 }
+.hartNav{
+  transform: scale(1.8);
+  color: #fff;
+  margin-top: 2%;
+  margin-right: 3%;
+  cursor: pointer;
+}
+.cart-f2 {
+  transform: scale(1.8);
+  color: red;
+  margin-top: 14px;
+  cursor: pointer;
+}
