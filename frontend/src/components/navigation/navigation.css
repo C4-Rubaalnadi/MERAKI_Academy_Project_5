@@ -16,16 +16,19 @@
   font-family: cursive;
   color: orange;
   margin-left: 2ch;
+  font-size: 40px;
 }
 
 .jebnalak2 {
   font-family: cursive;
+  font-size: 40px;
 }
 
 .divJebnalak {
   display: flex;
   flex-direction: row;
-  margin-left: 2ch;
+  margin-left: -4ch;
+  margin-top: -4ch;
 }
 
 .jebna {
@@ -39,6 +42,7 @@
   flex-direction: row;
   gap: 4ch;
   margin-right: 2.5ch;
+  margin-top: -3ch;
 }
 
 .divProfile {
