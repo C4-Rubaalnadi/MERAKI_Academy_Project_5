@@ -81,7 +81,9 @@ export default function HeroPage() {
             <span className="pLine1">Farm Food Featured Products</span>
             <span className="pLine2">Fresh & Healthy</span>
             <br/>
-            <span className="shopNow">SHOP NOW</span>
+            <span className="shopNow" onClick={() => {
+              navigate("/login")
+            }}>SHOP NOW</span>
             {/* <div>
               <span
                 className="btnHeroLog"
