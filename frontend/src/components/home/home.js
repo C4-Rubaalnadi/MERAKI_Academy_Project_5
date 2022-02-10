@@ -8,10 +8,10 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { BsFillCartPlusFill, BsCartPlusFill } from "react-icons/bs";
 import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
 import { Chat } from "../chatbot";
-
+import {AiFillHeart}  from "react-icons/ai";
 //==============================================================================
 
-const Home = ({ userInfo }) => {
+const Home = ({ userInfo , setWishList }) => {
   const [products, setProducts] = useState();
 
   const [page, setPage] = useState(1);
@@ -122,6 +122,7 @@ const Home = ({ userInfo }) => {
               </select>
             </div>
           </div>
+
           <div className="right">
             <BsFillCartPlusFill
               className="cart"
@@ -130,6 +131,11 @@ const Home = ({ userInfo }) => {
               }}
             />
           </div>
+          <AiFillHeart className="hartNav" 
+          onClick={() => {
+            navigate("/fav")
+          }}
+          />
         </div>
         <div className="pageContainer">
           <div className="sliderContainer">
@@ -152,6 +158,7 @@ const Home = ({ userInfo }) => {
                         <div className="productsContainer">
                           <div className="iconsContainer">
                             <div className="containerCartIcoon">
+                              <div className="cart-f1">
                               <div>{quantity}</div>
                               <IoMdRemoveCircleOutline
                                 className="add"
@@ -174,6 +181,23 @@ const Home = ({ userInfo }) => {
                                 onClick={() => {
                                   setQuantity((previos) => previos + 1);
                                 }}
+                              />  
+                              </div>
+                              <AiFillHeart className="cart-f2" 
+                              onClick={() => {
+                                axios
+                                  .post("http://localhost:5000/orders/add_wishList",{
+                                    product_id : product.id,
+                                    user_id : userInfo.userId
+                                  })
+                                  .then((res) => {
+                                    console.log(res.data);
+                                    setWishList(res.data)
+                                  })
+                                  .catch((err) => {
+                                    throw err;
+                                  });
+                              }}
                               />
                             </div>
                           </div>
