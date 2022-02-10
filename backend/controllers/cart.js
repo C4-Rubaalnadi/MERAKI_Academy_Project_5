@@ -109,11 +109,51 @@ const deleteCartById = (req, res) => {
     }
   });
 };
-
+//Add wishlist 
+const Add_wishList = (req, res) => {
+  const {product_id, user_id } = req.body;
+  const query = `INSERT INTO favorite_list (product_id , user_id ) VALUES (?,?)`;
+  const data = [product_id, user_id];
+  connection.query(query, data, (err, results) => {
+    if (err) {
+      res.status(500).json({
+        success: false,
+        message: "Server error",
+      });
+    }
+    res.status(201).json({
+      success: true,
+      message: "favorite_list created",
+      result: results,
+      data: data,
+    });
+  });
+};
+// get favorete list
+const getAllFavortListOfUser = (req, res) => {
+  const userId = req.params.idUser;
+  const query = `SELECT * FROM favorite_list LEFT JOIN products ON products.id = favorite_list.product_id  WHERE favorite_list.user_id = ? AND favorite_list.is_deleted =?`;
+  const data = [userId,0];
+  connection.query(query, data, (err, results) => {
+    if (err) {
+      res.status(500).json({
+        success: false,
+        message: "Server error",
+      });
+    }
+    res.status(201).json({
+      success: true,
+      message: "get favorite_list success ",
+      result: results,
+    });
+  });
+};
 module.exports = {
   createCart,
   getAllCartOfUser,
   getAllOrder,
   updateCartById,
   deleteCartById,
+  Add_wishList,
+  getAllFavortListOfUser
 };
