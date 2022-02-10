@@ -7,9 +7,11 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineMail } from "react-icons/ai";
 
 const images = [
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-  "https://images.unsplash.com/photo-1505826759037-406b40feb4cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  "https://radaarnews.com/wp-content/uploads/2020/11/istock-938050806-1024x683-1.jpg",
+  "https://2.bp.blogspot.com/-Do63v0-7Ew4/UjGwENe--0I/AAAAAAAASQs/5Z4p4q4OcRo/s1600/%D8%B5%D9%88%D8%B1+%D9%81%D9%88%D8%A7%D9%83%D9%87%D8%A9+(16).jpg",
+  "https://static.webteb.net/images/content/tbl_articles_article_21078_460f8c96881-5f31-4b15-9545-734665e83676.jpg",
+  "https://iamahuman2015.com/wp-content/uploads/2018/09/healthy-food-shopping.jpg"
+  
 ];
 
 export default function HeroPage() {
@@ -72,23 +74,24 @@ export default function HeroPage() {
       <div className="parOfNav">
         <div className="nav-infoo">
           <div className="infoo">
-            <p>
-              <p>
+              <p className="Why">
                 {" "}
-                Why <span className="jebna-hero">Jebna</span>
+                Why <span className="lak-hero">Jebna</span>
                 <span className="lak-hero">lak</span>!!{" "}
               </p>
+            <p className="paragJebna">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
             </p>
-          </div>
-          <div
-            className="hero-log"
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            <p> Get Started </p>
+            <div>
+            <button className="btnHeroLog" onClick=
+              {() => {
+                navigate("/login");
+              }}>
+              Get Started
+            </button>
+            </div>
+            
           </div>
         </div>
       </div>
