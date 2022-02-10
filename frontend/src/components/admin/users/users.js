@@ -92,6 +92,7 @@ const Users = () => {
           <th>Country</th>
           <th>Role</th>
           <th></th>
+          
         </tr>
         {users &&
           users.map((user) => {
