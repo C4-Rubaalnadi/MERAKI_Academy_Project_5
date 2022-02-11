@@ -24,7 +24,7 @@ const createCart = (req, res) => {
 // getAllCartOfUser
 const getAllCartOfUser = (req, res) => {
   const userId = req.params.id;
-  const query = `SELECT * FROM cart INNER JOIN products ON products.id = cart.product_id  WHERE cart.user_id = ? AND cart.is_deleted =?`;
+  const query = `SELECT * FROM cart LEFT JOIN products ON products.id = cart.product_id  WHERE cart.user_id = ? AND cart.is_deleted =?`;
   const data = [userId,0];
   connection.query(query, data, (err, results) => {
     if (err) {
@@ -61,12 +61,11 @@ const getAllOrder = (req, res) => {
 // update cart by id for user
 const updateCartById = (req, res) => {
   const id = req.params.id;
-  const product_id = req.params.product_id;
   const { quantity } = req.body;
   const user_id = req.body.user_id;
-  const query = `UPDATE cart SET quantity=? WHERE product_id=? AND  user_id=? AND id =?`;
+  const query = `UPDATE cart SET quantity=? WHERE  user_id=? AND id =?`;
 
-  const data = [quantity , product_id,user_id,id];
+  const data = [quantity ,user_id,id];
 
   connection.query(query, data, (err, result) => {
     if (err) {
@@ -110,11 +109,51 @@ const deleteCartById = (req, res) => {
     }
   });
 };
-
+//Add wishlist 
+const Add_wishList = (req, res) => {
+  const {product_id, user_id } = req.body;
+  const query = `INSERT INTO favorite_list (product_id , user_id ) VALUES (?,?)`;
+  const data = [product_id, user_id];
+  connection.query(query, data, (err, results) => {
+    if (err) {
+      res.status(500).json({
+        success: false,
+        message: "Server error",
+      });
+    }
+    res.status(201).json({
+      success: true,
+      message: "favorite_list created",
+      result: results,
+      data: data,
+    });
+  });
+};
+// get favorete list
+const getAllFavortListOfUser = (req, res) => {
+  const userId = req.params.idUser;
+  const query = `SELECT * FROM favorite_list LEFT JOIN products ON products.id = favorite_list.product_id  WHERE favorite_list.user_id = ? AND favorite_list.is_deleted =?`;
+  const data = [userId,0];
+  connection.query(query, data, (err, results) => {
+    if (err) {
+      res.status(500).json({
+        success: false,
+        message: "Server error",
+      });
+    }
+    res.status(201).json({
+      success: true,
+      message: "get favorite_list success ",
+      result: results,
+    });
+  });
+};
 module.exports = {
   createCart,
   getAllCartOfUser,
   getAllOrder,
   updateCartById,
   deleteCartById,
+  Add_wishList,
+  getAllFavortListOfUser
 };

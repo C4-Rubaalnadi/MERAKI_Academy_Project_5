@@ -63,7 +63,7 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                           onClick={() => {
                             axios
                               .put(
-                                `http://localhost:5000/orders/update/${ord.id}/${ord.product_id}`,
+                                `http://localhost:5000/orders/edit/${ord.id}`,
                                 {
                                   quantity: ord.quantity - 1,
                                   user_id: userInfo.userId,
@@ -85,7 +85,7 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                           onClick={() => {
                             axios
                               .put(
-                                `http://localhost:5000/orders/update/${ord.id}/${ord.product_id}`,
+                                `http://localhost:5000/orders/edit/${ord.id}`,
                                 {
                                   quantity: ord.quantity + 1,
                                   user_id: userInfo.userId,

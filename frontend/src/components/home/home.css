@@ -3,7 +3,7 @@
   flex-direction: row;
   height: 10vh;
   background-color: orange;
-  border-radius: 20ch;
+  border-radius: 2px;
   justify-content: space-between;
 }
 
@@ -11,7 +11,7 @@
   position: relative;
   /*Don't really need this just for demo styling*/
   float: left;
-  width: 15vw;
+  width:22vw;
 }
 
 /* IE11 hide native button (thanks Matt!) */
@@ -48,8 +48,8 @@ select::-ms-expand {
   max-width: 320px;
   height: 50px;
   float: right;
-  margin: 5px 0px;
-  padding: 0px 24px;
+  margin: 5px 12px;
+  padding: 0px 10px;
   font-size: 16px;
   line-height: 1.75;
   color: #333;
@@ -58,7 +58,7 @@ select::-ms-expand {
   border: 1px solid #cccccc;
   -ms-word-break: normal;
   word-break: normal;
-  border-radius: 20ch;
+  border-radius: 2px;
   font-family: system-ui;
   outline: none;
 }
@@ -122,7 +122,7 @@ select::-ms-expand {
   width: 18vw;
   position: relative;
   box-shadow: 1px 1px 5px orange;
-  border-radius: 10%;
+  border-radius: 3%
 }
 
 .productImg {
@@ -222,5 +222,18 @@ select::-ms-expand {
   align-items: center;
   justify-content: center;
   opacity: 0.5;
+  cursor: pointer;
+}
+.hartNav{
+  transform: scale(1.8);
+  color: #fff;
+  margin-top: 2%;
+  margin-right: 3%;
+  cursor: pointer;
+}
+.cart-f2 {
+  transform: scale(1.8);
+  color: red;
+  margin-top: 14px;
   cursor: pointer;
 }

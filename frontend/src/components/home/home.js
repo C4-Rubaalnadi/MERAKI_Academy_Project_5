@@ -8,14 +8,14 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { BsFillCartPlusFill, BsCartPlusFill } from "react-icons/bs";
 import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
 import { Chat } from "../chatbot";
-
+import {AiFillHeart}  from "react-icons/ai";
 //==============================================================================
 
-const Home = ({ userInfo }) => {
+const Home = ({ userInfo , setWishList }) => {
   const [products, setProducts] = useState();
 
   const [page, setPage] = useState(1);
-  const [category, setCategory] = useState("all"); //set category from select
+  const [category, setCategory] = useState("Category"); //set category from select
   const [productsCategory, setProductsCategory] = useState();
   const [numperOfProducts, setNumperOfProducts] = useState();
   const [quantity, setQuantity] = useState(0);
@@ -104,15 +104,16 @@ const Home = ({ userInfo }) => {
       <div className="divHome">
         <div className="homeNavBar">
           <div className="left">
-            <h3>Category </h3>
             <div className="box">
               <select
                 className="select"
                 onChange={(e) => {
+                  
                   setCategory(`${e.target.value}`);
                 }}
               >
-                <option>all</option>
+                <option>Category</option>
+                {/* <option>all</option> */}
                 <option>snake</option>
                 <option>meat</option>
                 <option>pasta</option>
@@ -121,6 +122,7 @@ const Home = ({ userInfo }) => {
               </select>
             </div>
           </div>
+
           <div className="right">
             <BsFillCartPlusFill
               className="cart"
@@ -129,6 +131,11 @@ const Home = ({ userInfo }) => {
               }}
             />
           </div>
+          <AiFillHeart className="hartNav" 
+          onClick={() => {
+            navigate("/fav")
+          }}
+          />
         </div>
         <div className="pageContainer">
           <div className="sliderContainer">
@@ -143,7 +150,7 @@ const Home = ({ userInfo }) => {
               <FaAngleLeft />
             </div>
             <div className="divProduct">
-              {category == "all"
+              {category == "Category"
                 ? products &&
                   products.map((product, i) => {
                     return (
@@ -151,6 +158,7 @@ const Home = ({ userInfo }) => {
                         <div className="productsContainer">
                           <div className="iconsContainer">
                             <div className="containerCartIcoon">
+                              <div className="cart-f1">
                               <div>{quantity}</div>
                               <IoMdRemoveCircleOutline
                                 className="add"
@@ -173,6 +181,23 @@ const Home = ({ userInfo }) => {
                                 onClick={() => {
                                   setQuantity((previos) => previos + 1);
                                 }}
+                              />  
+                              </div>
+                              <AiFillHeart className="cart-f2" 
+                              onClick={() => {
+                                axios
+                                  .post("http://localhost:5000/orders/add_wishList",{
+                                    product_id : product.id,
+                                    user_id : userInfo.userId
+                                  })
+                                  .then((res) => {
+                                    console.log(res.data);
+                                    setWishList(res.data)
+                                  })
+                                  .catch((err) => {
+                                    throw err;
+                                  });
+                              }}
                               />
                             </div>
                           </div>
