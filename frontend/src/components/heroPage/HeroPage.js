@@ -7,9 +7,9 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineMail } from "react-icons/ai";
 
 const images = [
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-  "https://images.unsplash.com/photo-1505826759037-406b40feb4cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  "https://pic.i7lm.com/wp-content/uploads/2019/06/%D8%A7%D9%84%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D8%B7%D8%A7%D8%B2%D8%AC%D8%A9.jpg",
+  "https://static.webteb.net/images/content/tbl_articles_article_21078_460f8c96881-5f31-4b15-9545-734665e83676.jpg",
+  "https://iamahuman2015.com/wp-content/uploads/2018/09/healthy-food-shopping.jpg",
 ];
 
 export default function HeroPage() {
@@ -72,23 +72,28 @@ export default function HeroPage() {
       <div className="parOfNav">
         <div className="nav-infoo">
           <div className="infoo">
-            <p>
-              <p>
-                {" "}
-                Why <span className="jebna-hero">Jebna</span>
-                <span className="lak-hero">lak</span>!!{" "}
-              </p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+            <p className="jebnalakHero">
+              {" "}
+              <span className="jebna-hero">Jebna</span>
+              <span className="lak-hero">lak</span>{" "}
             </p>
-          </div>
-          <div
-            className="hero-log"
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            <p> Get Started </p>
+            <br/>
+            <span className="pLine1">Farm Food Featured Products</span>
+            <span className="pLine2">Fresh & Healthy</span>
+            <br/>
+            <span className="shopNow" onClick={() => {
+              navigate("/login")
+            }}>SHOP NOW</span>
+            {/* <div>
+              <span
+                className="btnHeroLog"
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                Get Started
+              </span>
+            </div> */}
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
- 
+  opacity: 0.7;
 }
 
 .slideshowSlider {
@@ -10,15 +10,14 @@
 
 .slide {
   display: inline-block;
-  height: 90%;
+  /* height: 60ch; */
   width: 100%;
   border-radius: 40px;
-  opacity: 0.7;
 }
 
 .slide img {
-  width: 90%;
-  height: 100%;
+  width: 150ch;
+  height: 70ch;
   position: relative;
 }
 
@@ -77,41 +76,64 @@
   align-items: center;
   position: absolute;
   z-index: 100;
-  top: 22%;
+  top: 0.1ch;
   right: 25%;
   bottom: 0%;
-  left: -20%;
+  left: -15%;
+  /* padding-top: 5ch; */
+  margin-left: 13ch;
 }
 
 .nav-infoo {
-  width: 30%;
+  width: 100ch;
+  height: 50ch;
+}
+
+.pLine1 {
+  text-align: left;
+  font-size: 1.8em;
+}
+
+.pLine2 {
+  text-align: left;
+  font-size: 1.3em;
+
+}
+
+.shopNow {
+  text-align: left;
+  font-size: 1.3em;
+  text-decoration: underline;
+  width: 10ch;
+}
+
+.jebnalakHero {
+  font-size: 3em;
+  font-weight: bolder;
+  text-align: left;
+}
+
+.shopNow:hover {
+  cursor: pointer;
+  color: orange;
 }
 
 .infoo {
-  color: #fff;
-  font-weight: bolder;
   display: flex;
-  font-size: 30px;
-  text-align: start;
-}
-
-.hero-log {
-  position: absolute;
-  left: 40%;
-  bottom: 8%;
-  color: #fff;
-  border: 1px solid orange;
-  width: 15%;
-  border-radius: 7%;
-}
-
-.hero-log p {
+  flex-direction: column;
+  height: 55vh;
+  color: black;
   font-weight: bolder;
-  font-size: 17px;
-}
-
-.hero-log:hover {
-  background-color: orange;
+  /* font-size: 25px; */
+  /* font-size: 30px; */
+  /* text-align: start; */
+  /* background-color: white; */
+  /* border: solid 1px orange; */
+  border-radius: 10%;
+  /* opacity: 0.6; */
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
+  /* margin-bottom: 25ch; */
 }
 
 .jebna-hero {
@@ -161,9 +183,6 @@
 }
 
 @media (max-width: 800px) {
-  .infoo p {
-    font-size: 17px;
-  }
   .parOfNav {
     top: -25%;
   }
