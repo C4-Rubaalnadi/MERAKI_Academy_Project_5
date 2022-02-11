@@ -4,6 +4,7 @@ import axios from "axios";
 import "./cartStyle.css";
 import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
 import { TiDelete } from "react-icons/ti";
+
 const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
   const [order, setOrder] = useState();
 
@@ -20,16 +21,20 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
   //   });
   // };
 
-  useEffect(() => {
+  const getALlUserOrder = () => {
     axios
       .get(`http://localhost:5000/orders/${userInfo.userId}`)
       .then((res) => {
         setOrder(res.data.result);
+        console.log(res.data.result);
+        console.log(userInfo.userId);
         // final_price(res.data.result);
       })
       .catch((err) => {});
-  }, [order]);
-  const updateQuantity = () => {};
+  };
+  useEffect(() => {
+    getALlUserOrder();
+  }, []);
   return (
     <>
       <div>
@@ -72,6 +77,7 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                               .then((res) => {
                                 console.log(res.data);
                                 console.log(ord.id);
+                                getALlUserOrder();
                                 // ord.quantity +=1
                               })
                               .catch((err) => {
@@ -95,6 +101,7 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                                 console.log(res.data);
                                 console.log(ord.id);
                                 // ord.quantity +=1
+                                getALlUserOrder();
                               })
                               .catch((err) => {
                                 throw err;
@@ -113,6 +120,7 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                               )
                               .then((res) => {
                                 console.log(res.data);
+                                getALlUserOrder();
                               })
                               .catch((err) => {
                                 throw err;
