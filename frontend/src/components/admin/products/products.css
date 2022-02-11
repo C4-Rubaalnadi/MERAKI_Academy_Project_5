@@ -1,0 +1,70 @@
+.divContainerPro {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px silver;
+  width: 95%;
+  margin: auto;
+  margin-top: 5%;
+  font-family: system-ui;
+}
+
+.productPage {
+  text-align: left;
+  margin-left: 3ch;
+  margin-bottom: 2ch;
+  margin-top: 2ch;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: underline;
+}
+
+.divTable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thPrice {
+  width: 12ch;
+  border: none;
+  border-bottom: 1px solid silver;
+  border-top: 1px solid silver;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  font-size: large;
+  font-family: cursive;
+  text-align: center;
+}
+
+.thProduct {
+  border: none;
+  border-bottom: 1px solid silver;
+  border-top: 1px solid silver;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  width: 22ch;
+  font-size: large;
+  font-family: cursive;
+  text-align: center;
+}
+
+.tdProduct td {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.3em;
+  border-bottom: 1px solid silver;
+  border-top: 1px solid silver;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+}
+
+.underLine {
+  height: 0.5ch;
+  border: solid 1px white;
+  box-shadow: 0 0 10px silver;
+  margin-bottom: 4ch;
+}
+
+.productImage {
+  height: 18ch;
+}
