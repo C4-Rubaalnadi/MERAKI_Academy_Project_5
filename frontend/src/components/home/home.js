@@ -8,10 +8,10 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { BsFillCartPlusFill, BsCartPlusFill } from "react-icons/bs";
 import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
 import { Chat } from "../chatbot";
-import {AiFillHeart}  from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
 //==============================================================================
 
-const Home = ({ userInfo , setWishList }) => {
+const Home = ({ userInfo, setWishList }) => {
   const [products, setProducts] = useState();
 
   const [page, setPage] = useState(1);
@@ -77,7 +77,7 @@ const Home = ({ userInfo , setWishList }) => {
   }, [category]);
 
   //========================================
-  
+
   const handleAddToCart = (product_id) => {
     if (quantity > 0) {
       axios
@@ -108,7 +108,6 @@ const Home = ({ userInfo , setWishList }) => {
               <select
                 className="select"
                 onChange={(e) => {
-                  
                   setCategory(`${e.target.value}`);
                 }}
               >
@@ -131,10 +130,11 @@ const Home = ({ userInfo , setWishList }) => {
               }}
             />
           </div>
-          <AiFillHeart className="hartNav" 
-          onClick={() => {
-            navigate("/fav")
-          }}
+          <AiFillHeart
+            className="hartNav"
+            onClick={() => {
+              navigate("/fav");
+            }}
           />
         </div>
         <div className="pageContainer">
@@ -159,45 +159,49 @@ const Home = ({ userInfo , setWishList }) => {
                           <div className="iconsContainer">
                             <div className="containerCartIcoon">
                               <div className="cart-f1">
-                              <div>{quantity}</div>
-                              <IoMdRemoveCircleOutline
-                                className="add"
-                                onClick={() => {
-                                  quantity !== 0
-                                    ? setQuantity((previos) => previos - 1)
-                                    : setQuantity(0);
-                                }}
-                              />
-                              <BsCartPlusFill
-                                key={i}
-                                className="cartIcoon"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  handleAddToCart(product.id);
-                                }}
-                              />
-                              <IoIosAddCircle
-                                className="add"
-                                onClick={() => {
-                                  setQuantity((previos) => previos + 1);
-                                }}
-                              />  
+                                <div>{quantity}</div>
+                                <IoMdRemoveCircleOutline
+                                  className="add"
+                                  onClick={() => {
+                                    quantity !== 0
+                                      ? setQuantity((previos) => previos - 1)
+                                      : setQuantity(0);
+                                  }}
+                                />
+                                <BsCartPlusFill
+                                  key={i}
+                                  className="cartIcoon"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    handleAddToCart(product.id);
+                                  }}
+                                />
+                                <IoIosAddCircle
+                                  className="add"
+                                  onClick={() => {
+                                    setQuantity((previos) => previos + 1);
+                                  }}
+                                />
                               </div>
-                              <AiFillHeart className="cart-f2" 
-                              onClick={() => {
-                                axios
-                                  .post("http://localhost:5000/orders/add_wishList",{
-                                    product_id : product.id,
-                                    user_id : userInfo.userId
-                                  })
-                                  .then((res) => {
-                                    console.log(res.data);
-                                    setWishList(res.data)
-                                  })
-                                  .catch((err) => {
-                                    throw err;
-                                  });
-                              }}
+                              <AiFillHeart
+                                className="cart-f2"
+                                onClick={() => {
+                                  axios
+                                    .post(
+                                      "http://localhost:5000/orders/add_wishList",
+                                      {
+                                        product_id: product.id,
+                                        user_id: userInfo.userId,
+                                      }
+                                    )
+                                    .then((res) => {
+                                      console.log(res.data);
+                                      setWishList(res.data);
+                                    })
+                                    .catch((err) => {
+                                      throw err;
+                                    });
+                                }}
                               />
                             </div>
                           </div>
