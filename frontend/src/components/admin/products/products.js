@@ -1,7 +1,6 @@
+import "./products.css"
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
-import "../products/products.css";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -20,31 +19,37 @@ const Products = () => {
   });
 
   return (
-    <div>
+    <>
+    <div className="divContainerPro">
+    <div className="divProPage">
+      <h1 className="productPage">Products Page</h1>
+    </div>
+    <div className="underLine"></div>
+    <div className="divTable">
       <table>
         <thead>
-          <tr>
-            <th>Product</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Type</th>
+          <tr className="thProduct">
+            <th className="thProduct">Product</th>
+            <th className="thProduct">Name</th>
+            <th className="thProduct">Description</th>
+            <th className="thPrice">Price</th>
+            <th className="thProduct">Type</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="tdProduct">
           {products &&
             products.map((product, index) => {
               return (
                 <tr key={index}>
                   <td>
                     <img
-                      className="productImg"
+                      className="productImage"
                       src={product.image && product.image}
                     />
                   </td>
                   <td>{product.nameProduct && product.nameProduct}</td>
                   <td>{product.description && product.description}</td>
-                  <td>{product.price && product.price}</td>
+                  <td>{product.price && product.price} JD</td>
                   <td>{product.type && product.type}</td>
                 </tr>
               );
@@ -52,6 +57,8 @@ const Products = () => {
         </tbody>
       </table>
     </div>
+    </div>
+    </>
   );
 };
 
