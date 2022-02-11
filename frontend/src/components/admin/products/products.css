@@ -48,7 +48,7 @@
 }
 
 
-.thPrice {
+.thPrice, .thAction {
   width: 12ch;
   border: none;
   border-bottom: 1px solid silver;
@@ -66,7 +66,7 @@
   border-top: 1px solid silver;
   border-right: 1px solid silver;
   border-left: 1px solid silver;
-  width: 22ch;
+  width: 18ch;
   font-size: large;
   font-family: cursive;
   text-align: center;
@@ -83,9 +83,9 @@
 }
 
 .table {
-  margin-top: 3ch;
+  margin-top: 5ch;
   position: relative;
-
+  width: 95%;
 }
 
 .underLine {
@@ -101,14 +101,26 @@
 }
 
 .divCloudinary {
-  /* width: 100%;
-  height: 100%; */
   position: relative;
   top: 5ch;
+}
 
-  /* opacity: 0.86;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+.editIcon {
+  font-size: 4ch;
+  color: green;
+}
+
+.deleteIcon {
+  font-size: 4ch;
+  color: red;
+}
+
+.editIcon:hover, .deleteIcon:hover {
+  cursor: pointer;
+  color: rgb(1, 88, 1);
+}
+
+.deleteIcon:hover {
+  cursor: pointer;
+  color: rgb(187, 3, 3);
 }
