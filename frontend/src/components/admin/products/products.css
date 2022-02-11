@@ -1,28 +1,52 @@
-.divContainerPro {
+.divTable{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   box-shadow: 0 0 10px silver;
-  width: 95%;
-  margin: auto;
-  margin-top: 5%;
+  position: relative;
+  /* left: 3ch; */
+  /* right: 3ch;  */
+  /* margin: auto; */
+  margin-right: 6ch;
   font-family: system-ui;
+  padding-bottom: 10ch;
+  align-items: center;
+  left: 3ch;
+  right: 3ch;
+}
+
+.divProPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+  box-shadow: 0 0 10px silver;
+  margin-top: 5%;
 }
 
 .productPage {
+  display: flex;
+  flex-direction: row;
   text-align: left;
-  margin-left: 3ch;
+  margin-left: 1ch;
   margin-bottom: 2ch;
   margin-top: 2ch;
   font-family: "Courier New", Courier, monospace;
   text-decoration: underline;
 }
 
-.divTable {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.cloud {
+  font-size: 7ch;
+  margin-left: 1.5ch;
+  margin-right: 0.5ch;
 }
+
+.cloud:hover {
+  cursor: pointer;
+  color: rgb(90, 89, 89);
+}
+
 
 .thPrice {
   width: 12ch;
@@ -58,13 +82,33 @@
   border-left: 1px solid silver;
 }
 
+.table {
+  margin-top: 3ch;
+  position: relative;
+
+}
+
 .underLine {
-  height: 0.5ch;
+  height: 3ch;
   border: solid 1px white;
-  box-shadow: 0 0 10px silver;
-  margin-bottom: 4ch;
+  box-shadow: 0 0 20px silver;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
 }
 
 .productImage {
   height: 18ch;
+}
+
+.divCloudinary {
+  /* width: 100%;
+  height: 100%; */
+  position: relative;
+  top: 5ch;
+
+  /* opacity: 0.86;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
 }
