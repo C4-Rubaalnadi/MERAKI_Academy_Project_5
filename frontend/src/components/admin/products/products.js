@@ -2,6 +2,8 @@ import "./products.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BsCloudPlusFill } from "react-icons/bs";
+import { TiDelete } from "react-icons/ti";
+import { BiEditAlt } from "react-icons/bi";
 import Cloudinary from "../../cloudinary/cloudinary";
 
 const Products = () => {
@@ -21,26 +23,36 @@ const Products = () => {
     getAllProducts();
   });
 
+  // -------------------------------------------------------------------
+
+  const deleteProductById = (id) => {
+    axios
+      .delete(`http://localhost:5000/products/${id}`)
+      .then((res) => {
+        getAllProducts();
+      })
+      .catch((err) => {});
+  };
+
   return (
     <>
       <div className="divContainerPro">
         <div className="divProPage">
           <div className="productPage">
-          <BsCloudPlusFill
-            className="cloud"
-            onClick={() => {
-              setCloudinary(true);
-            }}
-          />
-          <h1>Products Page</h1>
+            <BsCloudPlusFill
+              className="cloud"
+              onClick={() => {
+                setCloudinary(true);
+              }}
+            />
+            <h1>Products Page</h1>
           </div>
-          
         </div>
         <div className="underLine"></div>
         <div className="divTable">
           {cloudinary ? (
             <div className="divCloudinary">
-              <Cloudinary/>
+              <Cloudinary />
             </div>
           ) : (
             <table className="table">
@@ -51,6 +63,7 @@ const Products = () => {
                   <th className="thProduct">Description</th>
                   <th className="thPrice">Price</th>
                   <th className="thProduct">Type</th>
+                  <th className="thAction">Actions</th>
                 </tr>
               </thead>
               <tbody className="tdProduct">
@@ -68,6 +81,15 @@ const Products = () => {
                         <td>{product.description && product.description}</td>
                         <td>{product.price && product.price} JD</td>
                         <td>{product.type && product.type}</td>
+                        <td>
+                          <BiEditAlt className="editIcon" />
+                          <TiDelete
+                            className="deleteIcon"
+                            onClick={() => {
+                              deleteProductById(product.id)
+                            }}
+                          />
+                        </td>
                       </tr>
                     );
                   })}
