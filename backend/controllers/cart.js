@@ -24,8 +24,8 @@ const createCart = (req, res) => {
 // getAllCartOfUser
 const getAllCartOfUser = (req, res) => {
   const userId = req.params.id;
-  const query = `SELECT * FROM cart LEFT JOIN products ON products.id = cart.product_id  WHERE cart.user_id = ? AND cart.is_deleted =?`;
-  const data = [userId,0];
+  const query = `SELECT * FROM products INNER JOIN cart ON products.id = cart.product_id  WHERE cart.user_id = ? AND cart.is_deleted =?`;
+  const data = [userId, 0];
   connection.query(query, data, (err, results) => {
     if (err) {
       res.status(500).json({
@@ -33,6 +33,7 @@ const getAllCartOfUser = (req, res) => {
         message: "Server error",
       });
     }
+    console.log(results);
     res.status(201).json({
       success: true,
       message: "get cart success ",
@@ -65,7 +66,7 @@ const updateCartById = (req, res) => {
   const user_id = req.body.user_id;
   const query = `UPDATE cart SET quantity=? WHERE  user_id=? AND id =?`;
 
-  const data = [quantity ,user_id,id];
+  const data = [quantity, user_id, id];
 
   connection.query(query, data, (err, result) => {
     if (err) {
@@ -109,9 +110,9 @@ const deleteCartById = (req, res) => {
     }
   });
 };
-//Add wishlist 
+//Add wishlist
 const Add_wishList = (req, res) => {
-  const {product_id, user_id } = req.body;
+  const { product_id, user_id } = req.body;
   const query = `INSERT INTO favorite_list (product_id , user_id ) VALUES (?,?)`;
   const data = [product_id, user_id];
   connection.query(query, data, (err, results) => {
@@ -132,8 +133,8 @@ const Add_wishList = (req, res) => {
 // get favorete list
 const getAllFavortListOfUser = (req, res) => {
   const userId = req.params.idUser;
-  const query = `SELECT * FROM favorite_list LEFT JOIN products ON products.id = favorite_list.product_id  WHERE favorite_list.user_id = ? AND favorite_list.is_deleted =?`;
-  const data = [userId,0];
+  const query = `SELECT * FROM products INNER JOIN favorite_list ON favorite_list.product_id=products.id   `;
+  const data = [userId, 0];
   connection.query(query, data, (err, results) => {
     if (err) {
       res.status(500).json({
@@ -155,5 +156,5 @@ module.exports = {
   updateCartById,
   deleteCartById,
   Add_wishList,
-  getAllFavortListOfUser
+  getAllFavortListOfUser,
 };
