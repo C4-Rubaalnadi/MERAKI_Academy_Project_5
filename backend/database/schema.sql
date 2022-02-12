@@ -76,6 +76,7 @@ FOREIGN KEY (user_id) REFERENCES users(id),
 is_deleted TINYINT DEFAULT 0,
 PRIMARY KEY (id)
 );
+-- role //
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/ad/76/03/ad7603e5bcd999ce4169c2f93525f2f4.jpg', 'shepase lays', 'lays wavy flavor cheese', 0.5 ,'snake');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES (' https://i.pinimg.com/564x/3a/83/5d/3a835d8ef7008cf7c758d6c778dc7897.jpg', 'shepase lays', 'lays flavor BBQ', 0.7 ,'snake');
@@ -94,6 +95,15 @@ INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('htt
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/f8/32/cc/f832ccb1d3d25791b98ca16d0fa045fd.jpg', 'meat', 'caw meat', 45 ,'meat');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/2e/a8/9f/2ea89f18bc885fc634b866fd5f271d6a.jpg', 'caw meat ', 'meat without a bone', 33 ,'meat');
+-- 
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/bb/cf/85/bbcf85a764e39bd967fa0a1dea0ef173.jpg', 'meat ', 'meat without a bone', 33 ,'meat');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/e2/73/8a/e2738aae13717045459b17c3d08dfcda.jpg', 'slamon', 'slamon', 33 ,'meat');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/47/f8/e5/47f8e5c091ead8226ea0eb239c3e626b.jpg', 'cawo meat ', 'meat', 33 ,'meat');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/4f/8b/33/4f8b3348486d5e6fc570cfbf8eda44e0.jpg', 'caw meat ', 'meat ', 33 ,'meat');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/51/d6/3a/51d63adc923c561d8d3e0026612b2ca5.jpg', 'chicken', 'chicken', 33 ,'meat');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/ed/8a/dc/ed8adc2f74d0e86ba9f91e1a5db117b4.jpg', 'meat', 'meat', 33 ,'meat');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/e8/6f/36/e86f367bf4a531a89654e13245ea4a95.jpg', 'meat', 'meat', 33 ,'meat');
+-- 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/41/2c/70/412c70fe214d638d56daf8f0a6911c1b.jpg', 'pasta rental', '500g  pasta  ', 1.5 ,'pasta');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/fe/91/7a/fe917a29fbd73ea08a34e1dc88f0b82f.jpg', 'pasta rental', '200g pasta fuchini  ', 3.5 ,'pasta');
@@ -119,3 +129,11 @@ INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('htt
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/98/f1/b8/98f1b87e9e64d51e09b67928500d9c8f.jpg', 'pear', '6 pieces ', 3.00 ,'vegatables_frutes');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/62/8f/11/628f11663de658a15ce253ce953c7ddb.jpg', 'peach', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
+-- 
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/c0/dd/11/c0dd11bb5f8a91289f3650b9ec6407dc.jpg', 'several vegatables', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/8a/e0/4c/8ae04c1d55d1a7483864eabcbc35cd6a.jpg', 'stubary', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/6b/ea/3f/6bea3fd7e2e94284ab805371e8fbac1c.jpg', 'corn', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/31/c2/dc/31c2dc2e790cb0e84dfad3cac46fb972.jpg', 'speach', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/11/9a/05/119a05c56f8d7437794463c6fbeebee8.jpg', 'blue bary', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/d0/ed/f2/d0edf2e9b86798632ee3eb90002cac9e.jpg', 'rase bary', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/5b/0d/4e/5b0d4e542f257fafaff5274738009295.jpg', 'توت اسود', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');

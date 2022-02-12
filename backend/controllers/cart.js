@@ -133,7 +133,7 @@ const Add_wishList = (req, res) => {
 // get favorete list
 const getAllFavortListOfUser = (req, res) => {
   const userId = req.params.idUser;
-  const query = `SELECT * FROM products INNER JOIN favorite_list ON favorite_list.product_id=products.id   `;
+  const query = `SELECT * FROM products INNER JOIN favorite_list ON favorite_list.product_id=products.id AND favorite_list.is_deleted =?  `;
   const data = [userId, 0];
   connection.query(query, data, (err, results) => {
     if (err) {
@@ -149,6 +149,26 @@ const getAllFavortListOfUser = (req, res) => {
     });
   });
 };
+//delete product in fav-list 
+const deleteProductOfUserInFAvList = (req, res) => {
+  const id = req.params.id;
+  const query = `UPDATE favorite_list SET is_deleted=? WHERE  id =?`;
+  const data = [1,id];
+  connection.query(query, data, (err, results) => {
+    if (err) {
+      res.status(500).json({
+        success: false,
+        message: "Server error",
+      });
+    }
+    res.status(201).json({
+      success: true,
+      message: "delete product from  favorite_list success ",
+      result: results,
+      data : data
+    });
+  });
+};
 module.exports = {
   createCart,
   getAllCartOfUser,
@@ -157,4 +177,5 @@ module.exports = {
   deleteCartById,
   Add_wishList,
   getAllFavortListOfUser,
+  deleteProductOfUserInFAvList
 };
