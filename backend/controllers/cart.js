@@ -69,7 +69,7 @@ const updateCartById = (req, res) => {
   const data = [quantity, user_id, id];
 
   connection.query(query, data, (err, result) => {
-    if (err) {
+    if (err) { throw err
       res.status(500).json({
         success: false,
         message: "Server error",
