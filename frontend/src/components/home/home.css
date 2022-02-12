@@ -224,11 +224,18 @@ select::-ms-expand {
   opacity: 0.5;
   cursor: pointer;
 }
+.nav-icon{
+  display: flex;
+  gap: 10px;
+  margin-right: 5%;
+}
+.right-left{
+  display: flex;
+  align-items: center;
+}
 .hartNav{
   transform: scale(1.8);
   color: #fff;
-  margin-top: 2%;
-  margin-right: 3%;
   cursor: pointer;
 }
 .cart-f2 {
