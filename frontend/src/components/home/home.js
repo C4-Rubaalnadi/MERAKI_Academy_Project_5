@@ -121,7 +121,15 @@ const Home = ({ userInfo, setWishList }) => {
               </select>
             </div>
           </div>
-
+          <div className="nav-icon">
+          <div className="right-left">
+           <AiFillHeart
+            className="hartNav"
+            onClick={() => {
+              navigate("/fav");
+            }}
+          />
+          </div>
           <div className="right">
             <BsFillCartPlusFill
               className="cart"
@@ -130,12 +138,9 @@ const Home = ({ userInfo, setWishList }) => {
               }}
             />
           </div>
-          <AiFillHeart
-            className="hartNav"
-            onClick={() => {
-              navigate("/fav");
-            }}
-          />
+
+          </div>
+         
         </div>
         <div className="pageContainer">
           <div className="sliderContainer">
