@@ -12,7 +12,7 @@ import Admin from "./components/admin/admin";
 import Users from "./components/admin/users/users.js";
 import Products from "./components/admin/products/products.js";
 import Orders from "./components/admin/orders/orders.js";
-import FsvList from "./components/wish-list/FsvList";
+import FsvList from "./components/fav-list/FsvList";
 function App() {
   const [userInfo, setUserInfo] = useState({});
   const [finalPrice, setFinalPrice] = useState(0);
@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <Navigation userInfo={userInfo} />
       <Routes>
-        <Route path="/login" element={<Login setUserInFo={setUserInfo} />} />
+        <Route path="/login" element={<Login setUserInfo={setUserInfo} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<UserProfile userInfo={userInfo} />} />
         <Route path="/home" element={<Home userInfo={userInfo} setWishList={setWishList} />} />

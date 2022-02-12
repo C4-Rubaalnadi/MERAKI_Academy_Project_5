@@ -8,7 +8,7 @@ import axios from "axios";
 
 //==============================================================================
 
-const Login = ({ setUserInFo }) => {
+const Login = ({ setUserInfo }) => {
   const dispatch = useDispatch();
 
   const state = useSelector((state) => {
@@ -28,7 +28,7 @@ const Login = ({ setUserInFo }) => {
   const handleLogin = (googleData) => {
     dispatch(login(googleData.tokenId));
 
-    setUserInFo({
+    setUserInfo({
       userId: googleData.profileObj.googleId,
       firstName: googleData.profileObj.givenName,
       lastName: googleData.profileObj.familyName,
@@ -59,7 +59,7 @@ const Login = ({ setUserInFo }) => {
         setMessage("");
         localStorage.setItem("token", res.data.token);
         dispatch(login(res.data.token));
-        setUserInFo(res.data.payload);
+        setUserInfo(res.data.payload);
         setUser(res.data.payload);
       } else throw Error;
     } catch (error) {

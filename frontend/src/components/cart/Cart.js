@@ -64,7 +64,8 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                       <td>{ord.nameProduct && ord.nameProduct}</td>
                       <td>{ord.price && ord.price} JD</td>
                       <td>
-                        <IoMdRemoveCircleOutline
+                        <IoMdRemoveCircleOutline 
+                        className="max-min"
                           onClick={() => {
                             axios
                               .put(
@@ -78,7 +79,6 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                                 console.log(res.data);
                                 console.log(ord.id);
                                 getALlUserOrder();
-                                // ord.quantity +=1
                               })
                               .catch((err) => {
                                 throw err;
@@ -88,6 +88,7 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
 
                         {ord.quantity && ord.quantity}
                         <IoIosAddCircle
+                        className="max-min"
                           onClick={() => {
                             axios
                               .put(
@@ -100,7 +101,7 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                               .then((res) => {
                                 console.log(res.data);
                                 console.log(ord.id);
-                                // ord.quantity +=1
+
                                 getALlUserOrder();
                               })
                               .catch((err) => {
