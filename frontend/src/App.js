@@ -12,7 +12,11 @@ import Admin from "./components/admin/admin";
 import Users from "./components/admin/users/users.js";
 import Products from "./components/admin/products/products.js";
 import Orders from "./components/admin/orders/orders.js";
+
+import Image from "./components/classification/image";
+
 import FsvList from "./components/fav-list/FsvList";
+
 function App() {
   const [userInfo, setUserInfo] = useState({});
   const [finalPrice, setFinalPrice] = useState(0);
@@ -51,6 +55,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/fav" element={<FsvList wishlist={wishlist} userInfo={userInfo}/>} />
+        <Route path="/img" element={<Image />}/>
       </Routes>
     </div>
   );

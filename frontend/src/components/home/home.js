@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight, FaJediOrder } from "react-icons/fa";
 import { BsFillCartPlusFill, BsCartPlusFill } from "react-icons/bs";
 import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
 import { Chat } from "../chatbot";
 import { AiFillHeart } from "react-icons/ai";
+
 //==============================================================================
 
 const Home = ({ userInfo, setWishList }) => {
@@ -20,7 +21,10 @@ const Home = ({ userInfo, setWishList }) => {
   const [numperOfProducts, setNumperOfProducts] = useState();
   const [quantity, setQuantity] = useState(0);
   const [user_id, setUser_id] = useState(userInfo.userId);
-
+  const [cart, setCart] = useState();
+  const [oreder, setOreder] = useState();
+  console.log(oreder);
+  console.log(cart);
   const state = useSelector((state) => {
     return {
       token: state.loginReducer.token,
@@ -78,8 +82,28 @@ const Home = ({ userInfo, setWishList }) => {
 
   //========================================
 
-  const handleAddToCart = (product_id) => {
-    if (quantity > 0) {
+  const getALlUserOrder = () => {
+    axios
+      .get(`http://localhost:5000/orders/${userInfo.userId}`)
+      .then((res) => {
+        setCart(res.data.result);
+        console.log(res.data.result);
+        console.log(userInfo.userId);
+        // final_price(res.data.result);
+      })
+      .catch((err) => {});
+  };
+  const checkCart = () => {
+    return (
+      cart &&
+      cart.map((name) => {
+        return name.product_id;
+      })
+    );
+  };
+
+  const handleAddToCart = async (product_id) => {
+    if (quantity > 0 && !checkCart().includes(product_id)) {
       axios
         .post(
           "http://localhost:5000/orders/",
@@ -94,9 +118,35 @@ const Home = ({ userInfo, setWishList }) => {
           setQuantity(0);
         })
         .catch((err) => {});
+    } else if (checkCart().includes(product_id)) {
+      const ord =
+        (await cart) &&
+        cart.map((ord) => {
+          if (ord.product_id === product_id) {
+            axios
+              .put(`http://localhost:5000/orders/edit/${ord.id}`, {
+                quantity: ord.quantity + quantity,
+                user_id,
+              })
+              .then((res) => {
+                console.log(res.data);
+                setQuantity(0);
+                // ord.quantity +=1
+              })
+              .catch((err) => {
+                throw err;
+              });
+          }
+        });
+      console.log(ord.id);
+      setOreder(ord);
     }
   };
 
+  useEffect(() => {
+    getALlUserOrder();
+  }, []);
+  console.log(checkCart());
   //========================================
 
   return (
