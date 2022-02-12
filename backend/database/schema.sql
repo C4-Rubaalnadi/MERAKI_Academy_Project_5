@@ -76,7 +76,8 @@ FOREIGN KEY (user_id) REFERENCES users(id),
 is_deleted TINYINT DEFAULT 0,
 PRIMARY KEY (id)
 );
--- role //
+INSERT INTO roles (role) VALUES ('user');
+INSERT INTO roles (role) VALUES ('admin');
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/ad/76/03/ad7603e5bcd999ce4169c2f93525f2f4.jpg', 'shepase lays', 'lays wavy flavor cheese', 0.5 ,'snake');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES (' https://i.pinimg.com/564x/3a/83/5d/3a835d8ef7008cf7c758d6c778dc7897.jpg', 'shepase lays', 'lays flavor BBQ', 0.7 ,'snake');
@@ -84,7 +85,16 @@ INSERT INTO products (image, nameProduct ,description, price ,type) VALUES (' ht
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES (' https://i.pinimg.com/564x/18/9b/9d/189b9d2adc3e1d8d8647aaa2b97da71c.jpg', 'shepase lays forno', 'lays forno flavor chesse', 0.6 ,'snake');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/ca/60/16/ca60168283d99b68870ee8f8f7499ec6.jpg', 'nestle cookies', 'milk cohoclate and biscuits', 0.8 ,'snake');
+-- 
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/originals/cc/d9/6d/ccd96da482ceb01801f6faae95a57f2e.jpg', 'Lays', 'kentaky fried checken', 1,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/e3/35/89/e335894c7d66072b11cc80a41df480d7.jpg', 'alexia', 'crispy truffle fries', 0.8 ,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/fc/ad/d3/fcadd3cb8b1e4e36e813d2ee39ab7336.jpg', 'cheetos bolitas', 'cheese flavor', 0.7 ,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/dd/60/89/dd60898bdcffd14d8bb4e377521eb14f.jpg', 'doritoss', 'spicy flavor', 0.7 ,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/ba/e5/67/bae56709c6544275506f9244cd38f6b8.jpg', 'hersheys', 'cookies crem', 0.9 ,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/85/c2/3e/85c23ec5222bd3ccb6baff58a608c44a.jpg', 'kinder', '4pars ,cohoclate and milk', 1 ,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/9b/d5/7c/9bd57cf87a74f2bc036931ab2d586f57.jpg', 'chewy candy', 'strawberry flavor', 0.8 ,'snake');
 
+-- 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/d3/80/39/d38039505f2eeb71d720a8b33096b890.jpg', 'kitkat', 'kitkat several flavors', 2.00 ,'snake');
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/46/47/2f/46472fcb2b8069cde2cbcf941c8d556b.jpg', 'burger meat', '500g meat with no spices ', 20 ,'meat');
 
@@ -113,13 +123,32 @@ INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('htt
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/6d/de/2b/6dde2bd1b0ea01062bdd94643734d869.jpg', 'pasta panzani', '500g pasta ', 2.80 ,'pasta');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/eb/8d/1f/eb8d1f9079308991e720354f74088d89.jpg', 'pasta panzani', '1kg pasta ', 2.00 ,'pasta');
-INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/1d/64/2a/1d642a687114798a7b43f80bf641ff38.jpg', 'strawberry millk', '170g nestle ,milk contains vetamena A , D  ', 2.90 ,'millk_egg');
 
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/79/af/eb/79afebfc96741cb17e742f483410f6ca.jpg', 'brilla', '250g pasta ', 2.90 ,'pasta');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/2a/ee/bc/2aeebc8f8022ae5ec072099b83b10eac.jpg', 'granoro', '500g pasta spagity ', 2.90 ,'pasta');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/fb/de/b1/fbdeb104b3da0520a7adfa548646fa35.jpg', 'brilla', '500g pasta,orecchiette ', 2.90 ,'pasta');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/26/fb/3a/26fb3aaa8106046eaddda9664af59dfa.jpg', 'brilla', '250g pasta ', 2.90 ,'pasta');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/c1/cd/c1/c1cdc1ee4efb5c1fd4a519679e5f2ac5.jpg', 'granoro', '500g pasta ', 2.90 ,'pasta');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/e5/ac/23/e5ac233b0bb5002b4b45d7443e26bb86.jpg', 'panzani, '500g pasta ', 2.90 ,'pasta');
+
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/e5/ac/23/e5ac233b0bb5002b4b45d7443e26bb86.jpg', 'panzani, '500g pasta ', 2.90 ,'pasta');
+
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/1d/64/2a/1d642a687114798a7b43f80bf641ff38.jpg', 'strawberry millk', '170g nestle ,milk contains vetamena A , D  ', 2.90 ,'millk_egg');
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/4b/b7/e5/4bb7e53a8c7cf399f4751e021a987e74.jpg', 'chocolate milk', '260m nestle ,100% natural', 2.50 ,'millk_egg');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/f4/32/30/f432301dbf3ca54a51070e4697a333db.jpg', 'cereal ', 'nesquik , chocolate flavore', 3.50 ,'millk_egg');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/10/60/64/1060647a5495b10e75e905dcf9e8e3e5.jpg', 'egg', 'fresh egg', 4.00 ,'millk_egg');
+
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/8d/8c/96/8d8c9601c284d2b82ea6337407eee267.jpg', 'egg', '', 2.50 ,'millk_egg');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/19/c3/61/19c36185d9d273b1c07c6d2c8c88efb2.jpg', 'korian milk', 'natural flavor ,400m',  ,'millk_egg');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/3b/14/4f/3b144fd7ae916c0cb2f5b06ef2028610.jpg', 'nestle ninho', '175g contains important nutrients', 2.50 ,'millk_egg');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/3f/a2/31/3fa231bc7ae1a4ecb994f8c3d2245fcc.jpg', 'nesquik stawberry', 'nestle ,100% natural', 2.50 ,'millk_egg');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/79/00/ec/7900ecfe9f11b0081421cddaa96e4496.jpg', 'pebbles', '311g,Natural and artificial flavor', 2.50 ,'millk_egg');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/87/4f/25/874f25759bbf8d6f633958260d472cd3.jpg', 'fitness ', '385g,cinamon flavor', 2.50 ,'millk_egg');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/7f/71/47/7f71470fa8c89ddce70de66740dab33e.jpg', 'activia', '170g amora  morgano and cereas flavor ', 2.50 ,'millk_egg');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/8f/53/e9/8f53e982da78379c9ad82d3e67238a53.jpg', 'greenfields', 'fresh milk,100% no suger', 2.50 ,'millk_egg');
+
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/20/b9/f3/20b9f3389973cda90fcb63ecd3568511.jpg', 'carrots', '3kg sweet carrots ', 4.00 ,'vegatables_frutes');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/97/ad/f1/97adf1a0274c510d4157e2359256eb74.jpg', 'mashroom', '250g mashrooms, fresh ', 3.00 ,'vegatables_frutes');
@@ -129,7 +158,7 @@ INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('htt
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/98/f1/b8/98f1b87e9e64d51e09b67928500d9c8f.jpg', 'pear', '6 pieces ', 3.00 ,'vegatables_frutes');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/62/8f/11/628f11663de658a15ce253ce953c7ddb.jpg', 'peach', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
--- 
+
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/c0/dd/11/c0dd11bb5f8a91289f3650b9ec6407dc.jpg', 'several vegatables', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/8a/e0/4c/8ae04c1d55d1a7483864eabcbc35cd6a.jpg', 'stubary', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/6b/ea/3f/6bea3fd7e2e94284ab805371e8fbac1c.jpg', 'corn', '1kg , hand cut peach ', 10.00 ,'vegatables_frutes');
