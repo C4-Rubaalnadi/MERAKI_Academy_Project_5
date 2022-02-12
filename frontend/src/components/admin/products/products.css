@@ -1,0 +1,126 @@
+.divTable{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 10px silver;
+  position: relative;
+  /* left: 3ch; */
+  /* right: 3ch;  */
+  /* margin: auto; */
+  margin-right: 6ch;
+  font-family: system-ui;
+  padding-bottom: 10ch;
+  align-items: center;
+  left: 3ch;
+  right: 3ch;
+}
+
+.divProPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+  box-shadow: 0 0 10px silver;
+  margin-top: 5%;
+}
+
+.productPage {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  margin-left: 1ch;
+  margin-bottom: 2ch;
+  margin-top: 2ch;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: underline;
+}
+
+.cloud {
+  font-size: 7ch;
+  margin-left: 1.5ch;
+  margin-right: 0.5ch;
+}
+
+.cloud:hover {
+  cursor: pointer;
+  color: rgb(90, 89, 89);
+}
+
+
+.thPrice, .thAction {
+  width: 12ch;
+  border: none;
+  border-bottom: 1px solid silver;
+  border-top: 1px solid silver;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  font-size: large;
+  font-family: cursive;
+  text-align: center;
+}
+
+.thProduct {
+  border: none;
+  border-bottom: 1px solid silver;
+  border-top: 1px solid silver;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  width: 18ch;
+  font-size: large;
+  font-family: cursive;
+  text-align: center;
+}
+
+.tdProduct td {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.3em;
+  border-bottom: 1px solid silver;
+  border-top: 1px solid silver;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+}
+
+.table {
+  margin-top: 5ch;
+  position: relative;
+  width: 95%;
+}
+
+.underLine {
+  height: 3ch;
+  border: solid 1px white;
+  box-shadow: 0 0 20px silver;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+}
+
+.productImage {
+  height: 18ch;
+}
+
+.divCloudinary {
+  position: relative;
+  top: 5ch;
+}
+
+.editIcon {
+  font-size: 4ch;
+  color: green;
+}
+
+.deleteIcon {
+  font-size: 4ch;
+  color: red;
+}
+
+.editIcon:hover, .deleteIcon:hover {
+  cursor: pointer;
+  color: rgb(1, 88, 1);
+}
+
+.deleteIcon:hover {
+  cursor: pointer;
+  color: rgb(187, 3, 3);
+}
