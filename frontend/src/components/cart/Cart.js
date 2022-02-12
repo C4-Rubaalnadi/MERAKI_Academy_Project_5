@@ -15,11 +15,11 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
     };
   });
 
-  // const final_price = (result) => {
-  //   result.map((element) => {
-  //     setFinalPrice(finalPrice + element.price);
-  //   });
-  // };
+  const final_price = (result) => {
+    result.map((element) => {
+      setFinalPrice(finalPrice + element.price);
+    });
+  };
 
   const getALlUserOrder = () => {
     axios
