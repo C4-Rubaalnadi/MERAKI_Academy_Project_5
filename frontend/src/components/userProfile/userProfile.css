@@ -1,4 +1,4 @@
-.divContainer {
+/* .divContainer {
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 10px #0000001a;
@@ -19,9 +19,7 @@
   border: 1px solid #80808029;
 }
 
-.userImg {
-  width: 100%;
-}
+
 
 .profile {
   text-align: left;
@@ -64,4 +62,26 @@
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
+} */
+.divContainer{
+  width: 80vw;
+  height: 70vh;
+}
+.user-cont{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  width: 22%;
+  border-right: 1px solid orange;
+}
+.userImg {
+  width: 35%;
+}
+.fl:hover{
+  color:orange;
+  cursor: pointer;
+}
+.history:hover{
+  color:orange;
+  cursor: pointer;
 }

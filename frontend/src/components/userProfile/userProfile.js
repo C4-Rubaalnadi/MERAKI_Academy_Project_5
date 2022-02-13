@@ -11,14 +11,14 @@ const UserProfile = ({ userInfo }) => {
       token: state.loginReducer.token,
     };
   });
-
+  const [favStatus , setFavStatus] = useState(false);
   const imag =
     "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg";
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       <div className="divContainer">
-        {userInfo ? (
+         {/*{userInfo ? (
           <>
             <div>
               <p className="welcome"> Welcome {userInfo.firstName} </p>
@@ -49,7 +49,25 @@ const UserProfile = ({ userInfo }) => {
           </>
         ) : (
           <></>
-        )}
+        )}*/}
+      <div className="user-cont">
+        <div className="profile">
+          <img src={imag} alt="userImg" className="userImg" />
+          <p>
+            {userInfo.firstName} {userInfo.lastName}
+          </p>
+        </div>
+        <div className="user-info">
+          <div className="favorate" onClick={() => {
+            setFavStatus(true)
+          }}>
+            <p className="fl">My favorate list</p>
+          </div>
+          <div className="history">
+            <p className="history">My history</p>
+          </div>
+        </div>
+      </div>
       </div>
     </>
   );
