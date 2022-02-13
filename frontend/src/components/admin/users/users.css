@@ -1,11 +1,75 @@
+.divUserPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+  box-shadow: 0 0 10px silver;
+  margin-top: 5%;
+}
+
+.userPage {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  margin-left: 1ch;
+  margin-bottom: 2ch;
+  margin-top: 2ch;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: underline;
+}
+
+.userIcon {
+  font-size: 5ch;
+  margin-left: 2.5ch;
+  margin-right: 0.5ch;
+  margin-top: 0.4ch;
+}
+
+.underLineU {
+  height: 3ch;
+  border: solid 1px white;
+  box-shadow: 0 0 20px silver;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+}
+
 .usersTable {
   display: flex;
-  background-color: rgb(245, 245, 245);
-  margin: 4ch;
   height: 70vh;
   justify-content: center;
   align-items: center;
   position: relative;
+  box-shadow: 0 0 10px silver;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+}
+
+.thUsers, .tdUsers td {
+  border: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  font-family: system-ui;
+  font-weight: bolder;
+}
+
+.thUsers, .thRole {
+  font-family: cursive;
+  font-size: larger;
+}
+
+.thDelete {
+  border: none;
+  background-color: white;
+}
+
+.thRole {
+  width: 20vw;
+  border: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .userMessage {
@@ -56,13 +120,12 @@
 
 .usersTable table {
   font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+  border-collapse: separate;
+  width: 90%;
 }
 
 .usersTable table td,
 th {
-  text-align: left;
   padding: 8px;
 }
 
@@ -77,19 +140,44 @@ th {
   background-color: #dddddd;
 }
 
+.usersTable table tr:nth-child(odd) {
+  background-color: rgb(245, 245, 245);
+}
+
 .deleteIcons {
   color: red;
   width: 3ch;
   height: 3ch;
   cursor: pointer;
+  font-size: 2.5ch;
 }
 
 .editRole {
-  margin-left: 1ch;
+  margin-left: 1vw;
   color: green;
   cursor: pointer;
+  font-size: 2.5ch;
+}
+
+.editRole:hover {
+  cursor: pointer;
+  color: rgb(1, 88, 1);
+}
+
+.deleteIcons:hover {
+  cursor: pointer;
+  color: rgb(187, 3, 3);
 }
 
 .updateSelect {
-  border: none;
+  height: 3vw;
+  width: 10vw;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: system-ui;
+  font-weight: bolder;
+}
+
+.updateSelect:hover {
+  cursor: pointer;
 }
