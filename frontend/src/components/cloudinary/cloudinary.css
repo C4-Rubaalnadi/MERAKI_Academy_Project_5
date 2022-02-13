@@ -1,65 +1,94 @@
 .AddContainer {
-    height: 85vh;
-    width: 25vw;
-    position: relative;
-    box-shadow: 1px 1px 5px orange;
- 
-  }
-  
-  .addImg {
-    height: 40%;
-    width: 80%;
-    margin-top: 2ch;
-  }
-  .addImgIcons{
-width: 4ch;
-height: 4ch;
-margin: none;
-  }
+  height: 120vh;
+  width: 40vw;
+  position: relative;
+  box-shadow: 0 0 10px black;
+}
 
-  .addName {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-align: center;
-    font-family: cursive;
-    margin-top: 1ch;
-  }
-  input{
-      width: 10ch;
-      height: 3ch;
-      margin-left: 1ch;
-      border: none;
-  }
-  .typeFile{
-width: 25ch;
-  }
-  .addprice {
-    margin-left: 30px;
-    font-family: cursive;
-    color: orangered;
-  }
-  
-  .adddescription {
-    text-align: left;
-    font-size: 1rem;
-    font-family: cursive;
-    text-align: center;
-  }
-  
-  .addButton{
-      height: 6ch;
-      width: 70%;
-      margin-top: 1.5ch;
-      font-family: cursive;
-      font-size: 1.5rem;
-     border: none;
-     
-      cursor: pointer;
-      background-color: rgb(245, 246, 244);
-  }
-  .addButton:hover{
-      background-color: orange;
-  }
+.addImg {
+  height: 35%;
+  width: 70%;
+  margin-top: 2ch;
+}
+
+.addImgIcons {
+  width: 4ch;
+  height: 4ch;
+  font-size: 2ch;
+  margin: none;
+}
+
+.addImgIcons:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
+.addName, .addprice, .adddescription, .adddescription {
+  text-align: left;
+  font-weight: bold;
+  /* display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  justify-content: left;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  font-family: system-ui;
+  margin-top: 1ch; */
+}
+
+.inputCloudinary {
+  border: none;
+  border-bottom: solid 0.1ch black;
+  outline: none;
+  width: 20vw;
+
+  /* text-align: left; */
+  /* width: 10ch;
+  height: 3ch;
+  margin-left: 1ch;
+  border: none; */
+}
+
+.divInput {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1.5ch;
+  justify-content: center;
+  margin-top: 5ch;
+}
+
+.input {
+  text-align: left;
+  /* width: 10ch;
+  height: 3ch;
+  margin-left: 1ch;
+  border: none; */
+}
+
+.divChoose {
+  margin-top: 2ch;
+  margin-bottom: 4ch;
+}
+
+.typeFile {
+  width: 32ch;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.addButton {
+  height: 6ch;
+  width: 70%;
+  margin-top: 1.5ch;
+  font-family: cursive;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(245, 246, 244);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.addButton:hover {
+  background-color: silver;
+}
