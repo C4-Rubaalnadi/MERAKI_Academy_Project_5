@@ -77,15 +77,15 @@ is_deleted TINYINT DEFAULT 0,
 PRIMARY KEY (id)
 );
 -- role //
-INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/ad/76/03/ad7603e5bcd999ce4169c2f93525f2f4.jpg', 'shepase lays', 'lays wavy flavor cheese', 0.5 ,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/ad/76/03/ad7603e5bcd999ce4169c2f93525f2f4.jpg', 'shepase lays', 'lays wavy flavor cheese', 0.5 ,'snack');
 
-INSERT INTO products (image, nameProduct ,description, price ,type) VALUES (' https://i.pinimg.com/564x/3a/83/5d/3a835d8ef7008cf7c758d6c778dc7897.jpg', 'shepase lays', 'lays flavor BBQ', 0.7 ,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES (' https://i.pinimg.com/564x/3a/83/5d/3a835d8ef7008cf7c758d6c778dc7897.jpg', 'shepase lays', 'lays flavor BBQ', 0.7 ,'snack');
 
-INSERT INTO products (image, nameProduct ,description, price ,type) VALUES (' https://i.pinimg.com/564x/18/9b/9d/189b9d2adc3e1d8d8647aaa2b97da71c.jpg', 'shepase lays forno', 'lays forno flavor chesse', 0.6 ,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES (' https://i.pinimg.com/564x/18/9b/9d/189b9d2adc3e1d8d8647aaa2b97da71c.jpg', 'shepase lays forno', 'lays forno flavor chesse', 0.6 ,'snack');
 
-INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/ca/60/16/ca60168283d99b68870ee8f8f7499ec6.jpg', 'nestle cookies', 'milk cohoclate and biscuits', 0.8 ,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/ca/60/16/ca60168283d99b68870ee8f8f7499ec6.jpg', 'nestle cookies', 'milk cohoclate and biscuits', 0.8 ,'snack');
 
-INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/d3/80/39/d38039505f2eeb71d720a8b33096b890.jpg', 'kitkat', 'kitkat several flavors', 2.00 ,'snake');
+INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/d3/80/39/d38039505f2eeb71d720a8b33096b890.jpg', 'kitkat', 'kitkat several flavors', 2.00 ,'snack');
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/46/47/2f/46472fcb2b8069cde2cbcf941c8d556b.jpg', 'burger meat', '500g meat with no spices ', 20 ,'meat');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/c8/b9/ba/c8b9baa504910c1c89464d43e7db8bf3.jpg', 'feathered meat', 'free range', 25 ,'meat');
