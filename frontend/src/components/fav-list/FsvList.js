@@ -17,7 +17,7 @@ function FsvList(wishlist, userInfo) {
     getFav();
   }, []);
   return (
-    <div className="divProduct">
+    <div className="divProduct fav">
       {fav &&
         fav.map((wish, i) => {
           return (
@@ -43,7 +43,7 @@ function FsvList(wishlist, userInfo) {
                 <div>
                   <div className="productName">
                     {wish.nameProduct && wish.nameProduct}{" "}
-                    <div className="price">{wish.wish && wish.price} JD</div>
+                    <div className="price">{wish.price && wish.price} JD</div>
                   </div>
                   <br />
                   <div className="description">
