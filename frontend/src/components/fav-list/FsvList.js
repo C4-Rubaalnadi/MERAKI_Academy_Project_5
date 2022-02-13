@@ -4,6 +4,7 @@ import { GiBrokenHeart } from "react-icons/gi";
 import "./FsvList.css";
 function FsvList(wishlist, userInfo) {
   const [fav, setFav] = useState();
+
   const getFav = () => {
     axios
       .get(`http://localhost:5000/orders/FavortList/${userInfo.userId}`)
