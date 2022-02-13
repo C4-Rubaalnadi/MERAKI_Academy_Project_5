@@ -4,10 +4,10 @@ import axios from "axios";
 import "./cartStyle.css";
 import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
 import { TiDelete } from "react-icons/ti";
-
-const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
+import StripeCheckout from "react-stripe-checkout";
+const Cart = ({ userInfo }) => {
   const [order, setOrder] = useState();
-
+  const [finalPrice, setFinalPrice] = useState(0);
   const state = useSelector((state) => {
     return {
       LoggedIn: state.loginReducer.isLoggedIn,
@@ -15,10 +15,13 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
     };
   });
 
-  const final_price = (result) => {
-    result.map((element) => {
-      setFinalPrice(finalPrice + element.price);
-    });
+  const final_price = () => {
+    let final = 0;
+    for (let i = 0; i < order.length; i++) {
+      final += order[i].price * order[i].quantity;
+    }
+    setFinalPrice(final);
+    console.log(final);
   };
 
   const getALlUserOrder = () => {
@@ -26,15 +29,18 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
       .get(`http://localhost:5000/orders/${userInfo.userId}`)
       .then((res) => {
         setOrder(res.data.result);
-        console.log(res.data.result);
-        console.log(userInfo.userId);
-        // final_price(res.data.result);
       })
       .catch((err) => {});
+  };
+  const onToken = (token) => {
+    console.log(token);
   };
   useEffect(() => {
     getALlUserOrder();
   }, []);
+  setTimeout(() => {
+    final_price();
+  }, 1000);
   return (
     <>
       <div>
@@ -64,8 +70,8 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                       <td>{ord.nameProduct && ord.nameProduct}</td>
                       <td>{ord.price && ord.price} JD</td>
                       <td>
-                        <IoMdRemoveCircleOutline 
-                        className="max-min"
+                        <IoMdRemoveCircleOutline
+                          className="max-min"
                           onClick={() => {
                             axios
                               .put(
@@ -76,8 +82,6 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                                 }
                               )
                               .then((res) => {
-                                console.log(res.data);
-                                console.log(ord.id);
                                 getALlUserOrder();
                               })
                               .catch((err) => {
@@ -88,7 +92,7 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
 
                         {ord.quantity && ord.quantity}
                         <IoIosAddCircle
-                        className="max-min"
+                          className="max-min"
                           onClick={() => {
                             axios
                               .put(
@@ -99,9 +103,6 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                                 }
                               )
                               .then((res) => {
-                                console.log(res.data);
-                                console.log(ord.id);
-
                                 getALlUserOrder();
                               })
                               .catch((err) => {
@@ -120,7 +121,6 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
                                 `http://localhost:5000/orders/delete/${userInfo.userId}/${ord.product_id}`
                               )
                               .then((res) => {
-                                console.log(res.data);
                                 getALlUserOrder();
                               })
                               .catch((err) => {
@@ -135,6 +135,27 @@ const Cart = ({ userInfo, finalPrice, setFinalPrice }) => {
             </tbody>
           </table>
         </div>
+        <div className="divPrice">
+          <p className="finalprice">
+            Your Final Price:{finalPrice && finalPrice} JD
+          </p>
+        </div>
+      </div>
+      <div className="stripe">
+        <StripeCheckout
+          style={{ width: "20%", "background-image": "none" }}
+          label="pay"
+          name="jebnalk"
+          currency="jod"
+          panelLabel="Buy"
+          // amount = {finalPrice}
+          token={onToken}
+          stripeKey="pk_test_51KPGonGxWziBD99WBnUQCBsLEOyRUw97hQpp53bgiNu1dLCmysV7OyGMLesafuguPkZvFp3tOsbRoTitdiCXvdpw00Ztg1W3bO"
+        >
+        <button className="btn btn-primary">
+        check out
+        </button>
+        </StripeCheckout>
       </div>
     </>
   );
