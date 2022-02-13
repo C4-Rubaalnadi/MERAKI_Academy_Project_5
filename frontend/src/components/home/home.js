@@ -23,8 +23,6 @@ const Home = ({ userInfo, setWishList }) => {
   const [user_id, setUser_id] = useState(userInfo.userId);
   const [cart, setCart] = useState();
   const [oreder, setOreder] = useState();
-  console.log(oreder);
-  console.log(cart);
   const state = useSelector((state) => {
     return {
       token: state.loginReducer.token,
@@ -87,9 +85,6 @@ const Home = ({ userInfo, setWishList }) => {
       .get(`http://localhost:5000/orders/${userInfo.userId}`)
       .then((res) => {
         setCart(res.data.result);
-        console.log(res.data.result);
-        console.log(userInfo.userId);
-        // final_price(res.data.result);
       })
       .catch((err) => {});
   };
@@ -129,16 +124,13 @@ const Home = ({ userInfo, setWishList }) => {
                 user_id,
               })
               .then((res) => {
-                console.log(res.data);
                 setQuantity(0);
-                // ord.quantity +=1
               })
               .catch((err) => {
                 throw err;
               });
           }
-        });
-      console.log(ord.id);
+        });+
       setOreder(ord);
     }
   };
@@ -146,7 +138,6 @@ const Home = ({ userInfo, setWishList }) => {
   useEffect(() => {
     getALlUserOrder();
   }, []);
-  console.log(checkCart());
   //========================================
 
   return (
@@ -250,7 +241,6 @@ const Home = ({ userInfo, setWishList }) => {
                                       }
                                     )
                                     .then((res) => {
-                                      console.log(res.data);
                                       setWishList(res.data);
                                     })
                                     .catch((err) => {
