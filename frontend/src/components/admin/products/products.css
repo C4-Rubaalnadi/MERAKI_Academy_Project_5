@@ -5,7 +5,6 @@
   box-shadow: 0 0 10px silver;
   position: relative;
   margin-right: 6ch;
-  font-family: system-ui;
   padding-bottom: 10ch;
   align-items: center;
   left: 3ch;
@@ -22,9 +21,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  
   top: 1%;
 }
+
 .child{
   background-color: white;
 }
@@ -65,10 +64,8 @@
 .thPrice, .thAction {
   width: 12ch;
   border: none;
-  border-bottom: 1px solid silver;
-  border-top: 1px solid silver;
-  border-right: 1px solid silver;
-  border-left: 1px solid silver;
+  border: 1px solid silver;
+  border-radius: 5px;
   font-size: large;
   font-family: cursive;
   text-align: center;
@@ -76,10 +73,8 @@
 
 .thProduct {
   border: none;
-  border-bottom: 1px solid silver;
-  border-top: 1px solid silver;
-  border-right: 1px solid silver;
-  border-left: 1px solid silver;
+  border: 1px solid silver;
+  border-radius: 5px;
   width: 18ch;
   font-size: large;
   font-family: cursive;
@@ -90,10 +85,8 @@
   font-family: monospace;
   font-weight: bold;
   font-size: 1.3em;
-  border-bottom: 1px solid silver;
-  border-top: 1px solid silver;
-  border-right: 1px solid silver;
-  border-left: 1px solid silver;
+  border: 1px solid silver;
+  border-radius: 5px;
 }
 
 .table {
@@ -129,7 +122,7 @@
   color: red;
 }
 
-.editIcon:hover, .deleteIcon:hover {
+.editIcon:hover {
   cursor: pointer;
   color: rgb(1, 88, 1);
 }
