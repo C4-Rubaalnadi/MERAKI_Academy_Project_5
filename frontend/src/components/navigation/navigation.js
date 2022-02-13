@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
+import { MdDashboard } from "react-icons/md";
+
 
 //===============================================================
 
@@ -45,7 +47,10 @@ const Navigation = ({ userInfo }) => {
                 className="Link"
                 to={userInfo.role === 1 ? "/home" : "/admin"}
               >
-                {userInfo.role === 1 ? "Home" : "Dashboard"}
+                {userInfo.role === 1 ? (
+"Home"
+                )
+                 : (<div><MdDashboard className="dash" /> Dashboard</div>)}
               </Link>
               <div className="divLogout">
                 <i id="logoutIcon" class="fas fa-sign-out-alt"></i>

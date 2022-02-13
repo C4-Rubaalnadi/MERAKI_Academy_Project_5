@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { MdOutlineAddAPhoto } from "react-icons/md";
+import { Navigate, useNavigate } from "react-router-dom";
 import "../cloudinary/cloudinary.css";
-const Cloudinary = () => {
+
+const Cloudinary = ({ setCloudinary }) => {
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
   const [show, setShow] = useState(false);
@@ -10,8 +12,6 @@ const Cloudinary = () => {
   const [price, setPrice] = useState("");
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
-
-  
 
   //==============================================
   //cloudinary to upload images
@@ -34,7 +34,11 @@ const Cloudinary = () => {
   const handleAddProduct = () => {
     axios
       .post(`http://localhost:5000/products/`, {
-        image:url, nameProduct, description, price, type
+        image: url,
+        nameProduct,
+        description,
+        price,
+        type,
       })
       .then((res) => {
         console.log(res.data);
@@ -43,7 +47,8 @@ const Cloudinary = () => {
         setDescription("");
         setType("");
         setShow(false);
-        setUrl("")
+        setUrl("");
+        setCloudinary(false);
       })
       .catch((err) => console.log(err));
   };
