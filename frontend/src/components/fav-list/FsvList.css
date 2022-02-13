@@ -5,3 +5,8 @@
     width: 80%;
     cursor: pointer;
 }
+.fav{
+    display: flex;
+    flex-flow: wrap;
+    margin-top: 8%;
+}
