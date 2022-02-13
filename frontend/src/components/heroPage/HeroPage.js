@@ -5,13 +5,12 @@ import { AiOutlineSend } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineMail } from "react-icons/ai";
-
+// import ruba from "../hero-imge/ruba.jpg"
 const images = [
   "https://pic.i7lm.com/wp-content/uploads/2019/06/%D8%A7%D9%84%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D8%B7%D8%A7%D8%B2%D8%AC%D8%A9.jpg",
   "https://static.webteb.net/images/content/tbl_articles_article_21078_460f8c96881-5f31-4b15-9545-734665e83676.jpg",
   "https://iamahuman2015.com/wp-content/uploads/2018/09/healthy-food-shopping.jpg",
 ];
-
 export default function HeroPage() {
   const navigate = useNavigate();
 
@@ -43,9 +42,10 @@ export default function HeroPage() {
 
   return (
     <>
-      <div className="slideshow">
+      <div className="slideshow" key={"slideshow"}>
         <div
           className="slideshowSlider"
+          key= {"slideshowSlider"}
           style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         >
           {images.map((backgroundImage, index) => (
@@ -57,7 +57,7 @@ export default function HeroPage() {
           ))}
         </div>
 
-        <div className="slideshowDots">
+        <div className="slideshowDots" key={"slideshowDots"}>
           {images.map((_, idx) => (
             <div
               key={idx}
@@ -69,9 +69,9 @@ export default function HeroPage() {
           ))}
         </div>
       </div>
-      <div className="parOfNav">
-        <div className="nav-infoo">
-          <div className="infoo">
+      <div className="parOfNav" key={"parOfNav"}>
+        <div className="nav-infoo" key={"nav-infoo"}>
+          <div className="infoo" key={"infoo"}>
             <p className="jebnalakHero">
               {" "}
               <span className="jebna-hero">Jebna</span>
@@ -97,9 +97,9 @@ export default function HeroPage() {
           </div>
         </div>
       </div>
-      <div className="about-us">
-        <div className="contaner-about">
-          <div className="about">
+      <div className="about-us" key={"about-us"}>
+        <div className="contaner-about" key={"contaner-about"}>
+          <div className="about" key={"about1"}>
             <img
               src="https://c.neh.tw/thumb/f/720/comhiclipartmepgu.jpg"
               style={{ width: "20%" }}
@@ -112,9 +112,10 @@ export default function HeroPage() {
               type and scrambled it to make a type specimen book.
             </p>
           </div>
-          <div className="about">
+          <div className="about"key={"about2"}>
             <img
               src="https://c.neh.tw/thumb/f/720/comhiclipartmepgu.jpg"
+              alt="ruba"
               style={{ width: "20%" }}
             />
             <h4> Ruba </h4>
@@ -125,7 +126,7 @@ export default function HeroPage() {
               type and scrambled it to make a type specimen book.
             </p>
           </div>
-          <div className="about">
+          <div className="about" key={"about3"}>
             <img
               src="https://c.neh.tw/thumb/f/720/comhiclipartmepgu.jpg"
               style={{ width: "20%" }}
@@ -140,12 +141,12 @@ export default function HeroPage() {
           </div>
         </div>
       </div>
-      <div className="hero-product">
-        <div className="product-contnt"></div>
+      <div className="hero-product"key={"hero-product"}>
+        <div className="product-contnt" key={"product-contnt"}></div>
       </div>
-      <div className="footer">
-        <div className="foot-content">
-          <div className="foot-info">
+      <div className="footer" key={"footer"}>
+        <div className="foot-content" key={"foot-content"}>
+          <div className="foot-info" key={"foot-info"}>
             <p> Jebnalak</p>
             <h5>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -154,17 +155,17 @@ export default function HeroPage() {
               type and scrambled it to make a type specimen book.
             </h5>
           </div>
-          <div className="hero-email">
+          <div className="hero-email" key={"hero-email"}>
             <input type="email" placeholder="type your email .." />
             <AiOutlineSend className="hero-send" />
           </div>
         </div>
-        <div className="foot-end">
+        <div className="foot-end" key={"foot-end"}>
           <p>Copyright &copy; 2022 spacingtech rights reserved</p>
-          <div className="foot-icon">
-            <BsFacebook />
-            <AiOutlineInstagram />
-            <AiOutlineMail />
+          <div className="foot-icon" key={"foot-icon"}>
+            <BsFacebook key={"face-icon"}/>
+            <AiOutlineInstagram key={"insta-icon"} />
+            <AiOutlineMail key={"email-icon"} />
           </div>
         </div>
       </div>
