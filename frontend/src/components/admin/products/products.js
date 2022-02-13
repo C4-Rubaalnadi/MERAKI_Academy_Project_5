@@ -52,7 +52,7 @@ const Products = () => {
         <div className="divTable">
           {cloudinary ? (
             <div className="divCloudinary">
-              <Cloudinary />
+              <Cloudinary setCloudinary={setCloudinary}/>
             </div>
           ) : (
             <table className="table">
