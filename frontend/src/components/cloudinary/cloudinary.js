@@ -41,7 +41,6 @@ const Cloudinary = ({ setCloudinary }) => {
         type,
       })
       .then((res) => {
-        console.log(res.data);
         setPrice("");
         setNameProduct("");
         setDescription("");
@@ -56,7 +55,14 @@ const Cloudinary = ({ setCloudinary }) => {
   //=====================================================
   return (
     <div className="AddContainer">
-      <img className="addImg" src={url}></img>
+      <img
+        className="addImg"
+        src={
+          url
+            ? url
+            : "https://cdn.learnwoo.com/wp-content/uploads/2016/11/Adding-Products_Cropped.png"
+        }
+      ></img>
       <div>
         <div>
           <MdOutlineAddAPhoto
@@ -66,7 +72,7 @@ const Cloudinary = ({ setCloudinary }) => {
             }}
           />
           {show ? (
-            <div>
+            <div className="divChoose">
               <input
                 className="typeFile"
                 type="file"
@@ -78,47 +84,57 @@ const Cloudinary = ({ setCloudinary }) => {
             <></>
           )}
         </div>
-        <div className="addName">
-          name :
-          <input
-            placeholder="name"
-            value={nameProduct}
-            onChange={(e) => {
-              setNameProduct(e.target.value);
-            }}
-          ></input>{" "}
-          <div className="addprice">
-            price:{" "}
+        <div className="divInput">
+          <div className="addName">
+            <label>Name :</label>
+          </div>
+          <div className="input">
             <input
-              placeholder="price"
+              className="inputCloudinary"
+              placeholder="Name ..."
+              value={nameProduct}
+              onChange={(e) => {
+                setNameProduct(e.target.value);
+              }}
+            />
+          </div>
+          <div className="addprice">
+            <label>Price :</label>
+          </div>
+          <div className="input">
+            <input className="inputCloudinary"
+              placeholder="Price ..."
               value={price}
               onChange={(e) => {
                 setPrice(e.target.value);
               }}
+            />
+          </div>
+          <div className="adddescription">
+            <label>Description :</label>
+          </div>
+          <div className="input">
+            <input className="inputCloudinary"
+              placeholder="Description ..."
+              value={description}
+              onChange={(e) => {
+                setDescription(e.target.value);
+              }}
+            ></input>
+          </div>
+          <div className="adddescription">
+            <label>Category :</label>
+          </div>
+          <div className="input">
+            <input className="inputCloudinary"
+              placeholder="Category ..."
+              value={type}
+              onChange={(e) => {
+                setType(e.target.value);
+              }}
             ></input>
           </div>
         </div>
-        <br />
-        <div className="adddescription">
-          description:{" "}
-          <input
-            placeholder="description"
-            value={description}
-            onChange={(e) => {
-              setDescription(e.target.value);
-            }}
-          ></input>
-        </div>
-      </div>
-      <div className="adddescription">
-        Category :{" "}
-        <input
-          placeholder="category"
-          value={type}
-          onChange={(e) => {
-            setType(e.target.value);
-          }}
-        ></input>
       </div>
       <button className="addButton" onClick={handleAddProduct}>
         Add products
