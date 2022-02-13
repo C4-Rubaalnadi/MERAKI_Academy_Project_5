@@ -130,7 +130,7 @@ const Home = ({ userInfo, setWishList }) => {
                 throw err;
               });
           }
-        });+
+        });
       setOreder(ord);
     }
   };
