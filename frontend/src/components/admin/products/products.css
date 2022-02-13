@@ -4,9 +4,6 @@
   justify-content: center;
   box-shadow: 0 0 10px silver;
   position: relative;
-  /* left: 3ch; */
-  /* right: 3ch;  */
-  /* margin: auto; */
   margin-right: 6ch;
   font-family: system-ui;
   padding-bottom: 10ch;
@@ -22,7 +19,7 @@
   margin-left: 3.2ch;
   margin-right: 3.2ch;
   box-shadow: 0 0 10px silver;
-  margin-top: 5%;
+  margin-top: 6.5%;
 }
 
 .productPage {
