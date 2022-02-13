@@ -2,18 +2,21 @@
   height: 75vh;
   margin: 4ch;
   background-color: rgb(245, 245, 245);
+  margin-top: 8ch;
 }
 
 .adminPageWrapper {
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 4ch;
 }
 
 .pageContainer {
   height: 100%;
   display: flex;
   flex-direction: row;
+  margin-top: 4ch;
 }
 
 .sideBar {
