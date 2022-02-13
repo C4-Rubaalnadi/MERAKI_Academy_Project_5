@@ -66,6 +66,7 @@
 .divContainer{
   width: 80vw;
   height: 70vh;
+  display: flex;
 }
 .user-cont{
   display: flex;
@@ -84,4 +85,11 @@
 .history:hover{
   color:orange;
   cursor: pointer;
+}
+.favorate{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 75%;
+  margin-left: 11%;
 }
