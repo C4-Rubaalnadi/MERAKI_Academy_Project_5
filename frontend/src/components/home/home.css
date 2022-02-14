@@ -122,7 +122,7 @@ select::-ms-expand {
   height: 50vh;
   width: 18vw;
   position: relative;
-  box-shadow: 1px 1px 5px orange;
+  box-shadow: 1px 1px 5px black;
   border-radius: 3%
 }
 
