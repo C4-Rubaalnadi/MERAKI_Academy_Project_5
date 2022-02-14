@@ -3,8 +3,10 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import "./cartStyle.css";
 import { IoIosAddCircle, IoMdRemoveCircleOutline } from "react-icons/io";
+import { FaOpencart } from "react-icons/fa";
 import { TiDelete } from "react-icons/ti";
 import StripeCheckout from "react-stripe-checkout";
+
 const Cart = ({ userInfo }) => {
   const [order, setOrder] = useState();
   const [finalPrice, setFinalPrice] = useState(0);
@@ -23,6 +25,8 @@ const Cart = ({ userInfo }) => {
     setFinalPrice(final);
   };
 
+  // ---------------------------------------------------------------------------------
+
   const getALlUserOrder = () => {
     axios
       .get(`http://localhost:5000/orders/${userInfo.userId}`)
@@ -31,31 +35,43 @@ const Cart = ({ userInfo }) => {
       })
       .catch((err) => {});
   };
+
+  // ---------------------------------------------------------------------------------
+
   const deleteAllCartOfUser = () => {
     axios
       .delete(`http://localhost:5000/orders/deleteCart/${userInfo.userId}`)
       .then((res) => {
         getALlUserOrder();
       })
-      .catch((err) => {throw err});
+      .catch((err) => {
+        throw err;
+      });
   };
+
+  // ---------------------------------------------------------------------------------
+
   const onToken = (token) => {
-    console.log(token);
     deleteAllCartOfUser();
   };
+
   useEffect(() => {
     getALlUserOrder();
   }, []);
   setTimeout(() => {
     final_price();
   }, 1000);
+
   return (
     <>
-      <div>
-        <div className="myCartTitle">
-          <p> My Cart </p>
+      <div className="divContainerCart">
+        <div className="divCartPage">
+          <div className="cartPage">
+            <FaOpencart className="cloud" />
+            <h1>My Cart</h1>
+          </div>
         </div>
-        <br />
+        <div className="underLineCart"></div>
         <div className="divTable">
           <table className="table">
             <thead>
@@ -142,31 +158,30 @@ const Cart = ({ userInfo }) => {
                 })}
             </tbody>
           </table>
-        <div className="divPrice">
-          <p className="finalprice">
-            Total Price:{finalPrice && finalPrice} JD
-          </p>
+          <div className="divPrice">
+            <p className="finalprice">
+              Total Price:{finalPrice && finalPrice} JD
+            </p>
+          </div>
+          <div className="stripe">
+            <StripeCheckout
+              style={{ width: "20%", "background-image": "none" }}
+              label="pay"
+              name="jebnalk"
+              currency="jod"
+              panelLabel="Buy"
+              onClick={() => {
+                console.log("hi");
+              }}
+              // amount = {finalPrice}
+              token={onToken}
+              stripeKey="pk_test_51KPGonGxWziBD99WBnUQCBsLEOyRUw97hQpp53bgiNu1dLCmysV7OyGMLesafuguPkZvFp3tOsbRoTitdiCXvdpw00Ztg1W3bO"
+            >
+              <div><button className="btn">Check Out</button></div>
+            </StripeCheckout>
+          </div>  
         </div>
-        </div>
-      </div>
-      <div className="stripe">
-        <StripeCheckout
-          style={{ width: "20%", "background-image": "none" }}
-          label="pay"
-          name="jebnalk"
-          currency="jod"
-          panelLabel="Buy"
-          onClick={()=>{
-            console.log('hi');
-          }}
-          // amount = {finalPrice}
-          token={onToken}
-          stripeKey="pk_test_51KPGonGxWziBD99WBnUQCBsLEOyRUw97hQpp53bgiNu1dLCmysV7OyGMLesafuguPkZvFp3tOsbRoTitdiCXvdpw00Ztg1W3bO"
-        >
-        <button className="btn btn-primary">
-        check out
-        </button>
-        </StripeCheckout>
+        
       </div>
     </>
   );
