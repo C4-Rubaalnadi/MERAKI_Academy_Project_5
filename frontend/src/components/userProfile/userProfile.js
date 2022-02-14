@@ -112,7 +112,7 @@ const UserProfile = ({ userInfo }) => {
                       })
                     ) : (
                       <div>
-                        <p> I don't have history order yet </p>
+                        <p className="history-mass"> I don't have history order yet </p>
                       </div>
                     )}
                   </tbody>
