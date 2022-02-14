@@ -31,22 +31,22 @@ const Orders = () => {
         <div className="order-table">
           <table>
             <tr>
-              <th>Cart id</th>
-              <th>Product Name</th>
-              <th>quantity</th>
-              <th>Category</th>
-              <th> Client </th>
+              <th className="thOrder">Cart ID</th>
+              <th className="thOrder">Product Name</th>
+              <th className="thOrder">Quantity</th>
+              <th className="thOrder">Category</th>
+              <th className="thOrder"> Client </th>
             </tr>
             {orders &&
               orders.map((order) => {
                 return (
                   <>
                     <tr>
-                      <td> {order.id && order.id} </td>
-                      <td>{order.nameProduct && order.nameProduct}</td>
-                      <td>{order.quantity && order.quantity}</td>
-                      <td>{order.type && order.type}</td>
-                      <td>
+                      <td className="tdOrder"> {order.id && order.id} </td>
+                      <td className="tdOrder">{order.nameProduct && order.nameProduct}</td>
+                      <td className="tdOrder">{order.quantity && order.quantity}</td>
+                      <td className="tdOrder">{order.type && order.type}</td>
+                      <td className="tdOrder">
                         {order.firstName && order.firstName}
                         {order.lastName && order.lastName}
                       </td>
