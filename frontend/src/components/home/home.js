@@ -154,7 +154,7 @@ const Home = ({ userInfo, setWishList }) => {
               >
                 <option>Category</option>
                 {/* <option>all</option> */}
-                <option>snake</option>
+                <option>snack</option>
                 <option>meat</option>
                 <option>pasta</option>
                 <option>millk_egg</option>
