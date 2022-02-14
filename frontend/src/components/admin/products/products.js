@@ -4,11 +4,18 @@ import React, { useEffect, useState } from "react";
 import { BsCloudPlusFill } from "react-icons/bs";
 import { TiDelete } from "react-icons/ti";
 import { BiEditAlt } from "react-icons/bi";
+import {MdCreditScore} from "react-icons/md";
 import Cloudinary from "../../cloudinary/cloudinary";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [cloudinary, setCloudinary] = useState(false);
+  const [image, setImage] = useState("");
+  const [nameProduct, setNameProduct] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState();
+  const [type, setType] = useState("");
+  const [update, setUpdate] = useState(false);
 
   const getAllProducts = () => {
     axios
@@ -34,6 +41,26 @@ const Products = () => {
       .catch((err) => {});
   };
 
+  // -------------------------------------------------------------------
+
+  const updateProductById = (id) => {
+    axios
+      .patch(`http://localhost:5000/products/${id}`, {
+        image,
+        nameProduct,
+        description,
+        price,
+        type,
+      })
+      .then((res) => {
+        getAllProducts();
+        console.log(res);
+      })
+      .catch((err) => {});
+  };
+
+  // -------------------------------------------------------------------
+
   return (
     <>
       <div className="divContainerPro">
@@ -52,7 +79,7 @@ const Products = () => {
         <div className="divTable">
           {cloudinary ? (
             <div className="divCloudinary">
-              <Cloudinary setCloudinary={setCloudinary}/>
+              <Cloudinary setCloudinary={setCloudinary} />
             </div>
           ) : (
             <table className="table">
@@ -71,25 +98,96 @@ const Products = () => {
                   products.map((product, index) => {
                     return (
                       <tr key={index}>
-                        <td>
-                          <img
-                            className="productImage"
-                            src={product.image && product.image}
-                          />
-                        </td>
-                        <td>{product.nameProduct && product.nameProduct}</td>
-                        <td>{product.description && product.description}</td>
-                        <td>{product.price && product.price} JD</td>
-                        <td>{product.type && product.type}</td>
-                        <td>
-                          <BiEditAlt className="editIcon" />
-                          <TiDelete
-                            className="deleteIcon"
-                            onClick={() => {
-                              deleteProductById(product.id)
-                            }}
-                          />
-                        </td>
+                        {update ? (
+                          <>
+                            {" "}
+                            <td>
+                              <img
+                                className="productImage"
+                                src={product.image && product.image}
+                              />
+                            </td>
+                            <td>
+                              <input
+                              className="inputUpdatePro"
+                                defaultValue={product.nameProduct}
+                                onChange={(e) => {
+                                  setNameProduct(e.target.value);
+                                }}
+                              />
+                            </td>
+                            <td>
+                              <input
+                              className="inputUpdatePro"
+                                defaultValue={product.description}
+                                onChange={(e) => {
+                                  setDescription(e.target.value);
+                                }}
+                              />
+                            </td>
+                            <td>
+                              <input className="inputUpdatePro"
+                                defaultValue={product.price + ` JD`}
+                                onChange={(e) => {
+                                  setPrice(e.target.value);
+                                }}
+                              />
+                            </td>
+                            <td>
+                              <input className="inputUpdatePro"
+                                defaultValue={product.type}
+                                onChange={(e) => {
+                                  setType(e.target.value);
+                                }}
+                              />
+                            </td>
+                            <td>
+                              <MdCreditScore
+                                className="editIcon"
+                                onClick={() => {
+                                  updateProductById(product.id)
+                                  setUpdate(false)
+                                }}
+                              />
+                            </td>
+                          </>
+                        ) : (
+                          <>
+                            <td>
+                              <img
+                                className="productImage"
+                                src={product.image && product.image}
+                              />
+                            </td>
+                            <td>
+                              {product.nameProduct && product.nameProduct}
+                            </td>
+                            <td>
+                              {product.description && product.description}
+                            </td>
+                            <td>{product.price && product.price} JD</td>
+                            <td>{product.type && product.type}</td>
+                            <td>
+                              <BiEditAlt
+                                className="editIcon"
+                                onClick={() => {
+                                  setUpdate(true);
+                                  setImage(product.image)
+                                  setNameProduct(product.nameProduct);
+                                  setDescription(product.description);
+                                  setPrice(product.price);
+                                  setType(product.type);
+                                }}
+                              />
+                              <TiDelete
+                                className="deleteIcon"
+                                onClick={() => {
+                                  deleteProductById(product.id);
+                                }}
+                              />
+                            </td>
+                          </>
+                        )}
                       </tr>
                     );
                   })}
