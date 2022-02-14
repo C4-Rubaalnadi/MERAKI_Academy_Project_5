@@ -47,11 +47,13 @@
 
 .thUsers, .tdUsers td {
   border: none;
-  border: 1px solid black;
+  border: 1px solid rgb(153, 151, 151);
   border-radius: 5px;
   text-align: center;
   font-family: system-ui;
   font-weight: bolder;
+  
+
 }
 
 .thUsers, .thRole {
@@ -67,7 +69,7 @@
 .thRole {
   width: 20vw;
   border: none;
-  border: 1px solid black;
+  border: 1px solid rgb(153, 151, 151);
   border-radius: 5px;
   text-align: center;
 }

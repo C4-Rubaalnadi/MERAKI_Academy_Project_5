@@ -1,14 +1,56 @@
+.divOrderPage {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+  box-shadow: 0 0 10px silver;
+  margin-top: 6.5%;
+}
+
+.OrderPage {
+    display: flex;
+  flex-direction: row;
+  text-align: left;
+  margin-left: 1ch;
+  margin-bottom: 2ch;
+  margin-top: 2ch;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: underline;
+}
+
+.orderIcon {
+    font-size: 5ch;
+  margin-left: 1.5ch;
+  margin-right: 0.5ch;
+  margin-top: 0.3ch;
+}
+
+.underLineO {
+    height: 3ch;
+  border: solid 1px white;
+  box-shadow: 0 0 20px silver;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+}
+
 .order-table{
     display: flex;
-    background-color: rgb(245, 245, 245);
-    margin: 4ch;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 10px silver;
+  position: relative;
+  margin-right: 6ch;
+  font-family: system-ui;
+  padding-bottom: 10ch;
+  align-items: center;
+  left: 3ch;
+  right: 3ch;
 }
+
 .order-table table{
     font-family: arial, sans-serif;
-    border-collapse: collapse;
+    border-collapse: separate;
     width: 100%;
 }
 .order-table table td, th{

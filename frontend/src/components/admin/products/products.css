@@ -1,30 +1,30 @@
-.divTable{
+.divTable {
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 0 10px silver;
   position: relative;
   margin-right: 6ch;
+  font-family: system-ui;
   padding-bottom: 10ch;
   align-items: center;
   left: 3ch;
   right: 3ch;
- 
 }
 
-.addPro{
+.addPro {
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: white;
-  opacity:1;
+  opacity: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
   top: 1%;
 }
 
-.child{
+.child {
   background-color: white;
 }
 
@@ -60,32 +60,41 @@
   color: rgb(90, 89, 89);
 }
 
-
-.thPrice, .thAction {
+.thPrice,
+.thAction {
   width: 12ch;
   border: none;
-  border: 1px solid silver;
-  border-radius: 5px;
+  border-bottom: 1px solid silver;
+  border-top: 1px solid silver;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
   font-size: large;
   font-family: cursive;
   text-align: center;
+  border-radius: 5px;
 }
 
 .thProduct {
   border: none;
-  border: 1px solid silver;
-  border-radius: 5px;
+  border-bottom: 1px solid silver;
+  border-top: 1px solid silver;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
   width: 18ch;
   font-size: large;
   font-family: cursive;
   text-align: center;
+  border-radius: 5px;
 }
 
 .tdProduct td {
   font-family: monospace;
   font-weight: bold;
   font-size: 1.3em;
-  border: 1px solid silver;
+  border-bottom: 1px solid silver;
+  border-top: 1px solid silver;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
   border-radius: 5px;
 }
 
@@ -122,7 +131,8 @@
   color: red;
 }
 
-.editIcon:hover {
+.editIcon:hover,
+.deleteIcon:hover {
   cursor: pointer;
   color: rgb(1, 88, 1);
 }
