@@ -93,7 +93,7 @@ const Users = () => {
         ) : (
           <></>
         )}
-        <table>
+        <table className="tableUsers">
           <tr>
             <th className="thUsers">Image</th>
             <th className="thUsers">Name</th>
