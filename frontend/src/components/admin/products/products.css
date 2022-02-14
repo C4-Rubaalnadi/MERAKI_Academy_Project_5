@@ -81,9 +81,9 @@
 }
 
 .tdProduct td {
-  font-family: monospace;
+  font-family: Georgia	;
   font-weight: bold;
-  font-size: 1.3em;
+  /* font-size: 1.3em; */
   border: 1px solid silver;
   border-radius: 5px;
 }
@@ -112,12 +112,12 @@
 }
 
 .editIcon {
-  font-size: 4ch;
+  font-size: 3vw;
   color: green;
 }
 
 .deleteIcon {
-  font-size: 4ch;
+  font-size: 3vw;
   color: red;
 }
 
@@ -130,4 +130,14 @@
 .deleteIcon:hover {
   cursor: pointer;
   color: rgb(187, 3, 3);
+}
+
+.inputUpdatePro {
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid;
+  font-size: medium;
+  font-family: Georgia	;
+  font-weight: bold;
+  outline: none;
 }
