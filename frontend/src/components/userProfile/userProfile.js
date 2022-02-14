@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import "./userProfile.css";
 import { useNavigate } from "react-router-dom";
 import FsvList from "../fav-list/FsvList";
+import axios from "axios";
 //======================================================
 
 const UserProfile = ({ userInfo }) => {
@@ -12,7 +13,18 @@ const UserProfile = ({ userInfo }) => {
       token: state.loginReducer.token,
     };
   });
+  const [history, setHistory] = useState();
+  const getAllHistoryCartOfUser = () => {
+    axios
+      .get(`http://localhost:5000/orders/gethistory/${userInfo.userId}`)
+      .then((res) => {
+        console.log(res.data.result);
+        setHistory(res.data.result);
+      })
+      .catch((err) => {});
+  };
   const [favStatus, setFavStatus] = useState(false);
+  const [hisStatus, setHisStatus] = useState(false);
   const imag =
     "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg";
   const navigate = useNavigate();
@@ -31,6 +43,7 @@ const UserProfile = ({ userInfo }) => {
               className="favorate"
               onClick={() => {
                 setFavStatus(true);
+                setHisStatus(false);
               }}
             >
               <p className="fl">My favorate list</p>
@@ -38,10 +51,18 @@ const UserProfile = ({ userInfo }) => {
             <div
               className="history"
               onClick={() => {
+                setHisStatus(true);
                 setFavStatus(false);
               }}
             >
-              <p className="history">My history</p>
+              <div
+                className="mh"
+                onClick={() => {
+                  getAllHistoryCartOfUser();
+                }}
+              >
+                <p className="history">My history</p>
+              </div>
             </div>
           </div>
         </div>
@@ -54,42 +75,56 @@ const UserProfile = ({ userInfo }) => {
         ) : (
           <></>
         )}
+        <div className="divHistory">
+          {hisStatus ? (
+            <>
+              <p>My history order</p>
+              <div className="hist">
+                <table className="histTable">
+                  <thead className="thCart">
+                    <tr>
+                      <th>Product</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {history ? (
+                      history.map((hist, index) => {
+                        return (
+                          <tr key={index} className="trCart">
+                            <td>
+                              <img
+                                className="cartImg"
+                                src={hist.image && hist.image}
+                              />
+                            </td>
+                            <td>{hist.nameProduct && hist.nameProduct}</td>
+                            <td>{hist.price && hist.price} JD</td>
+                            <td>{hist.quantity && hist.quantity}</td>
+                            <td>
+                              {hist.price && hist.price * hist.quantity} JD
+                            </td>
+                          </tr>
+                        );
+                      })
+                    ) : (
+                      <div>
+                        <p> I don't have history order yet </p>
+                      </div>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </>
   );
 };
 export default UserProfile;
-{
-  /*{userInfo ? (
-          <>
-            <div>
-              <p className="welcome"> Welcome {userInfo.firstName} </p>
-            </div>
-            <div className="line"></div>
-            <div className="profile">
-              <p className="details">Account Details:</p>
-              <div className="userInfo">
-                <div className="prof-cont">
-                <div className="profileImg">
-                  <img src={imag} alt="userImg" className="userImg" />
-                </div>
-                <div className="infoProfile">
-                  <p>
-                    {" "}
-                    {userInfo.firstName} {userInfo.lastName}{" "}
-                  </p>
-                  <p> {userInfo.email} </p>
-                </div>
-                </div>
-            <div className="user-fav">
-              <p onClick={() => {
-                navigate("/fav")
-              }}> Your favorate list </p>
-            </div>
-              </div>
-            </div>
-          </>
-        ) : (
-          <></>
-        )}*/
-}

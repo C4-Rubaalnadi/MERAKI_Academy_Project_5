@@ -41,6 +41,44 @@ const getAllCartOfUser = (req, res) => {
     });
   });
 };
+//delete cart of user 
+const deleteAllCartOfUser = (req, res) => {
+const user_id = req.params.id;
+const query = `UPDATE cart SET is_deleted =? WHERE  user_id=? `;
+const data = [1, user_id];
+connection.query(query,data, (err, results) => {
+  if (err) {
+    res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+  res.status(201).json({
+    success: true,
+    message: "delete cart success of user",
+    result: results,
+  });
+});
+}
+// get history order of user 
+const getAllHistoryCartOfUser = (req, res) => {
+  const userId = req.params.id;
+  const query = `SELECT * FROM products INNER JOIN cart ON products.id = cart.product_id  WHERE cart.user_id = ? AND cart.is_deleted =?`;
+  const data = [userId, 1];
+  connection.query(query, data, (err, results) => {
+    if (err) {
+      res.status(500).json({
+        success: false,
+        message: "Server error",
+      });
+    }
+    res.status(201).json({
+      success: true,
+      message: "get history cart success ",
+      result: results,
+    });
+  });
+};
 //admin
 const getAllOrder = (req, res) => {
   const query = `SELECT * FROM cart INNER JOIN products ON  cart.product_id = products.id INNER JOIN users ON cart.user_id = users.id`;
@@ -177,5 +215,7 @@ module.exports = {
   deleteCartById,
   Add_wishList,
   getAllFavortListOfUser,
-  deleteProductOfUserInFAvList
+  deleteProductOfUserInFAvList,
+  deleteAllCartOfUser,
+  getAllHistoryCartOfUser
 };

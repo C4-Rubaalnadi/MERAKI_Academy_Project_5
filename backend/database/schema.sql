@@ -77,6 +77,8 @@ is_deleted TINYINT DEFAULT 0,
 PRIMARY KEY (id)
 );
 -- role //
+INSERT INTO roles (role) VALUES ("user");
+INSERT INTO roles (role) VALUES ("admin");
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/ad/76/03/ad7603e5bcd999ce4169c2f93525f2f4.jpg', 'shepase lays', 'lays wavy flavor cheese', 0.5 ,'snack');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES (' https://i.pinimg.com/564x/3a/83/5d/3a835d8ef7008cf7c758d6c778dc7897.jpg', 'shepase lays', 'lays flavor BBQ', 0.7 ,'snack');
