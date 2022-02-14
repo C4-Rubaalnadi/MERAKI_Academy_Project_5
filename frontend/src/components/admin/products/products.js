@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { BsCloudPlusFill } from "react-icons/bs";
 import { TiDelete } from "react-icons/ti";
 import { BiEditAlt } from "react-icons/bi";
-import {MdCreditScore} from "react-icons/md";
+import { MdCreditScore } from "react-icons/md";
 import Cloudinary from "../../cloudinary/cloudinary";
 
 const Products = () => {
@@ -109,7 +109,7 @@ const Products = () => {
                             </td>
                             <td>
                               <input
-                              className="inputUpdatePro"
+                                className="inputUpdatePro"
                                 defaultValue={product.nameProduct}
                                 onChange={(e) => {
                                   setNameProduct(e.target.value);
@@ -118,7 +118,7 @@ const Products = () => {
                             </td>
                             <td>
                               <input
-                              className="inputUpdatePro"
+                                className="inputUpdatePro"
                                 defaultValue={product.description}
                                 onChange={(e) => {
                                   setDescription(e.target.value);
@@ -126,7 +126,8 @@ const Products = () => {
                               />
                             </td>
                             <td>
-                              <input className="inputUpdatePro"
+                              <input
+                                className="inputUpdatePro"
                                 defaultValue={product.price + ` JD`}
                                 onChange={(e) => {
                                   setPrice(e.target.value);
@@ -134,7 +135,8 @@ const Products = () => {
                               />
                             </td>
                             <td>
-                              <input className="inputUpdatePro"
+                              <input
+                                className="inputUpdatePro"
                                 defaultValue={product.type}
                                 onChange={(e) => {
                                   setType(e.target.value);
@@ -145,8 +147,8 @@ const Products = () => {
                               <MdCreditScore
                                 className="editIcon"
                                 onClick={() => {
-                                  updateProductById(product.id)
-                                  setUpdate(false)
+                                  updateProductById(product.id);
+                                  setUpdate(false);
                                 }}
                               />
                             </td>
@@ -172,7 +174,7 @@ const Products = () => {
                                 className="editIcon"
                                 onClick={() => {
                                   setUpdate(true);
-                                  setImage(product.image)
+                                  setImage(product.image);
                                   setNameProduct(product.nameProduct);
                                   setDescription(product.description);
                                   setPrice(product.price);
