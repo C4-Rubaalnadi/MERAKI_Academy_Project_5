@@ -13,7 +13,6 @@
   flex-direction: row;
   text-align: left;
   margin-left: 1ch;
-  margin-bottom: 2ch;
   margin-top: 2ch;
   font-family: "Courier New", Courier, monospace;
   text-decoration: underline;
@@ -21,7 +20,7 @@
 
 .userIcon {
   font-size: 5ch;
-  margin-left: 2.5ch;
+  margin-left: 2ch;
   margin-right: 0.5ch;
   margin-top: 0.4ch;
 }
@@ -45,15 +44,17 @@
   margin-right: 3.2ch;
 }
 
+.tableUsers {
+  margin-top: 6ch;
+}
+
 .thUsers, .tdUsers td {
   border: none;
   border: 1px solid rgb(153, 151, 151);
   border-radius: 5px;
   text-align: center;
-  font-family: system-ui;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bolder;
-  
-
 }
 
 .thUsers, .thRole {
