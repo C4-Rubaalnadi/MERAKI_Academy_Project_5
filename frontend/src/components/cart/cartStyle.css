@@ -1,26 +1,47 @@
-.myCartTitle {
-  font-size: larger;
-  font-family: cursive;
-  font-weight: bold;
+.divCartPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+  box-shadow: 0 0 10px silver;
+  margin-top: 6.5%;
+}
+
+.cartPage {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  margin-left: 1ch;
+  margin-top: 2ch;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: underline;
+}
+
+.underLineCart {
+  height: 3ch;
+  border: solid 1px white;
+  box-shadow: 0 0 20px silver;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
 }
 
 .thCart th {
   border: none;
-  border-bottom: 1px solid rgb(223, 193, 138);
-  border-top: 1px solid rgb(223, 193, 138);
-  border-right: 1px solid rgb(223, 193, 138);
-  border-left: 1px solid rgb(223, 193, 138);
+  border: 1px solid silver;
   width: 20ch;
   font-size: large;
   font-family: cursive;
   text-align: center;
+  border-radius: 5px;
 }
 
 .trCart td {
   border: none;
-  border-bottom: 1px solid rgb(223, 193, 138);
+  border: 1px solid silver;
   font-size: medium;
   font-family: cursive;
+  border-radius: 5px;
 }
 
 .divTable {
@@ -34,35 +55,57 @@
   width: 150px;
   margin-top: 5%;
 }
+
 .max-min{
   cursor: pointer;
 }
+
 .divPrice{
   display: flex;
+  flex-direction: row;
   justify-content: end;
-  margin-left: 82%;
+  margin-left: 65%;
+  margin-top: 3ch;
 }
+
 .finalprice{
-  border: 1px solid orange;
   text-align: center;
-  padding: 1%;
-  font-family: cursive;
+  font-family: "Courier New", Courier, monospace;
+  font-size: x-large;
+  font-weight: bolder;
+  
 }
+
 .StripeCheckout span{
   background: orange;
   background-image: none;
  
 }
-.btn{
-  width: 13%;
-  height: 30px;
-  font-family: cursive;
-  font-weight: bolder;
-  border:2px solid orange;
-  border-radius: 4%;
-  cursor: pointer;
-  margin-top: 1%;
+
+.stripe {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: right;
+  margin-right: 26%;
+  margin-top: 2ch;
 }
+
+.btn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: large;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  border: solid 2px silver;
+  border-radius: 10px;
+  box-shadow: 0 0 5px silver;
+}
+
 .btn:hover{
-  background: rgba(255, 166, 0, 0.76);
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  border: white;
 }
