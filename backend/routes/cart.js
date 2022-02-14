@@ -10,7 +10,9 @@ const {
   deleteCartById,
   Add_wishList,
   getAllFavortListOfUser,
-  deleteProductOfUserInFAvList
+  deleteProductOfUserInFAvList,
+  deleteAllCartOfUser,
+  getAllHistoryCartOfUser
 } = require("../controllers/cart");
 const authentication = require("../middleware/authentication");
 
@@ -22,4 +24,6 @@ cartRouter.delete("/delete/:id/:product_id", deleteCartById);
 cartRouter.post("/add_wishList", Add_wishList);
 cartRouter.get("/FavortList/:idUser", getAllFavortListOfUser);
 cartRouter.delete("/deleteFavortList/:id", deleteProductOfUserInFAvList);
+cartRouter.delete("/deleteCart/:id", deleteAllCartOfUser);
+cartRouter.get("/gethistory/:id", getAllHistoryCartOfUser);
 module.exports = cartRouter;

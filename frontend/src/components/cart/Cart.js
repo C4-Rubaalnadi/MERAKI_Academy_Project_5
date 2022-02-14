@@ -21,7 +21,6 @@ const Cart = ({ userInfo }) => {
       final += order[i].price * order[i].quantity;
     }
     setFinalPrice(final);
-    console.log(final);
   };
 
   const getALlUserOrder = () => {
@@ -32,8 +31,17 @@ const Cart = ({ userInfo }) => {
       })
       .catch((err) => {});
   };
+  const deleteAllCartOfUser = () => {
+    axios
+      .delete(`http://localhost:5000/orders/deleteCart/${userInfo.userId}`)
+      .then((res) => {
+        getALlUserOrder();
+      })
+      .catch((err) => {throw err});
+  };
   const onToken = (token) => {
     console.log(token);
+    deleteAllCartOfUser();
   };
   useEffect(() => {
     getALlUserOrder();
@@ -134,11 +142,11 @@ const Cart = ({ userInfo }) => {
                 })}
             </tbody>
           </table>
-        </div>
         <div className="divPrice">
           <p className="finalprice">
-            Your Final Price:{finalPrice && finalPrice} JD
+            Total Price:{finalPrice && finalPrice} JD
           </p>
+        </div>
         </div>
       </div>
       <div className="stripe">
@@ -148,6 +156,9 @@ const Cart = ({ userInfo }) => {
           name="jebnalk"
           currency="jod"
           panelLabel="Buy"
+          onClick={()=>{
+            console.log('hi');
+          }}
           // amount = {finalPrice}
           token={onToken}
           stripeKey="pk_test_51KPGonGxWziBD99WBnUQCBsLEOyRUw97hQpp53bgiNu1dLCmysV7OyGMLesafuguPkZvFp3tOsbRoTitdiCXvdpw00Ztg1W3bO"

@@ -40,11 +40,10 @@
 .divPrice{
   display: flex;
   justify-content: end;
-  margin-right: 12%;
+  margin-left: 82%;
 }
 .finalprice{
   border: 1px solid orange;
-  width: 10%;
   text-align: center;
   padding: 1%;
   font-family: cursive;
@@ -62,6 +61,7 @@
   border:2px solid orange;
   border-radius: 4%;
   cursor: pointer;
+  margin-top: 1%;
 }
 .btn:hover{
   background: rgba(255, 166, 0, 0.76);
