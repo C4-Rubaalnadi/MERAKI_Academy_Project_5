@@ -165,6 +165,19 @@ const getAllCategory = (req, res) => {
   });
 };
 
+const getProductGroubedBy = (req,res) => {
+  const query = `SELECT * FROM products GROUP BY type   `;
+  connection.query(query, (err, results) => {
+    if (err) { throw err
+      res.status(500).json({
+        success: false,
+        message: "server error",
+      });
+    }
+    res.status(200).json({ success: true, message: ` all type`, result: results });
+  });
+};
+
 module.exports = {
   createNewProduct,
   getAllProducts,
@@ -174,4 +187,5 @@ module.exports = {
   getProductByName,
   getProductsByType,
   getAllCategory,
+  getProductGroubedBy,
 };
