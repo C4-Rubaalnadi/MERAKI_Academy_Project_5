@@ -119,3 +119,11 @@
   font-weight: bold;
   font-size: small;
 }
+@media (max-width: 800px) {
+  .divLogin{
+    width: 33vh;
+  }
+  .divLogin2{
+    width: 22vh;
+  }
+}

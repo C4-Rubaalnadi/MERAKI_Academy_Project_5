@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { MdDashboard } from "react-icons/md";
 import { MdSpaceDashboard } from "react-icons/md";
 
+
 //===============================================================
 
 const Navigation = ({ userInfo }) => {
@@ -24,9 +25,6 @@ const Navigation = ({ userInfo }) => {
   return (
     <>
       <div className="divNavigation">
-        {/* <div className="divJebnalak">
-          <h1 className="jebnalak">Jebna</h1><h1 className="jebnalak2">lak</h1>
-        </div> */}
         {state.isLoggedIn ? (
           <>
             <div className="divJebnalak">
@@ -74,20 +72,7 @@ const Navigation = ({ userInfo }) => {
             </div>
           </>
         ) : (
-          <>
-            {/* <div className="divJebnalak">
-              <h1 className="jebna">Jebna</h1>
-              <h1 className="jebnalak2">lak</h1>
-            </div> */}
-            {/* <div className="divLink2">
-              <Link className="Link" to="/register">
-                Register
-              </Link>
-              <Link className="Link" to="/login">
-                Login
-              </Link>
-            </div> */}
-          </>
+          <></>
         )}
       </div>
     </>

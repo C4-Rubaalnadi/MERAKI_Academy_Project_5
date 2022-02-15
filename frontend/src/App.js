@@ -57,7 +57,7 @@ function App() {
         <Route path="/orders" element={<Orders />} />
         <Route
           path="/fav"
-          element={<FsvList wishlist={wishlist} userInfo={userInfo} />}
+          element={<FsvList userInfo={userInfo} />}
         />
       </Routes>
     </div>

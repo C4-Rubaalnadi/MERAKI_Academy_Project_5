@@ -45,15 +45,43 @@
   margin: auto;
   gap: 8%;
   margin-top: 3%;
+  font-family: cursive;
 }
 
 .contaner-about p {
-  max-width: 100%;
+  max-width: 95%;
 }
+.about{
+  border:1px solid orange;
+  height: 63vh;
+  width: 28vw;
+}
+.about img{
+  margin-top: 2%;
+  border-radius: 50%
+}
+.about-us{
+  min-height: 70vh;
+}
+.contact{
+  margin-top: -4%;
+  font-family: cursive;
+}
+.contact button{
 
+  height: 5vh;
+      background: #fff;
+      border: 2px solid orange;
+      cursor: pointer;
+}
+.contact button:hover{
+  background-color: rgba(255, 204, 109, 0.76);
+}
 .footer {
   width: 100%;
   background-color: orange;
+  font-family: cursive;
+  font-size: medium;
 }
 
 .foot-content {
@@ -101,10 +129,13 @@
 }
 
 .shopNow {
-  text-align: left;
+  text-align: center;
   font-size: 1.3em;
-  text-decoration: underline;
   width: 10ch;
+  border: 1px solid orange;
+  color: #fff;
+  background-color: orange;
+  
 }
 
 .jebnalakHero {
@@ -114,8 +145,10 @@
 }
 
 .shopNow:hover {
-  cursor: pointer;
+  background-color: white;
   color: orange;
+  cursor: pointer;
+  transition: 0.8s;
 }
 
 .infoo {
@@ -190,8 +223,10 @@
 
 @media (max-width: 800px) {
   .parOfNav {
-    top: -25%;
-  }
+    top: -3vh;
+    left: -7vh;
+}
+  
   .hero-log {
     bottom: 27%;
     left: 40%;
@@ -199,6 +234,14 @@
   .hero-log p {
     font-size: 14px;
   }
+  .contaner-about{
+    width:100%;
+    margin-left: 5%;
+  }
+  .about{
+    height: 53vh;
+    width: 33vw;
+}
 }
 /* @media (max-width: 400px){
   .infoo p{
