@@ -61,7 +61,7 @@ const UserProfile = ({ userInfo }) => {
                   getAllHistoryCartOfUser();
                 }}
               >
-                <p className="history">My history</p>
+                <p className="history">My Orders</p>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ const UserProfile = ({ userInfo }) => {
         <div className="divHistory">
           {hisStatus ? (
             <>
-              <p>My history order</p>
+              <p>My Orders History</p>
               <div className="hist">
                 <table className="histTable">
                   <thead className="thCart">
