@@ -13,7 +13,7 @@ const UserProfile = ({ userInfo }) => {
       token: state.loginReducer.token,
     };
   });
-  const [history, setHistory] = useState();
+  const [history, setHistory] = useState([]);
   const getAllHistoryCartOfUser = () => {
     axios
       .get(`http://localhost:5000/orders/gethistory/${userInfo.userId}`)
@@ -91,7 +91,7 @@ const UserProfile = ({ userInfo }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    {history ? (
+                    {history.length != 0 ? (
                       history.map((hist, index) => {
                         return (
                           <tr key={index} className="trCart">
