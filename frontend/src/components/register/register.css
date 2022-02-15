@@ -10,17 +10,20 @@
 .divRegister {
   width: 30%;
   border: solid 0.1ch rgb(228, 226, 226);
+  margin-top: 3ch;
 }
 
 .TitleRegister {
   font-size: x-large;
   font-family: cursive;
   font-weight: bold;
+  margin-top: 2ch;
 }
 
 .paragRegister {
   font-family: system-ui;
   font-size: small;
+  margin-top: 1.5ch;
 }
 
 .formRegister {
@@ -34,7 +37,7 @@
 .inputRegister {
   border: none;
   border-bottom: 0.2ch solid;
-  width: 80%;
+  width: 75%;
   font-family: cursive;
   outline: none;
 }
@@ -86,7 +89,7 @@
 .paraghraphQ {
   font-family: system-ui;
   font-weight: bold;
-  padding-bottom: 0.5ch;
+  padding-bottom: 1.5ch;
 }
 
 .paraghraphC {
