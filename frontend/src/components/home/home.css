@@ -5,7 +5,6 @@
   background-color: orange;
   border-radius: 2px;
   justify-content: space-between;
-  margin-top: 4ch;
   box-shadow: 1px 1px 5px orange;
 }
 
@@ -13,7 +12,7 @@
   position: relative;
   /*Don't really need this just for demo styling*/
   float: left;
-  width:22vw;
+  width: 22vw;
 }
 
 /* IE11 hide native button (thanks Matt!) */
@@ -48,7 +47,7 @@ select::-ms-expand {
   display: block;
   width: 100%;
   max-width: 320px;
-  height: 50px;
+  height: 45px;
   float: right;
   margin: 5px 12px;
   padding: 0px 10px;
@@ -58,6 +57,7 @@ select::-ms-expand {
   background-color: #ffffff;
   background-image: none;
   border: 1px solid #cccccc;
+  font-weight: bolder;
   -ms-word-break: normal;
   word-break: normal;
   border-radius: 2px;
@@ -88,11 +88,10 @@ select::-ms-expand {
 }
 
 .cart {
-  width: 30px;
-  height: 30px;
   color: aliceblue;
   margin-right: 10%;
   cursor: pointer;
+  font-size: 5ch;
 }
 
 .pageContainer {
@@ -111,12 +110,24 @@ select::-ms-expand {
   margin-bottom: 20ch;
 }
 
+.sliderContainer1 {
+  /* height: 75vh; */
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; */
+  /* width: 100%; */
+  /* margin-top: 15ch; */
+  /* margin-bottom: 20ch; */
+  /* margin-top: 10ch; */
+}
+
+
 .divProduct {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 3ch;
   margin-bottom: 2ch;
-
 }
 
 .productsContainer {
@@ -124,7 +135,16 @@ select::-ms-expand {
   width: 18vw;
   position: relative;
   box-shadow: 1px 1px 5px black;
-  border-radius: 3%
+  border-radius: 3%;
+}
+
+.productsContainer1 {
+  height: 50vh;
+  width: 18vw;
+  position: relative;
+  box-shadow: 1px 1px 5px black;
+  border-radius: 3%;
+  /* margin-top: 10ch; */
 }
 
 .productImg {
@@ -168,7 +188,6 @@ select::-ms-expand {
   color: black;
   cursor: pointer;
 }
-
 
 .productName {
   display: flex;
@@ -226,20 +245,25 @@ select::-ms-expand {
   opacity: 0.5;
   cursor: pointer;
 }
-.nav-icon{
+
+.nav-icon {
   display: flex;
-  gap: 10px;
-  margin-right: 5%;
+  gap: 20px;
+  margin-right: 7%;
 }
-.right-left{
+
+.right-left {
   display: flex;
   align-items: center;
 }
-.hartNav{
+
+.hartNav {
   transform: scale(1.8);
   color: #fff;
   cursor: pointer;
+  font-size: 3ch;
 }
+
 .cart-f2 {
   transform: scale(1.8);
   color: red;
