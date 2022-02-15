@@ -4,11 +4,11 @@
   gap: 5ch;
   align-items: center;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 .divLogin {
-  width: 25%;
+  width: 30%;
   border: solid 0.1ch rgb(228, 226, 226);
 }
 
@@ -16,11 +16,13 @@
   font-size: x-large;
   font-family: cursive;
   font-weight: bold;
+  margin-top: 3ch;
 }
 
 .paragLogin {
   font-family: system-ui;
   font-size: small;
+  margin-top: 1.5ch;
 }
 
 .formLogin {
@@ -34,13 +36,13 @@
 .inputLogin {
   border: none;
   border-bottom: 0.2ch solid;
-  width: 80%;
+  width: 70%;
   font-family: cursive;
   outline: none;
 }
 
 .btnLogin {
-  width: 80%;
+  width: 70%;
   height: 5ch;
   background-color: orange;
   border: solid orange 0.3ch;
@@ -48,7 +50,7 @@
   font-size: larg;
   font-family: cursive;
   font-weight: bold;
-  margin-bottom: 5ch;
+  margin-bottom: 8ch;
   outline: none;
 }
 
@@ -95,6 +97,7 @@
   font-size: small;
   font-weight: bold;
   text-align: left;
+  margin-top: 2ch;
 }
 
 .paraghraph {
