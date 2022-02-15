@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef  } from "react";
+import{ init,send,sendForm } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import "./heroStyle.css";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineSend } from "react-icons/ai";
@@ -18,10 +20,12 @@ const images = [
 
 export default function HeroPage() {
   const navigate = useNavigate();
+  const form = useRef();
 
   const [index, setIndex] = useState(0);
-
+const [subject, setSubject] = useState("");
   const timeoutRef = React.useRef(null);
+
 
   function resetTimeout() {
     if (timeoutRef.current) {
@@ -44,6 +48,21 @@ export default function HeroPage() {
       resetTimeout();
     };
   }, [index]);
+  //=================================================
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_n5xq28c',"template_jhbrfkq",form.current, 'user_qrOrUTiYc5bmnaG9rsqfh')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+
+  //=================================================
 
   return (
     <>
@@ -181,8 +200,15 @@ export default function HeroPage() {
             <br/>
           </div>
           <div className="hero-email" key={"hero-email"}>
-            <input className="inputEmail" type="email" placeholder="Type Your Email .." />
-            <AiOutlineSend className="hero-send" />
+            {/* <input className="inputEmail" type="text" placeholder="Type Your Email .." onClick={(e)=>{setSubject(e.target.value)}} />
+            <AiOutlineSend className="hero-send" onClick={sendEmail}/> */}
+             <form ref={form} onSubmit={sendEmail}>
+      
+     
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </form>
           </div>
         </div>
         <div className="foot-end" key={"foot-end"}>
