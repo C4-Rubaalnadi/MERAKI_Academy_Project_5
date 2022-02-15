@@ -156,8 +156,8 @@ const Home = ({ userInfo, setWishList }) => {
                 <option>snack</option>
                 <option>meat</option>
                 <option>pasta</option>
-                <option>millk_egg</option>
-                <option>vegatables_frutes</option>
+                <option>milk_egg</option>
+                <option>vegetables_fruits</option>
               </select>
             </div>
           </div>
