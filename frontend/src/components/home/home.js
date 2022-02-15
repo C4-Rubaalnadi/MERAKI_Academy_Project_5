@@ -271,47 +271,49 @@ const Home = ({ userInfo, setWishList }) => {
                   productsCategory.map((product, i) => {
                     return (
                       <>
-                        <div className="productsContainer">
-                          <div className="iconsContainer">
-                            <div className="containerCartIcoon">
-                              <div>{quantity}</div>
-                              <IoMdRemoveCircleOutline
-                                className="add"
-                                onClick={() => {
-                                  quantity !== 0
-                                    ? setQuantity((previos) => previos - 1)
-                                    : setQuantity(0);
-                                }}
-                              />
-                              <IoIosAddCircle
-                                className="add"
-                                onClick={() => {
-                                  setQuantity((previos) => previos + 1);
-                                }}
-                              />
-                              <BsCartPlusFill
-                                key={i}
-                                className="cartIcoon"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  handleAddToCart(product.id);
-                                }}
-                              />
-                            </div>
-                          </div>
-                          <img
-                            className="productImg"
-                            src={product.image && product.image}
-                          ></img>
-                          <div>
-                            <div className="productName">
-                              {product.nameProduct && product.nameProduct}{" "}
-                              <div className="price">
-                                {product.price && product.price} JOD
+                        <div className="sliderContainer1">
+                          <div className="productsContainer1">
+                            <div className="iconsContainer">
+                              <div className="containerCartIcoon">
+                                <div>{quantity}</div>
+                                <IoMdRemoveCircleOutline
+                                  className="add"
+                                  onClick={() => {
+                                    quantity !== 0
+                                      ? setQuantity((previos) => previos - 1)
+                                      : setQuantity(0);
+                                  }}
+                                />
+                                <IoIosAddCircle
+                                  className="add"
+                                  onClick={() => {
+                                    setQuantity((previos) => previos + 1);
+                                  }}
+                                />
+                                <BsCartPlusFill
+                                  key={i}
+                                  className="cartIcoon"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    handleAddToCart(product.id);
+                                  }}
+                                />
                               </div>
                             </div>
-                            <div className="description">
-                              {product.description && product.description}
+                            <img
+                              className="productImg"
+                              src={product.image && product.image}
+                            ></img>
+                            <div>
+                              <div className="productName">
+                                {product.nameProduct && product.nameProduct}{" "}
+                                <div className="price">
+                                  {product.price && product.price} JOD
+                                </div>
+                              </div>
+                              <div className="description">
+                                {product.description && product.description}
+                              </div>
                             </div>
                           </div>
                         </div>
