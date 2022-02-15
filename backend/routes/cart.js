@@ -12,7 +12,7 @@ const {
   getAllFavortListOfUser,
   deleteProductOfUserInFAvList,
   deleteAllCartOfUser,
-  getAllHistoryCartOfUser
+  getAllHistoryCartOfUser,
 } = require("../controllers/cart");
 const authentication = require("../middleware/authentication");
 

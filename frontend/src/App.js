@@ -14,6 +14,7 @@ import Products from "./components/admin/products/products.js";
 import Orders from "./components/admin/orders/orders.js";
 
 import FsvList from "./components/fav-list/FsvList";
+import Chart from "./components/admin/chart";
 
 function App() {
   const [userInfo, setUserInfo] = useState({});
@@ -52,13 +53,9 @@ function App() {
           }
         />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route
-          path="/fav"
-          element={<FsvList userInfo={userInfo} />}
-        />
+        <Route path="/dashboard" element={<Chart />} />
+
+        <Route path="/fav" element={<FsvList userInfo={userInfo} />} />
       </Routes>
     </div>
   );
