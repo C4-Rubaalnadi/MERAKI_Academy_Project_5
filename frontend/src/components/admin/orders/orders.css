@@ -1,5 +1,5 @@
 .divOrderPage {
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 3.2ch;
@@ -9,33 +9,32 @@
 }
 
 .OrderPage {
-    display: flex;
+  display: flex;
   flex-direction: row;
   text-align: left;
   margin-left: 1ch;
-  margin-bottom: 2ch;
   margin-top: 2ch;
   font-family: "Courier New", Courier, monospace;
   text-decoration: underline;
 }
 
 .orderIcon {
-    font-size: 5ch;
-  margin-left: 1.5ch;
+  font-size: 5ch;
+  margin-left: 2ch;
   margin-right: 0.5ch;
   margin-top: 0.3ch;
 }
 
 .underLineO {
-    height: 3ch;
+  height: 3ch;
   border: solid 1px white;
   box-shadow: 0 0 20px silver;
   margin-left: 3.2ch;
   margin-right: 3.2ch;
 }
 
-.order-table{
-    display: flex;
+.order-table {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 0 10px silver;
@@ -48,16 +47,37 @@
   right: 3ch;
 }
 
-.order-table table{
-    font-family: arial, sans-serif;
-    border-collapse: separate;
-    width: 100%;
+.order-table table {
+  font-family: arial, sans-serif;
+  border-collapse: separate;
+  width: 90%;
+  margin-top: 5ch;
 }
-.order-table table td, th{
-    text-align: center;
-    padding: 4px;
-    height: 8vh;
+
+.order-table table td,
+th {
+  text-align: center;
+  padding: 4px;
+  height: 8vh;
 }
+
 .order-table table tr:nth-child(even) {
-    background-color: #dddddd;
+  background-color: #dddddd;
+}
+
+.thOrder {
+  border: none;
+  border: 1px solid silver;
+  width: 18ch;
+  font-size: large;
+  font-family: cursive;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.tdOrder {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bolder;
+  border: 1px solid silver;
+  border-radius: 5px;
 }

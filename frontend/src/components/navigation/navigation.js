@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
 import { MdDashboard } from "react-icons/md";
+import { MdSpaceDashboard } from "react-icons/md";
+
 
 //===============================================================
 
@@ -44,10 +46,13 @@ const Navigation = ({ userInfo }) => {
                 to={userInfo.role === 1 ? "/home" : "/admin"}
               >
                 {userInfo.role === 1 ? (
-                  "Home"
+                  <div className="divHomeNav">
+                    <MdSpaceDashboard className="home" />
+                    <p className="homeParaNav">Home</p>
+                  </div>
                 ) : (
-                  <div>
-                    <MdDashboard className="dash" /> Dashboard
+                  <div className="divHomeNav">
+                    <MdDashboard className="dash" /> <p className="homeParaNav">Dashboard</p>
                   </div>
                 )}
               </Link>

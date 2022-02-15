@@ -5,7 +5,8 @@
   background-color: orange;
   border-radius: 2px;
   justify-content: space-between;
-  margin-top: 6ch;
+  margin-top: 4ch;
+  box-shadow: 1px 1px 5px orange;
 }
 
 .box {

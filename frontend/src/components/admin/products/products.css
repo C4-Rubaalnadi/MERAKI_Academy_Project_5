@@ -43,7 +43,6 @@
   flex-direction: row;
   text-align: left;
   margin-left: 1ch;
-  margin-bottom: 2ch;
   margin-top: 2ch;
   font-family: "Courier New", Courier, monospace;
   text-decoration: underline;
@@ -64,10 +63,7 @@
 .thAction {
   width: 12ch;
   border: none;
-  border-bottom: 1px solid silver;
-  border-top: 1px solid silver;
-  border-right: 1px solid silver;
-  border-left: 1px solid silver;
+  border: 1px solid silver;
   font-size: large;
   font-family: cursive;
   text-align: center;
@@ -76,10 +72,7 @@
 
 .thProduct {
   border: none;
-  border-bottom: 1px solid silver;
-  border-top: 1px solid silver;
-  border-right: 1px solid silver;
-  border-left: 1px solid silver;
+  border: 1px solid silver;
   width: 18ch;
   font-size: large;
   font-family: cursive;
@@ -88,13 +81,10 @@
 }
 
 .tdProduct td {
-  font-family: monospace;
+  font-family: Georgia	;
   font-weight: bold;
-  font-size: 1.3em;
-  border-bottom: 1px solid silver;
-  border-top: 1px solid silver;
-  border-right: 1px solid silver;
-  border-left: 1px solid silver;
+  /* font-size: 1.3em; */
+  border: 1px solid silver;
   border-radius: 5px;
 }
 
@@ -122,12 +112,12 @@
 }
 
 .editIcon {
-  font-size: 4ch;
+  font-size: 3vw;
   color: green;
 }
 
 .deleteIcon {
-  font-size: 4ch;
+  font-size: 3vw;
   color: red;
 }
 
@@ -140,4 +130,14 @@
 .deleteIcon:hover {
   cursor: pointer;
   color: rgb(187, 3, 3);
+}
+
+.inputUpdatePro {
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid;
+  font-size: medium;
+  font-family: Georgia	;
+  font-weight: bold;
+  outline: none;
 }
