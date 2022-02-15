@@ -101,7 +101,7 @@ INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('htt
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/44/d9/a7/44d9a7bb7ccca8dc3d0d4faa18d25ca2.jpg', 'nutella', '6 pieces', 1.50 ,'snack');
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/91/2a/49/912a498b33ab41b55e3dccd7feff95b7.jpg', 'Rold Gold', 'salty biscuit', 2.00 ,'snack');
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/a2/a5/4d/a2a54d6eadd7fd3aaee681e7722376b8.jpg', 'cheetos', 'cheddar jalapeno flavors', 2.00 ,'snack');
- 
+
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/46/47/2f/46472fcb2b8069cde2cbcf941c8d556b.jpg', 'burger meat', '500g meat with no spices ', 20 ,'meat');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/c8/b9/ba/c8b9baa504910c1c89464d43e7db8bf3.jpg', 'feathered meat', 'free range', 25 ,'meat');
@@ -130,7 +130,7 @@ INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('htt
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/6d/de/2b/6dde2bd1b0ea01062bdd94643734d869.jpg', 'panzani pasta', '500g pasta ', 2.80 ,'pasta');
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/eb/8d/1f/eb8d1f9079308991e720354f74088d89.jpg', 'panzani pasta', '1kg pasta ', 2.00 ,'pasta');
- 
+
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/26/fb/3a/26fb3aaa8106046eaddda9664af59dfa.jpg', 'granoro pasta', '500g', 1.5 ,'pasta');
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/e5/ac/23/e5ac233b0bb5002b4b45d7443e26bb86.jpg', 'panzani pasta', '500g', 1.5 ,'pasta');
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES ('https://i.pinimg.com/564x/d9/58/8f/d9588f2f01f0659d655c805079c87724.jpg', 'panzani pasta', '1Kg', 1.5 ,'pasta');
