@@ -101,11 +101,14 @@
   border: solid 2px silver;
   border-radius: 10px;
   box-shadow: 0 0 5px silver;
+  height: 4ch;
+  text-align: center;
+  padding-top: 1ch;
 }
 
 .btn:hover{
   cursor: pointer;
-  color: white;
-  background-color: black;
+  color: black;
+  /* background-color: orange; */
   border: white;
 }
