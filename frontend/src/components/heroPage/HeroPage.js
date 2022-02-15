@@ -4,15 +4,18 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineSend } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
 import { AiOutlineInstagram } from "react-icons/ai";
+import { HiOutlineMailOpen } from "react-icons/hi";
 import { AiOutlineMail } from "react-icons/ai";
 import ruba from "./img/ruba.jpg";
 import bessaan from "./img/bessaan.jpg";
-import momani from "./img/momane.jpg"
+import momani from "./img/momane.jpg";
+
 const images = [
   "https://pic.i7lm.com/wp-content/uploads/2019/06/%D8%A7%D9%84%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D8%B7%D8%A7%D8%B2%D8%AC%D8%A9.jpg",
   "https://static.webteb.net/images/content/tbl_articles_article_21078_460f8c96881-5f31-4b15-9545-734665e83676.jpg",
   "https://iamahuman2015.com/wp-content/uploads/2018/09/healthy-food-shopping.jpg",
 ];
+
 export default function HeroPage() {
   const navigate = useNavigate();
 
@@ -107,50 +110,57 @@ export default function HeroPage() {
       <div className="about-us" key={"about-us"}>
         <div className="contaner-about" key={"contaner-about"}>
           <div className="about" key={"about1"}>
-            <img
-             src={momani} alt="momani" style={{ width: "61%"}} 
-            />
-            <h4> abdullah Momani </h4>
-            <p>Electrical </p>
-            <p className="about-info">
-              i have an ambition to become the best web development in the world
-            </p>
+            <div className="hero-about-img">
+              <img src={momani} alt="momani" style={{ width: "61%" }} />
+              <h3> Abdullah Momani </h3>
+              <br />
+              <p className="major">Electrical Engineering</p>
+              <br />
+              <div className="divEmail">
+                <HiOutlineMailOpen className="emailIcon" />
+                <p className="about-info">abdallahz.almomani@gmail.com</p>
+              </div>
+              <br/>
+            </div>
             <div className="contact">
               <a href="https://github.com/AbdullahMomani" target="_blank">
-                <button>Contact us</button>
+                <button className="btnContact">Contact Us</button>
               </a>
             </div>
           </div>
           <div className="about" key={"about2"}>
             <div className="hero-about-img">
-              <img src={ruba} alt="ruba" style={{ width: "61%"}} />
+              <img src={ruba} alt="ruba" style={{ width: "61%" }} />
             </div>
             <div className="">
-            <h4> Ruba Alnadi </h4>
-            <p>Bit </p>
-            <p className="about-info">
-              i have an ambition to become the best web development in the world
-            </p>
+              <h3> Ruba Alnadi </h3>
+              <br />
+              <p className="major">Business Information Technology</p>
+              <br />
+              <div className="divEmail">
+                <HiOutlineMailOpen className="emailIcon" />
+                <p className="about-info">rubaalnadi5@gmail.com</p>
+              </div>
             </div>
             <div className="contact">
               <a href="https://github.com/Rubaalnadi" target="_blank">
-                <button>Contact us</button>
+                <button className="btnContact">Contact Us</button>
               </a>
             </div>
           </div>
           <div className="about" key={"about3"}>
-            <img
-              src={bessaan}
-              style={{ width: "60%"}}
-            />
-            <h4> Beesan Gaith </h4>
-            <p>Cis</p>
-            <p className="about-info">
-              i have an ambition to become the best web development in the world
-            </p>
+            <img src={bessaan} style={{ width: "60%" }} />
+            <h3> Beesan Ghaith </h3>
+            <br />
+            <p className="major">Computer Information System</p>
+            <br />
+            <div className="divEmail">
+              <HiOutlineMailOpen className="emailIcon" />
+              <p className="about-info">beesan.ghaith@gmail.com</p>
+            </div>
             <div className="contact">
               <a href="https://github.com/BeesanGhaith" target="_blank">
-                <button>Contact us</button>
+                <button className="btnContact">Contact Us</button>
               </a>
             </div>
           </div>
@@ -162,14 +172,16 @@ export default function HeroPage() {
       <div className="footer" key={"footer"}>
         <div className="foot-content" key={"foot-content"}>
           <div className="foot-info" key={"foot-info"}>
-            <p> Jebnalak</p>
-            <h5>
+            <h1> Jebnalak</h1>
+            <br/>
+            <h4>
               it is a small market selling some products that people need such
               as eggs , meat , chicken ,vegtables and fruits
-            </h5>
+            </h4>
+            <br/>
           </div>
           <div className="hero-email" key={"hero-email"}>
-            <input type="email" placeholder="type your email .." />
+            <input className="inputEmail" type="email" placeholder="Type Your Email .." />
             <AiOutlineSend className="hero-send" />
           </div>
         </div>

@@ -10,13 +10,13 @@
 
 .slide {
   display: inline-block;
-  /* height: 60ch; */
   width: 100%;
+  height: 100%;
   border-radius: 40px;
 }
 
 .slide img {
-  width: 150ch;
+  width: 100%;
   height: 70ch;
   position: relative;
 }
@@ -48,40 +48,85 @@
   font-family: cursive;
 }
 
-.contaner-about p {
-  max-width: 95%;
-}
-.about{
-  border:1px solid orange;
+
+.about {
+  border: 1px solid wheat;
   height: 63vh;
-  width: 28vw;
+  width: 40vw;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  border-radius: 20px;
 }
-.about img{
+
+.about h3, .major {
+  margin-left: 1vw;
+  margin-right: 2vw;
+  text-align: left;
+}
+
+
+.emailIcon {
+  font-size: 1.3em;
+  margin-top: -0.3ch;
+}
+
+.about-info {
+  font-size: 0.9em;
+}
+
+.btnContact {
+  text-align: center;
+  font-size: 1em;
+  width: 15ch;
+  height: 4ch;
+  border: 1px solid orange;
+  border-radius: 5px;
+  color: #fff;
+  background-color: orange;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  margin-top: 2ch;
+}
+
+.btnContact:hover {
+  background-color: white;
+  color: orange;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.about-info {
+  width: 50%;
+}
+
+.divEmail {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3vw;
+  margin-left: 1vw;
+  width: 50%;
+}
+
+.about img {
   margin-top: 2%;
-  border-radius: 50%
+  margin-bottom: 10%;
+  border-radius: 50%;
 }
-.about-us{
+.about-us {
   min-height: 70vh;
 }
-.contact{
+.contact {
   margin-top: -4%;
   font-family: cursive;
 }
-.contact button{
 
-  height: 5vh;
-      background: #fff;
-      border: 2px solid orange;
-      cursor: pointer;
-}
-.contact button:hover{
-  background-color: rgba(255, 204, 109, 0.76);
-}
 .footer {
   width: 100%;
   background-color: orange;
-  font-family: cursive;
+  font-family: "Courier New", Courier, monospace;
   font-size: medium;
+  margin-top: 3ch;
+  padding-bottom: 1ch;
 }
 
 .foot-content {
@@ -89,11 +134,12 @@
   flex-direction: row;
   width: 80%;
   align-items: flex-start;
-  margin: auto;
+  margin-left: 3ch;
 }
 
-.foot-content h5 {
-  width: 50%;
+.foot-content h4 {
+  width: 80%;
+  text-align: left;
 }
 
 .parOfNav {
@@ -108,7 +154,6 @@
   right: 25%;
   bottom: 0%;
   left: -15%;
-  /* padding-top: 5ch; */
   margin-left: 13ch;
 }
 
@@ -125,7 +170,6 @@
 .pLine2 {
   text-align: left;
   font-size: 1.3em;
-
 }
 
 .shopNow {
@@ -135,7 +179,6 @@
   border: 1px solid orange;
   color: #fff;
   background-color: orange;
-  
 }
 
 .jebnalakHero {
@@ -157,16 +200,10 @@
   height: 55vh;
   color: black;
   font-weight: bolder;
-  /* font-size: 25px; */
-  /* font-size: 30px; */
-  /* text-align: start; */
-  /* background-color: white; */
-  /* border: solid 1px orange; */
   border-radius: 10%;
-  /* opacity: 0.6; */
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   text-align: left;
-  /* margin-bottom: 25ch; */
+  margin-top: -5ch;
 }
 
 .jebna-hero {
@@ -181,15 +218,16 @@
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  margin-top: 2ch;
 }
 
 .hero-email {
   margin-top: 4%;
-  display: flex;
   display: grid;
   grid-template-columns: 2fr 2fr;
   gap: 10%;
   align-items: center;
+  width: 30%;
 }
 
 .hero-send {
@@ -200,23 +238,26 @@
 }
 
 .hero-email input {
-  padding: 9%;
-  border-radius: 9%;
-  border: 1px solid orange;
-  width: 15ch;
+  border: none;
+  width: 20vw;
+  height: 5vh;
+  outline: none;
 }
 
 .foot-end {
   display: flex;
-  width: 100%;
-  justify-content: space-evenly;
+  width: 70%;
+  justify-content: left;
+  margin-left: 2.7ch;
+  font-weight: bolder;
 }
 
 .foot-icon {
-  margin-top: 2%;
+  /* margin-top: 2%; */
   display: flex;
-  width: 30%;
+  width: 50%;
   justify-content: end;
+  gap: 1ch;
   color: #000;
   transform: scale(1.3);
 }
@@ -225,8 +266,8 @@
   .parOfNav {
     top: -3vh;
     left: -7vh;
-}
-  
+  }
+
   .hero-log {
     bottom: 27%;
     left: 40%;
@@ -234,14 +275,14 @@
   .hero-log p {
     font-size: 14px;
   }
-  .contaner-about{
-    width:100%;
+  .contaner-about {
+    width: 100%;
     margin-left: 5%;
   }
-  .about{
+  .about {
     height: 53vh;
     width: 33vw;
-}
+  }
 }
 /* @media (max-width: 400px){
   .infoo p{
