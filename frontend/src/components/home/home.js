@@ -162,25 +162,23 @@ const Home = ({ userInfo, setWishList }) => {
             </div>
           </div>
           <div className="nav-icon">
-          <div className="right-left">
-           <AiFillHeart
-            className="hartNav"
-            onClick={() => {
-              navigate("/fav");
-            }}
-          />
+            <div className="right-left">
+              <AiFillHeart
+                className="hartNav"
+                onClick={() => {
+                  navigate("/fav");
+                }}
+              />
+            </div>
+            <div className="right">
+              <BsFillCartPlusFill
+                className="cart"
+                onClick={() => {
+                  navigate("/cart");
+                }}
+              />
+            </div>
           </div>
-          <div className="right">
-            <BsFillCartPlusFill
-              className="cart"
-              onClick={() => {
-                navigate("/cart");
-              }}
-            />
-          </div>
-
-          </div>
-         
         </div>
         <div className="pageContainer">
           <div className="sliderContainer">
