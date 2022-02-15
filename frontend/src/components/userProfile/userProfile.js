@@ -69,7 +69,7 @@ const UserProfile = ({ userInfo }) => {
         {favStatus ? (
           <>
             <div className="favorate">
-              <FsvList />
+              <FsvList userInfo={userInfo}/>
             </div>
           </>
         ) : (

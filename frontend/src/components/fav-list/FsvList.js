@@ -2,27 +2,34 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { GiBrokenHeart } from "react-icons/gi";
 import "./FsvList.css";
-function FsvList(wishlist, userInfo) {
+function FsvList({userInfo}) {
   const [fav, setFav] = useState();
+  console.log(userInfo);
 
   const getFav = () => {
     axios
       .get(`http://localhost:5000/orders/FavortList/${userInfo.userId}`)
       .then((res) => {
         setFav(res.data.result);
+        console.log(res.data.result);
       })
-      .catch((err) => {});
+      .catch((err) => {
+        throw err;
+      });
   };
   useEffect(() => {
     getFav();
   }, []);
   return (
+    <>
+    <div className="divFav">
+      <p className="msFr"> My Favorite Product </p>
     <div className="divProduct fav">
       {fav &&
         fav.map((wish, i) => {
           return (
             <>
-              <div className="productsContainer">
+              <div className="productsContainer proFav">
                 <img
                   className="productImg"
                   src={wish.image && wish.image}
@@ -55,6 +62,8 @@ function FsvList(wishlist, userInfo) {
           );
         })}
     </div>
+    </div>
+    </>
   );
 }
 

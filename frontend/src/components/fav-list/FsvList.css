@@ -8,5 +8,22 @@
 .fav{
     display: flex;
     flex-flow: wrap;
-    margin-top: 8%;
+    margin-top: 4%;
+    margin-left: 10%;
+}
+.msFr{
+    font-family: cursive;
+}
+.divFav{
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 800px) {
+    .fav{
+        margin-top: 8%;
+    }
+    .proFav{
+        height: 34vh;
+        width: 62vw;
+    }
 }

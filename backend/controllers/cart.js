@@ -170,8 +170,8 @@ const Add_wishList = (req, res) => {
 };
 // get favorete list
 const getAllFavortListOfUser = (req, res) => {
-  const userId = req.params.idUser;
-  const query = `SELECT * FROM products INNER JOIN favorite_list ON favorite_list.product_id=products.id AND favorite_list.is_deleted =?  `;
+  const userId = req.params.id;
+  const query = `SELECT * FROM products INNER JOIN favorite_list ON favorite_list.product_id=products.id AND favorite_list.user_id = ? AND favorite_list.is_deleted =?  `;
   const data = [userId, 0];
   connection.query(query, data, (err, results) => {
     if (err) {

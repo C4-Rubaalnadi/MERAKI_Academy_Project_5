@@ -5,7 +5,6 @@ import { logout } from "../../reducer/login/index";
 import { useDispatch, useSelector } from "react-redux";
 import { MdDashboard } from "react-icons/md";
 
-
 //===============================================================
 
 const Navigation = ({ userInfo }) => {
@@ -24,9 +23,6 @@ const Navigation = ({ userInfo }) => {
   return (
     <>
       <div className="divNavigation">
-        {/* <div className="divJebnalak">
-          <h1 className="jebnalak">Jebna</h1><h1 className="jebnalak2">lak</h1>
-        </div> */}
         {state.isLoggedIn ? (
           <>
             <div className="divJebnalak">
@@ -48,9 +44,12 @@ const Navigation = ({ userInfo }) => {
                 to={userInfo.role === 1 ? "/home" : "/admin"}
               >
                 {userInfo.role === 1 ? (
-"Home"
-                )
-                 : (<div><MdDashboard className="dash" /> Dashboard</div>)}
+                  "Home"
+                ) : (
+                  <div>
+                    <MdDashboard className="dash" /> Dashboard
+                  </div>
+                )}
               </Link>
               <div className="divLogout">
                 <i id="logoutIcon" class="fas fa-sign-out-alt"></i>
@@ -68,20 +67,7 @@ const Navigation = ({ userInfo }) => {
             </div>
           </>
         ) : (
-          <>
-            {/* <div className="divJebnalak">
-              <h1 className="jebna">Jebna</h1>
-              <h1 className="jebnalak2">lak</h1>
-            </div> */}
-            {/* <div className="divLink2">
-              <Link className="Link" to="/register">
-                Register
-              </Link>
-              <Link className="Link" to="/login">
-                Login
-              </Link>
-            </div> */}
-          </>
+          <></>
         )}
       </div>
     </>

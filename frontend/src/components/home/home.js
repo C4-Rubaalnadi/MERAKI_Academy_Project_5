@@ -153,7 +153,6 @@ const Home = ({ userInfo, setWishList }) => {
                 }}
               >
                 <option>Category</option>
-                {/* <option>all</option> */}
                 <option>snack</option>
                 <option>meat</option>
                 <option>pasta</option>

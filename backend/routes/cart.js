@@ -22,7 +22,7 @@ cartRouter.get("/search/cart", getAllOrder);
 cartRouter.put("/edit/:id/", updateCartById);
 cartRouter.delete("/delete/:id/:product_id", deleteCartById);
 cartRouter.post("/add_wishList", Add_wishList);
-cartRouter.get("/FavortList/:idUser", getAllFavortListOfUser);
+cartRouter.get("/FavortList/:id", getAllFavortListOfUser);
 cartRouter.delete("/deleteFavortList/:id", deleteProductOfUserInFAvList);
 cartRouter.delete("/deleteCart/:id", deleteAllCartOfUser);
 cartRouter.get("/gethistory/:id", getAllHistoryCartOfUser);
