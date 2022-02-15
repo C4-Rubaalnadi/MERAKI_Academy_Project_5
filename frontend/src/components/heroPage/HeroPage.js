@@ -21,7 +21,7 @@ const images = [
 export default function HeroPage() {
   const navigate = useNavigate();
   const form = useRef();
-
+  const delay = 7000;
   const [index, setIndex] = useState(0);
 const [subject, setSubject] = useState("");
   const timeoutRef = React.useRef(null);
@@ -36,13 +36,13 @@ const [subject, setSubject] = useState("");
   useEffect(() => {
     resetTimeout();
     //to make it automatic
-    // timeoutRef.current = setTimeout(
-    //   () =>
-    //     setIndex((prevIndex) =>
-    //       prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    //     ),
-    //   delay
-    // );
+    timeoutRef.current = setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        ),
+      delay
+    );
 
     return () => {
       resetTimeout();
