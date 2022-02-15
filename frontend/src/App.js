@@ -19,6 +19,7 @@ function App() {
   const [userInfo, setUserInfo] = useState({});
   const [finalPrice, setFinalPrice] = useState(0);
   const [wishlist, setWishList] = useState();
+  
   return (
     <div className="App">
       <Navigation userInfo={userInfo} />
